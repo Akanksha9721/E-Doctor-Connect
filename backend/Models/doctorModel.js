@@ -3,7 +3,6 @@ const { model, Schema, } = require('../connection');
 const mySchema = new Schema({
     name: String,
     email: { type: String, unique: true },
-    password: { type: String, require: true },
     contact: { type: String },
     qualification: { type: String },
     specilization: { type: String },
