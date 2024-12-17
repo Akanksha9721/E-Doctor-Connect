@@ -4,8 +4,8 @@ const mySchema = new Schema ({
     patient: {type:String},  // 
     doctor: {type:String},// 
     reportTime: {type:Date,default:Date.now},  
-    details: {},
-    status: {},
+    
+    createdAt:{type:Date, default:Date.now}
     
 });
 

@@ -12,6 +12,7 @@ const mySchema = new Schema({
     avalilablity: { type: Date, default: Date.now },
     avatar: { type: String },
     city: { type: String, default: 'Unknown' },
+    createdAt:{type:Date, default:Date.now}
 
 });
 
