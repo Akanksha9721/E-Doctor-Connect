@@ -6,11 +6,8 @@ const SlotRouter = require('./routers/slotRouter');
 const ReportRouter = require('./routers/reportRouter');
 const TestRouter = require('./routers/testRouter');
 const AppointmentRouter = require('./routers/appointmentRouter');
-
-
-
-
 const cors = require('cors');
+
 //initializating express
 const app = express();
 const port = 5000;
@@ -32,8 +29,6 @@ app.use('/test', TestRouter);
 app.get('/', (req, res) => {
    res.send('response from express');
 });
-
-
 
 //start the server
 app.listen(port, () => {
