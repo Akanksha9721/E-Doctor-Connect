@@ -30,7 +30,7 @@ const Register = () => {
 
     // })
     return (
-        <div className='h-auto' style={{backgroundImage: `url('https://wallpapers.com/images/hd/yellow-and-blue-background-bqfg6r5bom6fxrvm.jpg')`}}>
+        <div className='h-auto' style={{ backgroundImage: `url('https://wallpapers.com/images/hd/yellow-and-blue-background-bqfg6r5bom6fxrvm.jpg')` }}>
             <div className="max-w-xl mx-auto mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
                 <div className="p-2 sm:p-7 ">
                     <div className="text-center">
@@ -344,7 +344,7 @@ const Register = () => {
                                             htmlFor="password"
                                             className="block text-sm mb-2 dark:text-white"
                                         >
-                                           Avalilablity
+                                            Avalilablity
                                         </label>
                                     </div>
                                     <div className="relative">
@@ -379,7 +379,7 @@ const Register = () => {
                                             htmlFor="password"
                                             className="block text-sm mb-2 dark:text-white"
                                         >
-                                          Avatar
+                                            Avatar
                                         </label>
                                     </div>
                                     <div className="relative">
@@ -390,7 +390,7 @@ const Register = () => {
                                             className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             required=""
                                             aria-describedby="Speciality-error"
-                                            
+
                                         />
                                         <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                                             <svg
@@ -415,7 +415,7 @@ const Register = () => {
                                             htmlFor="password"
                                             className="block text-sm mb-2 dark:text-white"
                                         >
-                                         City
+                                            City
                                         </label>
                                     </div>
                                     <div className="relative">
