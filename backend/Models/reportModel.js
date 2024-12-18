@@ -9,4 +9,4 @@ const mySchema = new Schema ({
     
 });
 
-module.exports=model('usres',mySchema);
+module.exports=model('reports',mySchema);
