@@ -1,37 +1,36 @@
+'use client';
 import { useFormik } from 'formik';
 import React from 'react'
 
 const Register = () => {
-    // const registerForm = useFormik({
-    //     initialValues: {
-    //         name: '',
-    //         email: '',
-    //         contact: '',
-    //         qualification: '',
-    //         specilization: '',
-    //         fees: '',
-    //         avalilablity: '',
-    //         avatar: '',
-    //         city: ''
-    //     },
-    //     // onSubmit: async (values) => {
-    //     //     console.log(values);
+    const registerForm = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            password: '',
+            contact: '',
+            qualification: '',
+
+            
+        },
+        onSubmit: async (values) => {
+            console.log(values);
 
 
-    //     //     const res = await axios.post('http://localhost:5000/user/authenticate', values)
-    //     //     console.log(res.data);
-    //     //     console.log(res.status);
-    //     //     if (res.status === 200) {
-    //     //         localStorage.setItem('token', res.data.token);
-    //     //     }
+            const res = await axios.post('http://localhost:5000/user/authenticate', values)
+            console.log(res.data);
+            console.log(res.status);
+            if (res.status === 200) {
+                localStorage.setItem('token', res.data.token);
+            }
 
 
-    //     // }
+        }
 
-    // })
+    })
     return (
-        <div className='h-auto' style={{ backgroundImage: `url('https://wallpapers.com/images/hd/yellow-and-blue-background-bqfg6r5bom6fxrvm.jpg')` }}>
-            <div className="max-w-xl mx-auto mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
+        <div className='h-auto py-7' style={{ backgroundImage: `url('https://wallpapers.com/images/hd/yellow-and-blue-background-bqfg6r5bom6fxrvm.jpg')` }}>
+            <div className="max-w-xl mx-auto bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
                 <div className="p-2 sm:p-7 ">
                     <div className="text-center">
                         <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
@@ -83,7 +82,7 @@ const Register = () => {
                             Or
                         </div>
                         {/* Form */}
-                        <form>
+                        <form onSubmit={registerForm.handleSubmit}>
                             <div className="grid gap-y-4">
                                 {/* Form Group */}
                                 <div>
@@ -98,6 +97,8 @@ const Register = () => {
                                             type="text"
                                             id="name"
                                             name="name"
+                                            onChange={registerForm.handleChange}
+                                            value={registerForm.values.name}
                                             className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             required=""
                                             aria-describedby="name-error"
@@ -164,18 +165,18 @@ const Register = () => {
                                             htmlFor="password"
                                             className="block text-sm mb-2 dark:text-white"
                                         >
-                                            Contact
+                                            Password
                                         </label>
                                     </div>
                                     <div className="relative">
                                         <input
-                                            type="text"
-                                            id="Speciality"
-                                            name="Speciality"
+                                            type="password"
+                                            id="password"
+                                            name="password"
                                             className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             required=""
-                                            aria-describedby="Speciality-error"
-                                            placeholder="enter the contact"
+                                            aria-describedby="password-error"
+                                            placeholder="enter the password"
                                         />
                                         <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                                             <svg
@@ -194,235 +195,21 @@ const Register = () => {
                                         8+ characters required
                                     </p>
                                 </div>
+                               
                                 <div>
                                     <div className="flex justify-between items-center">
                                         <label
                                             htmlFor="password"
                                             className="block text-sm mb-2 dark:text-white"
                                         >
-                                            Qualification
-                                        </label>
-                                    </div>
-                                    <div className="relative">
-                                        <input
-                                            type="text"
-                                            id="qualification"
-                                            name="qualification"
-                                            className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                            required=""
-                                            aria-describedby="Speciality-error"
-                                            placeholder="enter the qualification "
-                                        />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-                                        8+ characters required
-                                    </p>
-                                </div>
-                                <div>
-                                    <div className="flex justify-between items-center">
-                                        <label
-                                            htmlFor="password"
-                                            className="block text-sm mb-2 dark:text-white"
-                                        >
-                                            Specilization
-                                        </label>
-                                    </div>
-                                    <div className="relative">
-                                        <input
-                                            type="text"
-                                            id="specilization"
-                                            name="specilization"
-                                            className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                            required=""
-                                            aria-describedby="specilization-error"
-                                            placeholder="enter the specilization "
-                                        />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-                                        8+ characters required
-                                    </p>
-                                </div>
-                                <div>
-                                    <div className="flex justify-between items-center">
-                                        <label
-                                            htmlFor="password"
-                                            className="block text-sm mb-2 dark:text-white"
-                                        >
-                                            Experience
-                                        </label>
-                                    </div>
-                                    <div className="relative">
-                                        <input
-                                            type="text"
-                                            id="experience"
-                                            name="experience"
-                                            className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                            required=""
-                                            aria-describedby="Speciality-error"
-                                            placeholder="enter the experience"
-                                        />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-                                        8+ characters required
-                                    </p>
-                                </div>
-                                <div>
-                                    <div className="flex justify-between items-center">
-                                        <label
-                                            htmlFor="password"
-                                            className="block text-sm mb-2 dark:text-white"
-                                        >
-                                            Fees
+                                            Contect
                                         </label>
                                     </div>
                                     <div className="relative">
                                         <input
                                             type="number"
-                                            id="fees"
-                                            name="fees"
-                                            className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                            required=""
-                                            aria-describedby="Speciality-error"
-                                            placeholder="enter the fees"
-                                        />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-                                        8+ characters required
-                                    </p>
-                                </div>
-                                <div>
-                                    <div className="flex justify-between items-center">
-                                        <label
-                                            htmlFor="password"
-                                            className="block text-sm mb-2 dark:text-white"
-                                        >
-                                            Avalilablity
-                                        </label>
-                                    </div>
-                                    <div className="relative">
-                                        <input
-                                            type="text"
-                                            id="avalilablity"
-                                            name="avalilablity"
-                                            className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                            required=""
-                                            aria-describedby="Speciality-error"
-                                        />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-                                        8+ characters required
-                                    </p>
-                                </div>
-                                <div>
-                                    <div className="flex justify-between items-center">
-                                        <label
-                                            htmlFor="password"
-                                            className="block text-sm mb-2 dark:text-white"
-                                        >
-                                            Avatar
-                                        </label>
-                                    </div>
-                                    <div className="relative">
-                                        <input
-                                            type="file"
-                                            id="avatar"
-                                            name="avatar"
-                                            className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                            required=""
-                                            aria-describedby="Speciality-error"
-
-                                        />
-                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                            <svg
-                                                className="size-5 text-red-500"
-                                                width={16}
-                                                height={16}
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-                                        8+ characters required
-                                    </p>
-                                </div>
-                                <div>
-                                    <div className="flex justify-between items-center">
-                                        <label
-                                            htmlFor="password"
-                                            className="block text-sm mb-2 dark:text-white"
-                                        >
-                                            City
-                                        </label>
-                                    </div>
-                                    <div className="relative">
-                                        <input
-                                            type="text"
-                                            id="city"
-                                            name="city"
+                                            id="number"
+                                            name="number"
                                             className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             required=""
                                             aria-describedby="Speciality-error"
@@ -468,7 +255,7 @@ const Register = () => {
                                     type="submit"
                                     className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                                 >
-                                    Sign in
+                                    Register
                                 </button>
                             </div>
                         </form>
