@@ -1,5 +1,7 @@
 const express = require('express');
 const Model = require('../models/doctorModel');
+require('dotenv').config();
+
 const router = express.Router();
 
 router.post('/add', (req, res) => {

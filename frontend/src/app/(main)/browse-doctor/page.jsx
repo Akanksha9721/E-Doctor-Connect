@@ -1,6 +1,7 @@
 'use client';
 import axios from 'axios';
-import React, { useState } from 'react'
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react'
 
 
 const BrowseDoctor = () => {
@@ -16,6 +17,12 @@ const BrowseDoctor = () => {
                 console.log(err);
             })
     }
+
+    useEffect(() => {
+      fetchDoctor();
+    }, [])
+    
+
     return (
         <>
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -34,20 +41,20 @@ const BrowseDoctor = () => {
                     {/* Card */}
                     {
                         doctorList.map((doctor) => {
-                            return <Link key={doctor._id}
+                            return <Link    key={doctor._id}
                                 className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
                                 href={'/design-details/' + doctor._id}
                             >
                                 <div className="aspect-w-16 aspect-h-11">
                                     <img
                                         className="w-full object-cover rounded-xl"
-                                        // src={design.image}
+                                         src={doctor.image}
                                         alt="Blog Image"
                                     />
                                 </div>
                                 <div className="my-6">
                                     <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-                                        {/* {design.name} */}
+                                      {doctor.name} 
                                     </h3>
                                     <p className="mt-5 text-gray-600 dark:text-neutral-400">
 
@@ -61,7 +68,7 @@ const BrowseDoctor = () => {
                                     />
                                     <div>
                                         <h5 className="text-sm text-gray-800 dark:text-neutral-200">
-                                            {/* {design.uploadBy} */}
+                                           {doctor.uploadBy} 
                                         </h5>
                                     </div>
                                 </div>

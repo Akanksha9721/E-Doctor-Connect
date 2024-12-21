@@ -8,7 +8,6 @@ const mySchema = new Schema({
     specilization: { type: String },
     experience: { type: Number },
     fees: { type: Number },
-    avalilablity: { type: Date, default: Date.now },
     avatar: { type: String },
     city: { type: String, default: 'Unknown' },
     createdAt:{type:Date, default:Date.now}
