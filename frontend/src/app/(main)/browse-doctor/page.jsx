@@ -43,7 +43,7 @@ const BrowseDoctor = () => {
                         doctorList.map((doctor) => {
                             return <Link    key={doctor._id}
                                 className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
-                                href={'/design-details/' + doctor._id}
+                                href={'/view-doctor/' + doctor._id}
                             >
                                 <div className="aspect-w-16 aspect-h-11">
                                     <img
@@ -57,7 +57,10 @@ const BrowseDoctor = () => {
                                       {doctor.name} 
                                     </h3>
                                     <p className="mt-5 text-gray-600 dark:text-neutral-400">
-
+                                       {doctor.fees}
+                                    </p>
+                                    <p className="mt-5 text-gray-600 dark:text-neutral-400">
+                                        {doctor.qualification}
                                     </p>
                                 </div>
                                 <div className="mt-auto flex items-center gap-x-3">

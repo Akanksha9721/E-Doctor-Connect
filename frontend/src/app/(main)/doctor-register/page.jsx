@@ -1,9 +1,14 @@
 'use client';
 import axios from 'axios';
 import { useFormik } from 'formik';
+import { useRouter } from 'next/navigation';
 import React from 'react'
+import toast from 'react-hot-toast';
 
 const Register = () => {
+
+    const router = useRouter();
+
     const registerForm = useFormik({
         initialValues: {
             name: '',
@@ -11,18 +16,15 @@ const Register = () => {
             password: '',
             contact: '',
             qualification: '',
-
-
         },
         onSubmit: async (values) => {
             console.log(values);
-
-
-            const res = await axios.post('http://localhost:5000/user/authenticate', values)
+            const res = await axios.post('http://localhost:5000/doctor/add', values)
             console.log(res.data);
             console.log(res.status);
             if (res.status === 200) {
-                localStorage.setItem('token', res.data.token);
+                toast.success('Doctor registered successfully');
+                router.push('/doctor-login');
             }
         }
 
@@ -157,6 +159,44 @@ const Register = () => {
                                         8+ characters required
                                     </p>
                                 </div>
+                                <div>
+                                    <div className="flex justify-between items-center">
+                                        <label
+                                            htmlFor="password"
+                                            className="block text-sm mb-2 dark:text-white"
+                                        >
+                                            Conform  Password
+                                        </label>
+                                    </div>
+                                    <div className="relative">
+                                        <input
+                                            type="password"
+                                            id="confirmPassword"
+                                          
+                                            onChange={registerForm.handleChange}
+                                            value={registerForm.values.confirmpassword}
+                                            className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                            required=""
+                                            aria-describedby="password-error"
+                                            placeholder="enter the password"
+                                        />
+                                        <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
+                                            <svg
+                                                className="size-5 text-red-500"
+                                                width={16}
+                                                height={16}
+                                                fill="currentColor"
+                                                viewBox="0 0 16 16"
+                                                aria-hidden="true"
+                                            >
+                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p className="hidden text-xs text-red-600 mt-2" id="password-error">
+                                        8+ characters required
+                                    </p>
+                                </div>
 
                                 <div>
                                     <div className="flex justify-between items-center">
@@ -169,9 +209,8 @@ const Register = () => {
                                     </div>
                                     <div className="relative">
                                         <input
-                                            type="number"
+                                            type="tel"
                                             id="contact"
-                                            name="contact"
                                             onChange={registerForm.handleChange}
                                             value={registerForm.values.contact}
                                             className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"

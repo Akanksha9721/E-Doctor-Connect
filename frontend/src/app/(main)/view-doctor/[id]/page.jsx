@@ -56,7 +56,7 @@ const DesignDetails = () => {
           <div className="md:grid md:grid-cols-2 md:items-center gap-12">
             <img
               className="rounded-xl w-full"
-              src={doctorData.image}
+              src={doctorData. avatar}
               alt="Features Image"
             />
             {/* End Col */}
@@ -75,9 +75,12 @@ const DesignDetails = () => {
                 {/* End Title */}
                 <p>{doctorData.name}</p>
                 <p className='font-bold'>₹ {doctorData.fees}</p>
-                <p className='mt-5'>{doctorData.qualification}</p>
-                <a className='bg-green-500 py-1 px-3 text-black rounded-full' target='_blank'></a>
-                <p>{doctorData.description}</p>
+                <p className='mt-5'>{doctorData. qualification}</p>
+                <a className='py-1 px-3 text-black rounded-full' target='_blank'></a>
+                <p>{doctorData.specilization}</p>
+                <p>{doctorData. experience}</p>
+                <p>{doctorData. fees}</p>
+                <p>{doctorData. city}</p>
               </div>
             </div>
             {/* End Col */}
