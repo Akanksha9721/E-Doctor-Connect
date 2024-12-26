@@ -81,6 +81,7 @@ const DesignDetails = () => {
                 <p>{doctorData. experience}</p>
                 <p>{doctorData. fees}</p>
                 <p>{doctorData. city}</p>
+                <link className='bg-red-500 py-1 px-3 text-black rounded-full'  target='_blank'>Appointment</link>
               </div>
             </div>
             {/* End Col */}
