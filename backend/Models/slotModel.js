@@ -3,8 +3,8 @@ const { model, Schema, Types } = require('../connection');
 const mySchema = new Schema({
     doctor: { type: Types.ObjectId, ref: 'doctors' },
     date: { type: Date },
-    startTime: { type: String, default: Date.now },
-    available: Boolean,
+    time: { type: String },
+    available:{  type:Boolean,default:true },
     createdAt: { type: Date, default: Date.now }
 });
 

@@ -48,7 +48,7 @@ const BrowseDoctor = () => {
                                 <div className="aspect-w-16 aspect-h-11">
                                     <img
                                         className="w-full object-cover rounded-xl"
-                                         src={doctor.image}
+                                         src={doctor.avatar}
                                         alt="Blog Image"
                                     />
                                 </div>

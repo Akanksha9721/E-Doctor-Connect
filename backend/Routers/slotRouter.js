@@ -1,8 +1,10 @@
 const express = require('express');
 const Model = require('../models/slotModel');
+const verifyToken = require('../middleware/verifytoken');
 const router = express.Router();
 
-router.post('/add', (req, res) => {
+router.post('/add', verifyToken, (req, res) => {
+  req.body.doctor = req.user._id;
   console.log(req.body);
   new Model(req.body).save()
     .then((result) => {
