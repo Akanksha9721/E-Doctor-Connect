@@ -1,10 +1,11 @@
 'use client';
 import axios, { Axios } from 'axios';
+import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
-const DesignDetails = () => {
+const ViewDoctor = () => {
 
   const router = useRouter();
   const [doctorData, setDoctorData] = useState(null);
@@ -53,10 +54,10 @@ const DesignDetails = () => {
         {/* Features */}
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           {/* Grid */}
-          <div className="md:grid md:grid-cols-2 md:items-center gap-12">
+          <div className="md:grid md:grid-cols-2 md:items-center gap-12 shadow-2xl">
             <img
               className="rounded-xl w-full"
-              src={doctorData. avatar}
+              src={doctorData.avatar}
               alt="Features Image"
             />
             {/* End Col */}
@@ -64,8 +65,7 @@ const DesignDetails = () => {
               <div className="space-y-6 sm:space-y-8">
                 {/* Title */}
                 <div className="space-y-2 md:space-y-4">
-                  <h2 className="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200">
-
+                  <h2 className="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200 text-center">
                     {doctorData.name}
                   </h2>
                   <p className="text-gray-500 dark:text-neutral-500">
@@ -73,26 +73,32 @@ const DesignDetails = () => {
                   </p>
                 </div>
                 {/* End Title */}
-                <p>{doctorData.name}</p>
-                <p className='font-bold'>₹ {doctorData.fees}</p>
-                <p className='mt-5'>{doctorData. qualification}</p>
-                <a className='py-1 px-3 text-black rounded-full' target='_blank'></a>
-                <p>{doctorData.specilization}</p>
-                <p>{doctorData. experience}</p>
-                <p>{doctorData. fees}</p>
-                <p>{doctorData. city}</p>
-                <link className='bg-red-500 py-1 px-3 text-black rounded-full'  target='_blank'>Appointment</link>
+                <div className='text-center'>
+                <p className='p-3'>{doctorData.name}</p>
+                <p className=' p-3 font-bold'>₹ {doctorData.fees}</p>
+                <p className=' p-3 mt-5'>{doctorData.qualification}</p>
+                <p className='p-3'>{doctorData.specilization}</p>
+                <p className='p-3'>{doctorData.experience}</p>
+                <p className='p-3'>{doctorData.fees}</p>
+                <p className='p-2'>{doctorData.city}</p>
+                <Link href={`/user/appointment/`+doctorData._id}>
+                <button className='bg-yellow-500 py-1 px-3 text-black rounded-full'>Book appointment</button>
+                </Link>
               </div>
+
             </div>
-            {/* End Col */}
+
           </div>
-          {/* End Grid */}
+
+          {/* End Col */}
         </div>
-        {/* End Features */}
-      </>
+        {/* End Grid */}
+      </div>
+      {/* End Features */}
+    </>
 
     </>
   )
 }
 
-export default DesignDetails
+export default ViewDoctor;

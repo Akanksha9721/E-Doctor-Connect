@@ -53,6 +53,18 @@ const Manageslot = () => {
     fetchSlot();
 
   }, [])
+  const deleteSlot = (id) => {
+    axios.delete('http://localhost:5000/slot/delete/' + id)
+      .then((result) => {
+        toast.success('Slot Deleted Successfully');
+        fetchSlot();
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error('Failed to delete slot');
+      })
+
+  }
 
 
 
@@ -148,6 +160,7 @@ const Manageslot = () => {
                       <td className='p-3' colSpan={2}></td>
                       <td className='p-3' colSpan={2}></td>
                       <td className='p-3' colSpan={2}></td>
+                      
 
                       <td className='p-3'>
                         <button onClick={() => { deleteSlot(slot._id) }} className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
