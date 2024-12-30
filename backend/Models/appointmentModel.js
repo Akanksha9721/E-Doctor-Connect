@@ -5,8 +5,8 @@ const mySchema = new Schema({
     slot: { type: Types.ObjectId, ref: 'slots' },
     description: { type: String },
     patientName: {type:String},
-    patientage:{type:String},
-    patientgender:{type:String},
+    patientAge:{type:String},
+    patientGender:{type:String},
     createdAt: { type: Date, default: Date.now }
 });
 
