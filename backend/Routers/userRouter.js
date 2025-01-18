@@ -1,6 +1,8 @@
 const express = require('express');
 const Model = require('../models/userModel');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 router.post('/add', (req, res) => {
   console.log(req.body);

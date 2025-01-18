@@ -158,9 +158,7 @@ const Manageslot = () => {
                       <td className='p-3'>{slot.time}</td>
                       <td className='p-3'>{new Date(slot.createdAt).toDateString()}</td>
                       <td className='p-3' colSpan={2}></td>
-                      <td className='p-3' colSpan={2}></td>
-                      <td className='p-3' colSpan={2}></td>
-                      
+                     
 
                       <td className='p-3'>
                         <button onClick={() => { deleteSlot(slot._id) }} className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>

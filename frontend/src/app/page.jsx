@@ -2,7 +2,1076 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+    <>
+  {/* hero - start */}
+  <div className="bg-white pb-6 sm:pb-8 lg:pb-12">
+    <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+      <header className="mb-8 flex items-center justify-between py-4 md:mb-12 md:py-8 xl:mb-16">
+        {/* logo - start */}
+        <a
+          href="/"
+          className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
+          aria-label="logo"
+        >
+          <svg
+            width={95}
+            height={94}
+            viewBox="0 0 95 94"
+            className="h-auto w-6 text-indigo-500"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M96 0V47L48 94H0V47L48 0H96Z"/>
+          </svg>
+          Flowrift
+        </a>
+        {/* logo - end */}
+        {/* nav - start */}
+        <nav className="hidden gap-12 lg:flex">
+          <a href="#" className="text-lg font-semibold text-indigo-500">
+            Home
+          </a>
+          <a
+            href="#"
+            className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+          >
+            Features
+          </a>
+          <a
+            href="#"
+            className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+          >
+            Pricing
+          </a>
+          <a
+            href="#"
+            className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+          >
+            About
+          </a>
+        </nav>
+        {/* nav - end */}
+        {/* buttons - start */}
+        <a
+          href="#"
+          className="hidden rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:inline-block"
+        >
+          Contact Sales
+        </a>
+        <button
+          type="button"
+          className="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clipRule="evenodd"
+            />
+          </svg>
+          Menu
+        </button>
+        {/* buttons - end */}
+      </header>
+      <section className="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
+        {/* content - start */}
+        <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
+          <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl">
+            Let's connect with doctors
+          </p>
+          <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
+           E-Doctors website 
+          </h1>
+          <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
+            This is a section of some simple filler text, also known as
+            placeholder text. It shares some characteristics of a real written
+            text but is random.
+          </p>
+          <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
+            <a
+              href="#"
+              className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
+            >
+              Start now
+            </a>
+            <a
+              href="#"
+              className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
+            >
+              Take tour
+            </a>
+          </div>
+        </div>
+        {/* content - end */}
+        {/* image - start */}
+        <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12">
+          <img
+            src=" https://youthincmag.com/wp-content/uploads/2023/12/2150796738.jpg"
+            loading="lazy"
+            alt="Photo by Fakurian Design"
+            className="h-full w-full object-cover object-center"
+          />
+        </div>
+        {/* image - end */}
+      </section>
+    </div>
+  </div>
+  {/* hero - end */}
+  {/* features - start */}
+
+  {/* features - end */}
+  {/* logo cloud - start */}
+  <div className="bg-white py-6 sm:py-8 lg:py-12">
+   
+  </div>
+  {/* logo cloud - end */}
+  {/* stats - start */}
+  <div className="bg-white py-6 sm:py-8 lg:py-12">
+    <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+      {/* text - start */}
+      <div className="mb-10 md:mb-16">
+        <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+          Our Team by the numbers
+        </h2>
+        <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+          This is a section of some simple filler text, also known as
+          placeholder text. It shares some characteristics of a real written
+          text but is random or otherwise generated.
+        </p>
+      </div>
+      {/* text - end */}
+      <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-0 md:divide-x">
+        {/* stat - start */}
+        <div className="flex flex-col items-center md:p-4">
+          <div className="text-xl font-bold text-indigo-500 sm:text-2xl md:text-3xl">
+            200
+          </div>
+          <div className="text-sm font-semibold sm:text-base">People</div>
+        </div>
+        {/* stat - end */}
+        {/* stat - start */}
+        <div className="flex flex-col items-center md:p-4">
+          <div className="text-xl font-bold text-indigo-500 sm:text-2xl md:text-3xl">
+            500+
+          </div>
+          <div className="text-sm font-semibold sm:text-base">People</div>
+        </div>
+        {/* stat - start */}
+        <div className="flex flex-col items-center md:p-4">
+          <div className="text-xl font-bold text-indigo-500 sm:text-2xl md:text-3xl">
+            1000+
+          </div>
+          <div className="text-sm font-semibold sm:text-base">Customers</div>
+        </div>
+        {/* stat - end */}
+        {/* stat - start */}
+        <div className="flex flex-col items-center md:p-4">
+          <div className="text-xl font-bold text-indigo-500 sm:text-2xl md:text-3xl">
+            A couple
+          </div>
+          <div className="text-sm font-semibold sm:text-base">
+            doctors 
+          </div>
+        </div>
+        {/* stat - end */}
+      </div>
+    </div>
+  </div>
+  {/* stats - end */}
+  {/* team - start */}
+  <div className="bg-white py-6 sm:py-8 lg:py-12">
+    <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+      {/* text - start */}
+      <div className="mb-10 md:mb-16">
+        <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+          Meet our Team
+        </h2>
+        <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+          This is a section of some simple filler text, also known as
+          placeholder text. It shares some characteristics of a real written
+          text but is random or otherwise generated.
+        </p>
+      </div>
+      {/* text - end */}
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
+        {/* person - start */}
+        <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+          <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2N1kH-CMSZYlRZ2qTyhd00TL-Sl8vLgxc3w&s"
+              loading="lazy"
+              alt="Photo by Radu Florin"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+          <div>
+            <div className="text-center font-bold text-indigo-500 md:text-lg">
+              John McCulling
+            </div>
+            <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
+              Founder / CEO
+            </p>
+            {/* social - start */}
+            <div className="flex justify-center">
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            {/* social - end */}
+          </div>
+        </div>
+        {/* person - end */}
+        {/* person - start */}
+        <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+          <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Dn0oLz6MDWnNS6Tkf6AT-zQNdMQ9YF-Iqw&s "
+              loading="lazy"
+              alt="Photo by christian ferrer"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+          <div>
+            <div className="text-center font-bold text-indigo-500 md:text-lg">
+              Kate Berg
+            </div>
+            <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
+              CFO
+            </p>
+            {/* social - start */}
+            <div className="flex justify-center">
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            {/* social - end */}
+          </div>
+        </div>
+        {/* person - end */}
+        {/* person - start */}
+        <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+          <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReerJg361TuZegMwMdpOKrpsWvnvuI7vuEzQ&s "
+              loading="lazy"
+              alt="Photo by Ayo Ogunseinde"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+          <div>
+            <div className="text-center font-bold text-indigo-500 md:text-lg">
+              Greg Jackson
+            </div>
+            <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
+              CTO
+            </p>
+            {/* social - start */}
+            <div className="flex justify-center">
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            {/* social - end */}
+          </div>
+        </div>
+        {/* person - end */}
+        {/* person - start */}
+        <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+          <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_-Gkh2Gfmhr3QmQxGlrPiRvO5aSZ5CK0wg&s"
+              loading="lazy"
+              alt="Photo by Midas Hofstra"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+          <div>
+            <div className="text-center font-bold text-indigo-500 md:text-lg">
+              Robert Greyson
+            </div>
+            <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
+              Creative Director
+            </p>
+            {/* social - start */}
+            <div className="flex justify-center">
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            {/* social - end */}
+          </div>
+        </div>
+        {/* person - end */}
+        {/* person - start */}
+        <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+          <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSjhNErdY0bBlN28KirqjUYhik4SlORWm_XA&s "
+              loading="lazy"
+              alt="Photo by Elizeu Dias"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+          <div>
+            <div className="text-center font-bold text-indigo-500 md:text-lg">
+              John Roberts
+            </div>
+            <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
+              Investor Relations
+            </p>
+            {/* social - start */}
+            <div className="flex justify-center">
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            {/* social - end */}
+          </div>
+        </div>
+        {/* person - end */}
+        {/* person - start */}
+        <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+          <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <img
+              src=" data:image/jpeg;base64,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 "
+              loading="lazy"
+              alt="Photo by Matheus Ferrero"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+          <div>
+            <div className="text-center font-bold text-indigo-500 md:text-lg">
+              Judy Amandez
+            </div>
+            <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
+              Senior Art Director
+            </p>
+            {/* social - start */}
+            <div className="flex justify-center">
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            {/* social - end */}
+          </div>
+        </div>
+        {/* person - end */}
+        {/* person - start */}
+        <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+          <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <img
+              src=" data:image/jpeg;base64,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"
+              loading="lazy"
+              alt="Photo by Leilani Angel"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+          <div>
+            <div className="text-center font-bold text-indigo-500 md:text-lg">
+              Rahul Williams
+            </div>
+            <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
+              Creative Director
+            </p>
+            {/* social - start */}
+            <div className="flex justify-center">
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            {/* social - end */}
+          </div>
+        </div>
+        {/* person - end */}
+        {/* person - start */}
+        <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+          <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <img
+              src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE-n-Eb5PPHCiRyGR1vpCKxiucX1RsoZ0gEA&s"
+              loading="lazy"
+              alt="Photo by Jernej Graj"
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+          <div>
+            <div className="text-center font-bold text-indigo-500 md:text-lg">
+              Ari Ferris
+            </div>
+            <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
+              Marketing Analyst
+            </p>
+            {/* social - start */}
+            <div className="flex justify-center">
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            {/* social - end */}
+          </div>
+        </div>
+        {/* person - end */}
+      </div>
+    </div>
+  </div>
+  {/* team - end */}
+  {/* testemonials - start */}
+  <div className="bg-white py-6 sm:py-8 lg:py-12">
+    <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+      <h2 className="mb-8 text-center text-2xl font-bold text-gray-800 md:mb-12 lg:text-3xl">
+        What others say about us
+      </h2>
+      <div className="grid gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3 lg:divide-x">
+        {/* quote - start */}
+        <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
+          <div className="text-center text-gray-600">
+            “This is a section of some simple filler text, also known as
+            placeholder text.”
+          </div>
+          <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
+            <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
+              <img
+                src="https://images.unsplash.com/photo-1567515004624-219c11d31f2e??auto=format&q=75&fit=crop&w=112"
+                loading="lazy"
+                alt="Photo by Radu Florin"
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+            <div>
+              <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">
+                John McCulling
+              </div>
+              <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">
+                CEO / Datadrift
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* quote - end */}
+        {/* quote - start */}
+        <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
+          <div className="text-center text-gray-600">
+            “This is a section of some simple filler text, also known as
+            placeholder text.”
+          </div>
+          <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
+            <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
+              <img
+                src="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?auto=format&q=75&fit=crop&w=112"
+                loading="lazy"
+                alt="Photo by christian ferrer"
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+            <div>
+              <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">
+                Kate Berg
+              </div>
+              <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">
+                CFO / Dashdash
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* quote - end */}
+        {/* quote - start */}
+        <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
+          <div className="text-center text-gray-600">
+            “This is a section of some simple filler text, also known as
+            placeholder text.”
+          </div>
+          <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
+            <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
+              <img
+                src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&q=75&fit=crop&w=500"
+                loading="lazy"
+                alt="Photo by Ayo Ogunseinde"
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+            <div>
+              <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">
+                Greg Jackson
+              </div>
+              <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">
+                CTO / Uptime
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* quote - end */}
+      </div>
+    </div>
+  </div>
+  {/* testemonials - end */}
+  {/* newsletter - start */}
+  <div className="bg-white py-6 sm:py-8 lg:py-12">
+    <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+      <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 sm:p-8">
+        <div className="mb-4 sm:mb-8">
+          <h2 className="text-center text-xl font-bold text-indigo-500 sm:text-2xl lg:text-3xl">
+            Get the latest updates
+          </h2>
+          <p className="text-center text-gray-500">
+            Sign up for our newsletter
+          </p>
+        </div>
+        <form className="mb-3 flex w-full max-w-md gap-2 sm:mb-5">
+          <input
+            placeholder="Email"
+            className="bg-gray-white w-full flex-1 rounded border border-gray-300 px-3 py-2 text-gray-800 placeholder-gray-400 outline-none ring-indigo-300 transition duration-100 focus:ring"
+          />
+          <button className="inline-block rounded bg-indigo-500 px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+            Send
+          </button>
+        </form>
+        <p className="text-center text-xs text-gray-400">
+          By signing up to our newsletter you agree to our{" "}
+          <a
+            href="#"
+            className="underline transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+          >
+            Term of Service
+          </a>{" "}
+          and{" "}
+          <a
+            href="#"
+            className="underline transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+          >
+            Privacy Policy
+          </a>
+          .
+        </p>
+      </div>
+    </div>
+  </div>
+  {/* newsletter - end */}
+  {/* footer - start */}
+  <div className="bg-gray-900">
+    <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
+      <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
+        <div className="col-span-full lg:col-span-2">
+          {/* logo - start */}
+          <div className="mb-4 lg:-mt-2">
+            <a
+              href="/"
+              className="inline-flex items-center gap-2 text-xl font-bold text-gray-100 md:text-2xl"
+              aria-label="logo"
+            >
+              <svg
+                width={95}
+                height={94}
+                viewBox="0 0 95 94"
+                className="h-auto w-5 text-indigo-500"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M96 0V47L48 94H0V47L48 0H96Z" />
+              </svg>
+              Flowrift
+            </a>
+          </div>
+          {/* logo - end */}
+          <p className="mb-6 text-gray-400 sm:pr-8">
+            Filler text is dummy text which has no meaning however looks very
+            similar to real text.
+          </p>
+          {/* social - start */}
+          <div className="flex gap-4">
+            <a
+              href="#"
+              target="_blank"
+              className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+            >
+              <svg
+                className="h-5 w-5"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+            >
+              <svg
+                className="h-5 w-5"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+              </svg>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+            >
+              <svg
+                className="h-5 w-5"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+            >
+              <svg
+                className="h-5 w-5"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+          </div>
+          {/* social - end */}
+        </div>
+        {/* nav - start */}
+        <div>
+          <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
+            Products
+          </div>
+          <nav className="flex flex-col gap-4">
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Overview
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Solutions
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Pricing
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Customers
+              </a>
+            </div>
+          </nav>
+        </div>
+        {/* nav - end */}
+        {/* nav - start */}
+        <div>
+          <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
+            Company
+          </div>
+          <nav className="flex flex-col gap-4">
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                About
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Investor Relations
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Jobs
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Press
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Blog
+              </a>
+            </div>
+          </nav>
+        </div>
+        {/* nav - end */}
+        {/* nav - start */}
+        <div>
+          <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
+            Support
+          </div>
+          <nav className="flex flex-col gap-4">
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Contact
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Documentation
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Chat
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                FAQ
+              </a>
+            </div>
+          </nav>
+        </div>
+        {/* nav - end */}
+        {/* nav - start */}
+        <div>
+          <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
+            Legal
+          </div>
+          <nav className="flex flex-col gap-4">
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Terms of Service
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Privacy Policy
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              >
+                Cookie settings
+              </a>
+            </div>
+          </nav>
+        </div>
+        {/* nav - end */}
+      </div>
+      <div className="border-t border-gray-800 py-8 text-center text-sm text-gray-400">
+        © 2021 - Present Flowrift. All rights reserved.
+      </div>
+    </footer>
+  </div>
+  {/* footer - end */}
+</>
+
+    </>
   )
 }
 
