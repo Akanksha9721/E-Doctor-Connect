@@ -13,9 +13,8 @@ const viewAppointment = () => {
   const fetchSlot = () => {
     axios.get('http://localhost:5000/appointment/getbyslot/' + id, {
       headers: {
-        'x-auth-token': token
+        'x-auth-token': token 
       }
-
     })
       .then((result) => {
         console.table(result.data);
