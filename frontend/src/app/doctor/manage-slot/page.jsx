@@ -38,7 +38,12 @@ const Manageslot = () => {
   const token = localStorage.getItem('token');
 
   const fetchSlot = () => {
-    axios.get('http://localhost:5000/slot/getall',)
+    axios.get('http://localhost:5000/slot/getdoctorslots', {
+        headers: {
+          'x-auth-token': token
+        }
+        
+      })
       .then((result) => {
         console.table(result.data);
         setSlotList(result.data);
@@ -75,6 +80,7 @@ const Manageslot = () => {
         {/* Comment Form */}
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="mx-auto max-w-2xl">
+          <h1 className='text-center font-bold  text-2xl '>DOCTOR DASHBORD</h1>
             <div className="text-center">
               <h2 className="text-xl text-gray-800 font-bold sm:text-3xl dark:text-white">
                 Manage Slot
@@ -139,11 +145,14 @@ const Manageslot = () => {
           <table className='w-full'>
             <thead>
               <tr className='bg-gray-800 text-white font-bold'>
-                <th className='p-3'>ID</th>
-                <th className='p-3'>Time</th>
-                <th className='p-3'>Date</th>
-                <th className='p-3'>Actoin</th>
-
+                <th className='p-3' >ID</th>
+                <th className='p-3' ></th>
+                <th className='p-3' >Time</th>
+                <th className='p-3' >Date</th>
+                <th className='p-3' colSpan={2}></th>
+                <th className='p-3' colSpan={2}>Action</th>
+                <th className='p-3' colSpan={2}></th>
+                
 
               </tr>
 
@@ -152,12 +161,14 @@ const Manageslot = () => {
               {
                 slotList.map((slot) => {
                   return (
-                    <tr key={slot._id} className='border bg-red-200'>
+                    <tr key={slot._id} className='border text-center  font-bold '>
                       <td className='p-3'>{slot._id}</td>
                       <td className='p-3'>{slot.name}</td>
                       <td className='p-3'>{slot.time}</td>
                       <td className='p-3'>{new Date(slot.createdAt).toDateString()}</td>
                       <td className='p-3' colSpan={2}></td>
+
+
                      
 
                       <td className='p-3'>

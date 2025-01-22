@@ -5,8 +5,8 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
 const ManageAppointment = () => {
-const [appointmentList, setAppointmentList] = useState([]);
-const token = localStorage.getItem('token');
+  const [appointmentList, setAppointmentList] = useState([]);
+  const token = localStorage.getItem('token');
 
 
   const fetchAppointment = () => {
@@ -14,7 +14,7 @@ const token = localStorage.getItem('token');
       headers: {
         'x-auth-token': token
       }
-      })
+    })
       .then((result) => {
         console.table(result.data);
         setAppointmentList(result.data);
@@ -23,11 +23,10 @@ const token = localStorage.getItem('token');
       .catch((err) => {
         console.log(err);
       })
-
   }
   useEffect(() => {
     fetchAppointment();
-  })
+  }, [])
 
   const deleteAppointment = (id) => {
     axios.delete('http://localhost:5000/appointment/delete/' + id)
@@ -39,49 +38,49 @@ const token = localStorage.getItem('token');
         console.log(err);
         toast.error('Failed to delete appointment');
       })
-
   }
-    
   return (
     <div className=''>
+      <h1 className='text-center font-bold  text-2xl '>USER DASHBORD</h1>
       <div className='container mx-auto py-10'>
         <h1 className='text-center font-bold  text-2xl'></h1>
         <table className='w-full'>
           <thead>
-            <tr className='bg-gray-800  text-white font-bold  '>
+            <tr className='bg-gray-800 text-white font-bold  '>
               <th className='p-3'>ID</th>
               <th className='P-3'>PatientName</th>
-              <th  className='p-3'>PatientAge</th>
-              <th  className='p-3'>PatienGender</th>
+              <th className='p-3'>PatientAge</th>
+              <th className='p-3'>PatienGender</th>
               <th className='p-3'>createdAt</th>
-              <th className='p-3 '>Action</th>
-              
+              <th className='p-3'>Action</th>
+              <th className='p-3'>Action</th>
             </tr>
           </thead>
           <tbody>
-          {
-                appointmentList.map((appointment) => {
-                  return (
-                    <tr key={appointment._id} className='border text-center'>
-                      <td className='p-3'>{appointment._id}</td>
-                      <td className='p-3'>{appointment.patientName}</td>
-                      <td className='p-3'>{appointment.patientAge}</td>
-                      <td className='p-3'>{appointment.patientGender}</td>
-                      <td className='p-3'>{new Date(appointment.createdAt).toDateString()}</td>
-                      
-                      <td className='p-3'>
-                        <button onClick={() => { deleteAppointment(appointment._id) }} className='bg-green-500 py-1 px-3 text-white rounded-full'>Delete</button>
-                      </td>
-                     
+            {
+              appointmentList.map((appointment) => {
+                return (
+                  <tr key={appointment._id} className='border text-center'>
+                    <td className='p-3'>{appointment._id}</td>
+                    <td className='p-3'>{appointment.patientName}</td>
+                    <td className='p-3'>{appointment.patientAge}</td>
+                    <td className='p-3'>{appointment.patientGender}</td>
+                    <td className='p-3'>{new Date(appointment.createdAt).toDateString()}</td>
                     
+                   
+                    <td className='p-3'>
+                      <button onClick={() => { deleteAppointment(appointment._id) }} className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
+                    </td>
+                    <td className='p-3'>
+                          <Link href={'/user/view-appointment/' + appointment._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>View appointment</Link>
+                        </td>
 
-                     
-                    </tr>
-                  )
-                })
-              }
+                  </tr>
+                )
+              })
+            }
 
-                      
+
           </tbody>
 
         </table>

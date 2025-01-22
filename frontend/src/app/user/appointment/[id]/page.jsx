@@ -11,10 +11,13 @@ const Appointment = () => {
 
   const [selSlot, setSelSlot] = useState(null);
   const [slotData, setSlotData] = useState([]);
+  const [doctorData, setDoctorData] = useState([]);
   const { id } = useParams();
+  // console.log(id);
   const token = localStorage.getItem('token');
 
-//validation code...
+
+  //validation code...
   const AppointmentSchema = Yup.object().shape({
     patientName: Yup.string()
       .min(2, 'Too Short!')
@@ -23,6 +26,9 @@ const Appointment = () => {
     patientGender: Yup.string().required('Required'),
     patientAge: Yup.number().required('Required')
   });
+
+
+
 
   const appointmentForm = useFormik({
     initialValues: {
@@ -35,7 +41,7 @@ const Appointment = () => {
       if (!selSlot) {
         return toast.error('Please select a slot')
       }
-      console.log(values);
+      
       axios.post('http://localhost:5000/appointment/add', values,
         {
           headers: {
@@ -73,6 +79,17 @@ const Appointment = () => {
     appointmentForm.setFieldValue('slot', selSlot);
   }, [selSlot])
 
+  const fetchDoctorData = async () => {
+    const res = await axios.get('http://localhost:5000/doctor/getbyid/' + id)
+    console.log(res.data);
+    setDoctorData(res.data);
+  }
+
+  useEffect(() => {
+    fetchDoctorData();
+  }, []);
+
+
 
   //   const getAppointmentData = async () => {
   //       const res = await axios.get('https://localhost:5000/doctor/getbyid/' + id);
@@ -87,6 +104,38 @@ const Appointment = () => {
 
   return (
     <>
+      <>
+      <h1 className='text-center font-bold  text-2xl '>USER DASHBORD</h1>
+      <div className=' max-w-lg mx-auto py-5'>
+        {/* Card */}
+        <a
+          className="block border border-gray-200 rounded-lg hover:shadow-sm focus:outline-none dark:border-neutral-700"
+          href="#"
+        >
+          <div className="relative flex items-center overflow-hidden">
+            <img
+              className="w-32 sm:w-48 h-full absolute inset-0 object-cover rounded-s-lg"
+               src={doctorData.avatar}
+              alt="Blog Image"
+            />
+            <div className="grow p-4 ms-32 sm:ms-48">
+              <div className="min-h-24 flex flex-col justify-center">
+                <h3 className="font-semibold text-sm text-gray-800 dark:text-neutral-300">
+                  {doctorData.name}
+                </h3>
+                <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
+                 {doctorData.qualification}
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        </div>
+        {/* End Card */}
+      </>
+
+
+
 
       <div className=''>
         <div className='container mx-auto py-10'>
@@ -95,7 +144,8 @@ const Appointment = () => {
             <thead>
               <tr className='bg-gray-800 text-white font-bold'>
                 <th className='p-3'>ID</th>
-                <th className='p-3'>Slot Date & Time</th>
+                <th className='p-3'>Slot Date</th>
+                <th className='p-3'>TIme</th>
                 <th className='p-3'>Action</th>
               </tr>
 
@@ -107,6 +157,7 @@ const Appointment = () => {
                     <tr key={slot._id} className=' border text-center'>
                       <td className='p-3'>{slot._id}</td>
                       <td className='p-3'>{new Date(slot.createdAt).toDateString()}</td>
+                      <td className='p-3'>{slot.time}</td>
                       <td className='p-3' colSpan={2}>
                         <button onClick={() => { setSelSlot(slot._id) }}
                           className='flex items-center h-full my-auto mx-auto'

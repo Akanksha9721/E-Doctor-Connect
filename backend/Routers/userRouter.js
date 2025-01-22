@@ -2,6 +2,7 @@ const express = require('express');
 const Model = require('../models/userModel');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
+const verifyToken = require('../middleware/verifytoken');
 require('dotenv').config();
 
 router.post('/add', (req, res) => {
@@ -56,6 +57,17 @@ router.get('/getbyid/:id', (req, res) => {
     res.status(500).json(err);
    });
 });
+router.get('/getuser', verifyToken, (req, res) => {
+  const { _id } = req.user;
+  Model.findById(_id)
+    .then((result) => {
+      res.status(200).json(result);
+
+    }).catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 //delete
 router.delete('/delete/:id', (req, res) => {
@@ -70,8 +82,8 @@ router.delete('/delete/:id', (req, res) => {
 });
 
 //update
-router.put('/update/:id', (req, res) => {
-  Model.findByIdAndUpdate(req.params.id,req.body,{new:TextTrackCueList})
+router.put('/update', verifyToken, (req, res) => {
+  Model.findByIdAndUpdate(req.user._id, req.body, { new: true })
   .then((result) => {
     res.status(200).json(result);
     

@@ -48,6 +48,7 @@ const viewAppointment = () => {
       <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         {/* Grid */}
         <div className="md:grid md:grid-cols-2 md:items-center gap-12">
+        <h1 className='text-center font-bold  text-2xl '>DOCTOR DASHBORD</h1>
           <img
             className="rounded-xl w-full"
             src={slotData.name}
@@ -71,7 +72,7 @@ const viewAppointment = () => {
               <p className='font-bold'> {slotData.time}</p>
               <p className='mt-5'>{slotData.date}</p>
 
-              <p>{ }</p>
+              <p ></p>
             </div>
           </div>
           {/* End Col */}

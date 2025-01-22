@@ -2,8 +2,8 @@
 import axios from 'axios';
 import { Formik } from 'formik';
 import { useRouter } from 'next/navigation';
-
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 
 const Profile = () => {
   const router = useRouter();
@@ -31,48 +31,48 @@ const Profile = () => {
   }
 
   const fetchUserData = async () => {
-    const res = await axios.get('http://localhost:5000/user/getuser', {
+    const res = await axios.get('http://localhost:5000/user/getuser',{
       headers: {
         'x-auth-token': token
       }
     });
     console.log(res.data);
     setUserData(res.data);
+
   }
   useEffect(() => {
-      fetchUserData();
-    }, [])
+    fetchUserData();
+  }, [])
 
-    const submitForm = (values) => {
-      console.log(values);
-      console.log(token);
-  
-      axios.put('http://localhost:5000/user/update', values, {
-        headers: {
-          'x-auth-token': token
-        }
+  const submitForm = (values) => {
+    console.log(values);
+    console.log(token);
+
+    axios.put('http://localhost:5000/user/update', values, {
+      headers: {
+        'x-auth-token': token
+      }
+    })
+      //  values
+      .then((result) => {
+        toast.success('Profile Updated successfully');
+        // router.back();
       })
-        //  values
-        .then((result) => {
-          toast.success('Profile Updated successfully');
-          // router.back();
-        })
-        .catch((err) => {
-          console.log(err);
-          toast.error('Failed to profile doctor');
-        });
-    }
+      .catch((err) => {
+        console.log(err);
+        toast.error('Failed to profile doctor');
+      });
+  }
   return (
     <>
-
       <>
         {/* Card Section */}
         <div className="max-w-4xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <h1 className='text-center font-bold  text-2xl '>USER DASHBORD</h1>
           {
             userData !== null ? (
               <Formik initialValues={userData} onSubmit={submitForm}>
                 {
-
                   (userForm) => {
                     return (
                       <form onSubmit={userForm.handleSubmit}>
@@ -110,7 +110,7 @@ const Profile = () => {
                             {/* Grid */}
                             <div className="space-y-4 sm:space-y-6">
                               <div>
-                                <label className="sr-only">Product photo</label>
+                                <label className="sr-only"> Product photo </label>
                                 <div className="flex flex-col sm:flex-row sm:items-center sm:gap-x-5">
                                   <img
                                     className="-mt-8 relative z-10 inline-block size-24 mx-auto sm:mx-0 rounded-full ring-4 ring-white dark:ring-neutral-900"
@@ -155,13 +155,13 @@ const Profile = () => {
                                   htmlFor="af-submit-app-project-name"
                                   className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200"
                                 >
-                                  Doctor Name
+                                  Patient Name
                                 </label>
                                 <input
                                   id="name"
                                   type="text"
                                   onChange={userForm.handleChange}
-                                  value={userForm.values.name}
+                                  value={userForm.values.patientname}
                                   className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                   placeholder="Enter "
                                 />
@@ -200,70 +200,52 @@ const Profile = () => {
                               </div>
 
 
-                              <div className="space-y-2">
+                              <div className='py-6 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-neutral-700 dark:first:border-transparent'>
                                 <label
-                                  htmlFor="af-submit-app-project-name"
-                                  className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200"
+                                  htmlFor="af-payment-billing-contact"
+                                  className="inline-block text-sm font-medium dark:text-white"
                                 >
-                                  Qualification
+                                  Patient gender
                                 </label>
-                                <input
-                                  id="qualification"
-                                  type="text"
-                                  onChange={userForm.handleChange}
-                                  value={userForm.values.qualification}
-                                  className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                  placeholder="Enter your qualification"
-                                />
+                                <div className="gender">
+                                  <input
+                                    type="radio"
+                                    name='patientGender'
+                                    onChange={userForm.handleChange}
+                                    value={'male'}
+
+                                  /> Male
+
+                                  <input
+                                    type="radio"
+                                    name="patientGender"
+                                    onChange={userForm.handleChange}
+                                    value={'female'}
+                                  /> Female
+
+                                </div>
+
 
                               </div>
-                              <div className="space-y-2">
+
+                              <div className='py-6 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-neutral-700 dark:first:border-transparent'>
                                 <label
-                                  htmlFor="af-submit-app-project-name"
-                                  className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200"
+                                  htmlFor="af-payment-billing-contact"
+                                  className="inline-block text-sm font-medium dark:text-white"
                                 >
-                                  Specilization
+                                  Patient age
                                 </label>
-                                <input
-                                  id="specilization"
-                                  type="text"
-                                  onChange={userForm.handleChange}
-                                  value={userForm.values.specilization}
-                                  className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                  placeholder="Enter  your specilization"
-                                />
-                              </div>
-                              <div>
-                                <label
-                                  htmlFor="af-submit-app-project-name"
-                                  className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200"
-                                >
-                                  Experience
-                                </label>
-                                <input
-                                  id="experience"
-                                  type="text"
-                                  onChange={userForm.handleChange}
-                                  value={userForm.values.experience}
-                                  className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                  placeholder="Enter your  experience"
-                                />
-                              </div>
-                              <div >
-                                <label
-                                  htmlFor="af-submit-app-project-name"
-                                  className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200"
-                                >
-                                  fees
-                                </label>
-                                <input
-                                  id="fees"
-                                  type="number"
-                                  onChange={userForm.handleChange}
-                                  value={userForm.values.fees}
-                                  className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                  placeholder="Enter your  experience"
-                                />
+                                <div className="age">
+                                  <input
+                                    id="patientAge"
+                                    type="number"
+                                    onChange={userForm.handleChange}
+                                    value={userForm.values.patientAge}
+                                    className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                    placeholder="age"
+                                  />
+
+                                </div>
                               </div>
                               <div>
                                 <label

@@ -44,8 +44,8 @@ router.get('/getbyuser', verifyToken, (req, res) => {
     });
 
 })
-router.get('/getbyslot/:id', (req, res) => {
-  Model.findOne({ user: req.params.id })
+router.get('/getbyslot/:id', verifyToken, (req, res) => {
+  Model.findOne({ slot: req.params.id }).populate('slot')
     .then((result) => {
       res.status(200).json(result);
 
