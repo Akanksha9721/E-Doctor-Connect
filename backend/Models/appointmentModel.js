@@ -7,6 +7,10 @@ const mySchema = new Schema({
     patientName: {type:String},
     patientAge:{type:String},
     patientGender:{type:String},
+    status: {type:String, default:"booked"},
+    prescription: {type:String},
+    prescridedTests: {type:Array},
+    report:{type:String},
     createdAt: { type: Date, default: Date.now }
 });
 

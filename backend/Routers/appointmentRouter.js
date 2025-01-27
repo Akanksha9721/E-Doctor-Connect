@@ -1,21 +1,32 @@
 const express = require('express');
 const Model = require('../models/appointmentModel');
 const verifyToken = require('../middleware/verifytoken');
+const slotModel = require('../models/slotModel');
 const router = express.Router();
 
 router.post('/add', verifyToken, (req, res) => {
+  const { slot } = req.body;
+
   req.body.user = req.user._id;
   console.log(req.body);
   new Model(req.body).save()
     .then((result) => {
       res.status(200).json(result);
+      slotModel.findByIdAndUpdate(slot, { available: false, status: 'booked' })
+      .then((result) => {
+        res.status(200).json(result);
+
+      }).catch((err) => {
+        console.log(err);
+      res.status(500).json(err);
+      });
     })
     .catch((err) => {
       console.log(err);
       if (err.code === 11000) {
-        res.status(500).json({ message: 'Email Aleady Registered'});
+        res.status(500).json({ message: 'Email Aleady Registered' });
       } else {
-        res.status(500).json({ message: 'internal server Error'});
+        res.status(500).json({ message: 'internal server Error' });
       }
     })
 
@@ -58,6 +69,8 @@ router.get('/getbyslot/:id', verifyToken, (req, res) => {
 
 //getbyid
 router.get('/getbyid/:id', (req, res) => {
+  console.log(req.params.id);
+
   Model.findById(req.params.id)
     .then((result) => {
       res.status(200).json(result);

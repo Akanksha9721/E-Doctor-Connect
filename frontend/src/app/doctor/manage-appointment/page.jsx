@@ -9,7 +9,7 @@ const ManageAppointment = () => {
   const token = localStorage.getItem('token');
 
   const fetchAppointment = () => {
-    axios.get('http://localhost:5000/slot/getbydoctor', {
+    axios.get('http://localhost:5000/slot/getbookedslotsdoctor/', {
       headers: {
         'x-auth-token': token
       }
@@ -27,7 +27,8 @@ const ManageAppointment = () => {
   }
   useEffect(() => {
     fetchAppointment();
-  })
+  }, [])
+
   const deleteslot = (id) => {
     axios.delete('http://localhost:5000/slot/delete/' + id)
       .then((result) => {

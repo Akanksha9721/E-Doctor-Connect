@@ -16,7 +16,6 @@ const Appointment = () => {
   // console.log(id);
   const token = localStorage.getItem('token');
 
-
   //validation code...
   const AppointmentSchema = Yup.object().shape({
     patientName: Yup.string()
@@ -26,9 +25,6 @@ const Appointment = () => {
     patientGender: Yup.string().required('Required'),
     patientAge: Yup.number().required('Required')
   });
-
-
-
 
   const appointmentForm = useFormik({
     initialValues: {
@@ -41,7 +37,7 @@ const Appointment = () => {
       if (!selSlot) {
         return toast.error('Please select a slot')
       }
-      
+
       axios.post('http://localhost:5000/appointment/add', values,
         {
           headers: {
@@ -105,31 +101,31 @@ const Appointment = () => {
   return (
     <>
       <>
-      <h1 className='text-center font-bold  text-2xl '>USER DASHBORD</h1>
-      <div className=' max-w-lg mx-auto py-5'>
-        {/* Card */}
-        <a
-          className="block border border-gray-200 rounded-lg hover:shadow-sm focus:outline-none dark:border-neutral-700"
-          href="#"
-        >
-          <div className="relative flex items-center overflow-hidden">
-            <img
-              className="w-32 sm:w-48 h-full absolute inset-0 object-cover rounded-s-lg"
-               src={doctorData.avatar}
-              alt="Blog Image"
-            />
-            <div className="grow p-4 ms-32 sm:ms-48">
-              <div className="min-h-24 flex flex-col justify-center">
-                <h3 className="font-semibold text-sm text-gray-800 dark:text-neutral-300">
-                  {doctorData.name}
-                </h3>
-                <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                 {doctorData.qualification}
-                </p>
+        <h1 className='text-center font-bold  text-2xl '>USER DASHBORD</h1>
+        <div className=' max-w-lg mx-auto py-5'>
+          {/* Card */}
+          <a
+            className="block border border-gray-200 rounded-lg hover:shadow-sm focus:outline-none dark:border-neutral-700"
+            href="#"
+          >
+            <div className="relative flex items-center overflow-hidden">
+              <img
+                className="w-32 sm:w-48 h-full absolute inset-0 object-cover rounded-s-lg"
+                src={doctorData.avatar}
+                alt="Blog Image"
+              />
+              <div className="grow p-4 ms-32 sm:ms-48">
+                <div className="min-h-24 flex flex-col justify-center">
+                  <h3 className="font-semibold text-sm text-gray-800 dark:text-neutral-300">
+                    {doctorData.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
+                    {doctorData.qualification}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </a>
+          </a>
         </div>
         {/* End Card */}
       </>

@@ -6,11 +6,11 @@ import React, { useEffect, useState } from 'react'
 const viewAppointment = () => {
   const { id } = useParams();
   const token = localStorage.getItem('token');
-
+  
   const [slotData, setSlotData] = useState([null]);
+  const [patientData, setPatientData] = useState([null]);
 
-
-  const fetchSlot = () => {
+  const fetchPatientData = () => {
     axios.get('http://localhost:5000/appointment/getbyid/' + id, {
       headers: {
         'x-auth-token': token
@@ -18,7 +18,7 @@ const viewAppointment = () => {
     })
       .then((result) => {
         console.table(result.data);
-        setSlotData(result.data);
+        setPatientData(result.data);
 
       })
       .catch((err) => {
@@ -26,8 +26,26 @@ const viewAppointment = () => {
       })
 
   }
+
+  const fetchSlot = () => {
+    console.log(patientData._id);
+    
+    axios.get('http://localhost:5000/slot/getbyid/' + patientData._id, {
+      headers: {
+        'x-auth-token': token
+      }
+    })
+      .then((result) => {
+        console.table(result.data);
+        setSlotData(result.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
   useEffect(() => {
     fetchSlot();
+    fetchPatientData();
 
   }, [])
 
@@ -41,7 +59,7 @@ const viewAppointment = () => {
       <>
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           {/* Grid */}
-          <h1 className='text-center font-bold  text-2xl '>USER DASHBORD</h1>
+          <h1 className='text-center font-bold  text-2xl '>USER DASHBOARD</h1>
           <div className="md:grid md:grid-cols-2 md:items-center gap-12">
             <img
               className="rounded-xl w-full"
@@ -63,6 +81,9 @@ const viewAppointment = () => {
                 </div>
                 {/* End Title */}
                 <p>{slotData._id}</p>
+                <p className='font-bold'> Name : {patientData.patientName}</p>
+                <p className='font-bold'> Age : {patientData.patientAge}</p>
+                <p className='font-bold'> Gender : {patientData.patientGender}</p>
                 <p className='font-bold'> {slotData.time}</p>
                 <p className='mt-5'>{slotData.date}</p>
 
