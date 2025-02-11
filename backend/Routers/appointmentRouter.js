@@ -11,15 +11,13 @@ router.post('/add', verifyToken, (req, res) => {
   console.log(req.body);
   new Model(req.body).save()
     .then((result) => {
-      res.status(200).json(result);
-      slotModel.findByIdAndUpdate(slot, { available: false, status: 'booked' })
-      .then((result) => {
-        res.status(200).json(result);
-
-      }).catch((err) => {
-        console.log(err);
-      res.status(500).json(err);
-      });
+      slotModel.findByIdAndUpdate(slot, { available: false, status: 'booked' }, {new : true})
+        .then((result) => {
+          console.log(result);
+          res.status(200).json(result);
+        }).catch((err) => {
+          console.log(err);
+        });
     })
     .catch((err) => {
       console.log(err);
@@ -55,11 +53,10 @@ router.get('/getbyuser', verifyToken, (req, res) => {
     });
 
 })
-router.get('/getbyslot/:id', verifyToken, (req, res) => {
+router.get('/getbyslot/:id', (req, res) => {
   Model.findOne({ slot: req.params.id }).populate('slot')
     .then((result) => {
       res.status(200).json(result);
-
     }).catch((err) => {
       console.log(err);
       res.status(500).json(err);

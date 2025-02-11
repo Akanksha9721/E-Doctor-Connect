@@ -44,17 +44,6 @@ const ManageDoctor = () => {
           })
     
       }
-
-
-
-
-
-
-
-
-    
-
-
   return (
    <>
        <div className=''>

@@ -7,6 +7,10 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
 const Manageslot = () => {
+  const [doctorData, setDoctorData] = useState([]);
+  const [slotList, setSlotList] = useState([]);
+  const token = localStorage.getItem('token');
+
 
   const slotForm = useFormik({
     initialValues: {
@@ -34,16 +38,15 @@ const Manageslot = () => {
   });
 
 
-  const [slotList, setSlotList] = useState([]);
-  const token = localStorage.getItem('token');
+ 
 
   const fetchSlot = () => {
     axios.get('http://localhost:5000/slot/getdoctorslots', {
-        headers: {
-          'x-auth-token': token
-        }
-        
-      })
+      headers: {
+        'x-auth-token': token
+      }
+
+    })
       .then((result) => {
         console.table(result.data);
         setSlotList(result.data);
@@ -58,6 +61,7 @@ const Manageslot = () => {
     fetchSlot();
 
   }, [])
+
   const deleteSlot = (id) => {
     axios.delete('http://localhost:5000/slot/delete/' + id)
       .then((result) => {
@@ -70,6 +74,28 @@ const Manageslot = () => {
       })
 
   }
+  const fetchDoctorData = async () => {
+    const res = await axios.get('http://localhost:5000/doctor/getdoctor',{
+      headers: {
+        'x-auth-token': token
+      }
+    })
+
+    .then((result) => {
+      console.table(result.data);
+      setDoctorData(result.data);
+
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+   
+  }
+
+  useEffect(() => {
+    fetchDoctorData();
+  }, []);
+
 
 
 
@@ -80,7 +106,33 @@ const Manageslot = () => {
         {/* Comment Form */}
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="mx-auto max-w-2xl">
-          <h1 className='text-center font-bold  text-2xl '>DOCTOR DASHBORD</h1>
+            <h1 className='text-center font-bold  text-2xl '>DOCTOR DASHBORD</h1>
+
+            <div className=' max-w-lg mx-auto py-5'>
+              {/* Card */}
+              <a
+                className="block border border-gray-200 rounded-lg hover:shadow-sm focus:outline-none dark:border-neutral-700"
+                href="#"
+              >
+                <div className="relative flex items-center overflow-hidden">
+                  <img
+                    className="w-32 sm:w-48 h-full absolute inset-0 object-cover rounded-s-lg"
+                    src={doctorData.avatar}
+                    alt="Blog Image"
+                  />
+                  <div className="grow p-4 ms-32 sm:ms-48">
+                    <div className="min-h-24 flex flex-col justify-center">
+                      <h3 className="font-semibold text-sm text-gray-800 dark:text-neutral-300">
+                        {doctorData.name}
+                      </h3>
+                      <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
+                        {doctorData.qualification}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
             <div className="text-center">
               <h2 className="text-xl text-gray-800 font-bold sm:text-3xl dark:text-white">
                 Manage Slot
@@ -149,10 +201,11 @@ const Manageslot = () => {
                 <th className='p-3' ></th>
                 <th className='p-3' >Time</th>
                 <th className='p-3' >Date</th>
+                <th className='p-3' >Status</th>
                 <th className='p-3' colSpan={2}></th>
                 <th className='p-3' colSpan={2}>Action</th>
                 <th className='p-3' colSpan={2}></th>
-                
+
 
               </tr>
 
@@ -166,10 +219,11 @@ const Manageslot = () => {
                       <td className='p-3'>{slot.name}</td>
                       <td className='p-3'>{slot.time}</td>
                       <td className='p-3'>{new Date(slot.createdAt).toDateString()}</td>
+                      <td className='p-3'>{slot.status}</td>
                       <td className='p-3' colSpan={2}></td>
 
 
-                     
+
 
                       <td className='p-3'>
                         <button onClick={() => { deleteSlot(slot._id) }} className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>

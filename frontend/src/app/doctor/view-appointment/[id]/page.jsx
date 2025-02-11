@@ -10,7 +10,7 @@ const viewAppointment = () => {
   const [patientData, setPatientData] = useState(null);
 
   const fetchPatientData = () => {
-    axios.get('http://localhost:5000/appointment/getbyid/' + id, {
+    axios.get('http://localhost:5000/appointment/getbyslot/' + id, {
       headers: {
         'x-auth-token': token
       }

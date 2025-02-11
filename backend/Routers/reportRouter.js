@@ -1,8 +1,12 @@
 const express = require('express');
 const Model = require('../models/reportModel');
+const verifyToken = require('../middleware/verifytoken');
+const appiontmentModel = require('../models/appointmentModel');
 const router = express.Router();
 
+
 router.post('/add', (req, res) => {
+  
   console.log(req.body);
   new Model(req.body).save()
     .then((result) => {
@@ -43,6 +47,7 @@ router.get('/getbycity/:city', (req, res) => {
     });
 
 })
+
 //getbyid
 router.get('/getbyid/:id', (req, res) => {
   Model.findById(req.params.id)

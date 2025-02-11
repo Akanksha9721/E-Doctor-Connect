@@ -46,7 +46,7 @@ router.get('/getbycity/:city', (req, res) => {
 
 })
 router.get('/getbydoctor/:doctor', (req, res) => {
-  Model.find({ doctor: req.params.doctor })
+  Model.find({ doctor: req.params.doctor, available : true })
     .then((result) => {
       res.status(200).json(result);
 
@@ -78,18 +78,9 @@ router.get('/getdoctorslots', verifyToken, (req, res) => {
     });
 })
 
-router.get('/getbydoctor', verifyToken, (req, res) => {
-  Model.find({ doctor: req.user._id })
-    .then((result) => {
-      res.status(200).json(result);
-
-    }).catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-})
 
 //getbyid
+
 router.get('/getbyid/:id', (req, res) => {
   Model.findById(req.params.id)
     .then((result) => {
