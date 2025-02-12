@@ -1,10 +1,14 @@
 'use client';
 import axios from 'axios';
 import { useFormik } from 'formik';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import toast from 'react-hot-toast';
 
 const Login = () => {
+
+    const router = useRouter();
+
     const loginForm = useFormik({
         initialValues: {
             email: '',
@@ -18,6 +22,7 @@ const Login = () => {
             if (res.status === 200) {
                 toast.success('Logged in successfully');
                 localStorage.setItem('token', res.data.token);
+                router.push('/doctor/manage-appointment');
             }
         }
     })

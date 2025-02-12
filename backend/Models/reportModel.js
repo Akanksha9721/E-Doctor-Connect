@@ -1,10 +1,10 @@
-const { model, Schema,Types } = require('../connection');
+const { model, Schema, Types } = require('../connection');
 
 const mySchema = new Schema({
     appointment: { type: Types.ObjectId, ref: 'appointments' },
-    prescription: { type: String },
-    description: { type: String },
-    suggestedTest: { type: String },
+    prescription: { type: String, default: '' },
+    description: { type: String, default: '' },
+    suggestedTest: { type: String, default: '' },
     createdAt: { type: Date, default: Date.now }
 
 });
