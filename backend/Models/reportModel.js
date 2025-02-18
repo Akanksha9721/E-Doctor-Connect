@@ -4,7 +4,7 @@ const mySchema = new Schema({
     appointment: { type: Types.ObjectId, ref: 'appointments' },
     prescription: { type: String, default: '' },
     description: { type: String, default: '' },
-    suggestedTest: { type: String, default: '' },
+    suggestedTest: { type: Array, default: '' },
     createdAt: { type: Date, default: Date.now }
 
 });

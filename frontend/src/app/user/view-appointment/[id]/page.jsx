@@ -1,4 +1,5 @@
 'use client';
+import { IconDownload } from '@tabler/icons-react';
 import axios from 'axios';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
@@ -86,7 +87,7 @@ const viewAppointment = () => {
                 <p className='font-bold'> Gender : {patientData.patientGender}</p>
                 <p className='font-bold'> {slotData.time}</p>
                 <p className='mt-5'>{slotData.date}</p>
-
+                
                 <p ></p>
               </div>
             </div>

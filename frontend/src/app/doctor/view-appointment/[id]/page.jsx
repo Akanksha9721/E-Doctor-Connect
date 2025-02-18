@@ -50,7 +50,7 @@ const viewAppointment = () => {
           console.log(err);
           toast.error('something went wrong');
         });
-      }else{
+    } else {
       router.push('/doctor/view-report/' + res.data._id)
     }
   }
@@ -64,9 +64,9 @@ const viewAppointment = () => {
           <div className="mt-5 sm:mt-10 lg:mt-0">
             <div className="space-y-6 sm:space-y-8">
               {/* Title */}
-              <div className="space-y-2 md:space-y-4">
-                <h2 className="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200">
 
+              <div className="space-y-2 md:space-y-4">
+                <h2 className="font-bold text-3xl lg:text-xl text-gray-800 dark:text-neutral-200">
                   {patientData._id}
                 </h2>
                 <p className="text-gray-500 dark:text-neutral-500">
@@ -75,15 +75,15 @@ const viewAppointment = () => {
               </div>
               {/* End Title */}
               {/* <p>{patientData._id}</p> */}
+              <div className='p-4 border rounded shadow space-y-6'>
+                <p className='font-bold '> Name : {patientData.patientName}</p>
+                <p className='font-bold'> Age : {patientData.patientAge}</p>
+                <p className='font-bold'> Gender : {patientData.patientGender}</p>
+                <button className='bg-yellow-500 py-1 px-3 text-white rounded-full' onClick={checkReport} >Edit Report</button>
 
-              <p className='font-bold'> Name : {patientData.patientName}</p>
-              <p className='font-bold'> Age : {patientData.patientAge}</p>
-              <p className='font-bold'> Gender : {patientData.patientGender}</p>
-              <p className='font-bold'> Slot Timing : {patientData.time}</p>
-              <p className='mt-5'> Slot Date : {patientData.date}</p>
-              <button className='border' onClick={checkReport} >Edit Report</button>
+                {/* <p ></p> */}
+              </div>
 
-              {/* <p ></p> */}
             </div>
           </div>
           {/* End Col */}
