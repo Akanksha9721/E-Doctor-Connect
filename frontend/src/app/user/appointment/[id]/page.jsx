@@ -277,60 +277,16 @@ const Appointment = () => {
               </label>
               <div className="desctiption">
                 <textarea
-                  id="desctiption"
+                  id="description"
                   onChange={appointmentForm.handleChange}
                   value={appointmentForm.values.description}
-                  className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                  className=" border py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                   placeholder="message"
                 ></textarea>
               </div>
 
-              <div className='py-6 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-neutral-700 dark:first:border-transparent'>
-              <label
-                htmlFor="af-payment-billing-contact"
-                className="inline-block text-sm font-medium dark:text-white"
-              >
-                Slot Timing
-              </label>
-              <div className="slottiming">
-                <input
-                  id="slottiming"
-                  type="text"
-                  onChange={appointmentForm.handleChange}
-                  value={appointmentForm.values.slottiming}
-                  className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                  placeholder="timing"
-                />
-                {
-                  (appointmentForm.touched.slottiming && appointmentForm.errors.slottiming) && (
-                    <p className='my-2 text-sm text-red-500'>{appointmentForm.errors.slottiming}</p>
-                  )
-                }
-              </div>
-            </div>
-            <div className='py-6 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-neutral-700 dark:first:border-transparent'>
-              <label
-                htmlFor="af-payment-billing-contact"
-                className="inline-block text-sm font-medium dark:text-white"
-              >
-                SlotDate
-              </label>
-              <div className="slotdate">
-                <input
-                  id="slotdate"
-                  type="date"
-                  onChange={appointmentForm.handleChange}
-                  value={appointmentForm.values.slotdate}
-                  className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                  placeholder="timing"
-                />
-                {
-                  (appointmentForm.touched.slotdate && appointmentForm.errors.slotdate) && (
-                    <p className='my-2 text-sm text-red-500'>{appointmentForm.errors.slotdate}</p>
-                  )
-                }
-              </div>
-            </div>
+
+
             </div>
 
 

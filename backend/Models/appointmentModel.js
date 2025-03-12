@@ -5,6 +5,7 @@ const mySchema = new Schema({
     slot: { type: Types.ObjectId, ref: 'slots', unique : true },
     description: { type: String },
     patientName: {type:String},
+    patientAvatar:{type:String},
     patientAge:{type:String},
     patientGender:{type:String},
     slottiming:{type:String},

@@ -33,7 +33,7 @@ const Login = () => {
                     <div className="p-4 sm:p-7">
                         <div className="text-center">
                             <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
-                                Log in
+                                Patient Login
                             </h1>
                             <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
                                 Don't have an account yet?
@@ -151,7 +151,7 @@ const Login = () => {
                                     {/* End Checkbox */}
                                     <button
                                         type="submit"
-                                        className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                        className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-orange-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                                     >
                                         Sign in
                                     </button>

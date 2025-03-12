@@ -64,7 +64,8 @@ const viewAppointment = () => {
           <div className="md:grid md:grid-cols-2 md:items-center gap-12">
             <img
               className="rounded-xl w-full"
-              src={slotData.avatar}
+              src={slotData.patientAvatar}
+
               alt="Features Image"
             />
             {/* End Col */}
@@ -85,8 +86,8 @@ const viewAppointment = () => {
                 <p className='font-bold'> Name : {patientData.patientName}</p>
                 <p className='font-bold'> Age : {patientData.patientAge}</p>
                 <p className='font-bold'> Gender : {patientData.patientGender}</p>
-                <p className='font-bold'> {slotData.time}</p>
-                <p className='mt-5'>{slotData.date}</p>
+                <p className='font-bold'> </p>
+                <p className='font-bold'></p>
                 
                 <p ></p>
               </div>
