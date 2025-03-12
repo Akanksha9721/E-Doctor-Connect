@@ -62,6 +62,8 @@ router.get('/getbyid/:id', (req, res) => {
 
 router.get('/getdoctor', verifyToken, (req, res) => {
   const { _id } = req.user;
+  console.log(_id);
+  
   Model.findById(_id)
     .then((result) => {
       res.status(200).json(result);

@@ -51,7 +51,7 @@ router.get('/getbycity/:city', (req, res) => {
 //getbyid
 router.get('/getbyid/:id', (req, res) => {
   console.log(req.params.id);
-  Model.findById(req.params.id)
+  Model.findById(req.params.id).populate('appointment')
     .then((result) => {
       res.status(200).json(result);
 

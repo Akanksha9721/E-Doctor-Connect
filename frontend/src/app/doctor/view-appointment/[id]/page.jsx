@@ -8,10 +8,10 @@ const viewAppointment = () => {
   const token = localStorage.getItem('token');
   const { id } = useParams();
 
-  const [patientData, setPatientData] = useState(null);
+  const [appointmentData, setAppointmentData] = useState(null);
   const router = useRouter();
 
-  const fetchPatientData = () => {
+  const fetchAppointmentData = () => {
     axios.get('http://localhost:5000/appointment/getbyslot/' + id, {
       headers: {
         'x-auth-token': token
@@ -19,8 +19,7 @@ const viewAppointment = () => {
     })
       .then((result) => {
         console.table(result.data);
-        setPatientData(result.data);
-
+        setAppointmentData(result.data);
       })
       .catch((err) => {
         console.log(err);
@@ -28,20 +27,21 @@ const viewAppointment = () => {
 
   }
   useEffect(() => {
-    fetchPatientData();
+    fetchAppointmentData();
   }, [])
 
 
-  if (patientData === null) {
+  if (appointmentData === null) {
     return <h1 className='text-3xl font-bold text-center mt-10'>Loading...</h1>
   }
 
   const checkReport = async () => {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/report/getbyappointment/${id}`);
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/report/getbyappointment/${appointmentData._id}`);
     console.log(res.data);
+    // return;
     if (res.data === null) {
       axios.post(`${process.env.NEXT_PUBLIC_API_URL}/report/add`, {
-        appointment: id
+        appointment: appointmentData._id
       })
         .then((result) => {
           const { _id } = result;
@@ -67,18 +67,18 @@ const viewAppointment = () => {
 
               <div className="space-y-2 md:space-y-4">
                 <h2 className="font-bold text-3xl lg:text-xl text-gray-800 dark:text-neutral-200">
-                  {patientData._id}
+                  {appointmentData._id}
                 </h2>
                 <p className="text-gray-500 dark:text-neutral-500">
 
                 </p>
               </div>
               {/* End Title */}
-              {/* <p>{patientData._id}</p> */}
+              {/* <p>{appointmentData._id}</p> */}
               <div className='p-4 border rounded shadow space-y-6'>
-                <p className='font-bold '> Name : {patientData.patientName}</p>
-                <p className='font-bold'> Age : {patientData.patientAge}</p>
-                <p className='font-bold'> Gender : {patientData.patientGender}</p>
+                <p className='font-bold '> Name : {appointmentData.patientName}</p>
+                <p className='font-bold'> Age : {appointmentData.patientAge}</p>
+                <p className='font-bold'> Gender : {appointmentData.patientGender}</p>
                 <button className='bg-yellow-500 py-1 px-3 text-white rounded-full' onClick={checkReport} >Edit Report</button>
 
                 {/* <p ></p> */}

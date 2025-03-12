@@ -1,6 +1,7 @@
+'use client';
 import axios from 'axios';
 import { useParams } from 'next/navigation';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const viewReport = () => {
     const [reportData, setReportData] = useState(null);
@@ -30,11 +31,11 @@ const viewReport = () => {
   return (
     <>
     {/* List */}
-    <div className="space-y-3">
+    <div className="space-y-3 center">
       <dl className="flex flex-col sm:flex-row gap-1">
         <dt className="min-w-40">
           <span className="block text-sm text-gray-500 dark:text-neutral-500">
-            Design Tools:
+            Name:
           </span>
         </dt>
         <dd>
@@ -58,7 +59,7 @@ const viewReport = () => {
                 <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" />
                 <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
               </svg>
-              Figma
+              aaaa
             </li>
             <li className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
               <svg

@@ -11,7 +11,6 @@ const Manageslot = () => {
   const [slotList, setSlotList] = useState([]);
   const token = localStorage.getItem('token');
 
-
   const slotForm = useFormik({
     initialValues: {
       time: '',
@@ -30,6 +29,7 @@ const Manageslot = () => {
           fetchSlot();
         }).catch((err) => {
           console.log(err);
+
           toast.error(err?.response?.data?.message || 'Some error occured');
 
         });
@@ -38,7 +38,7 @@ const Manageslot = () => {
   });
 
 
- 
+
 
   const fetchSlot = () => {
     axios.get('http://localhost:5000/slot/getdoctorslots', {
@@ -74,29 +74,30 @@ const Manageslot = () => {
       })
 
   }
-  const fetchDoctorData = async () => {
-    const res = await axios.get('http://localhost:5000/doctor/getdoctor',{
+  const fetchDoctorData = () => {
+    axios.get('http://localhost:5000/doctor/getdoctor', {
       headers: {
         'x-auth-token': token
       }
     })
+      .then((result) => {
+        console.table(result.data);
+        setDoctorData(result.data);
 
-    .then((result) => {
-      console.table(result.data);
-      setDoctorData(result.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log(doctorData);
+      })
 
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-   
   }
 
   useEffect(() => {
     fetchDoctorData();
   }, []);
 
-
+  if (doctorData === null)
+    return <h1>Loading...</h1>
 
 
   return (
@@ -117,7 +118,7 @@ const Manageslot = () => {
                 <div className="relative flex items-center overflow-hidden">
                   <img
                     className="w-32 sm:w-48 h-full absolute inset-0 object-cover rounded-s-lg"
-                    src={doctorData.avatar}
+                    src={doctorData?.avatar}
                     alt="Blog Image"
                   />
                   <div className="grow p-4 ms-32 sm:ms-48">
