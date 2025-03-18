@@ -1,6 +1,7 @@
 'use client';
 import { IconDownload } from '@tabler/icons-react';
 import axios from 'axios';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
@@ -9,9 +10,9 @@ const viewAppointment = () => {
   const token = localStorage.getItem('token');
   
   const [slotData, setSlotData] = useState([null]);
-  const [patientData, setPatientData] = useState([null]);
+  const [appointmentData, setAppointmentData] = useState([null]);
 
-  const fetchPatientData = () => {
+  const fetchAppointmentData = () => {
     axios.get('http://localhost:5000/appointment/getbyid/' + id, {
       headers: {
         'x-auth-token': token
@@ -19,7 +20,7 @@ const viewAppointment = () => {
     })
       .then((result) => {
         console.table(result.data);
-        setPatientData(result.data);
+        setAppointmentData(result.data);
 
       })
       .catch((err) => {
@@ -29,9 +30,9 @@ const viewAppointment = () => {
   }
 
   const fetchSlot = () => {
-    console.log(patientData._id);
+    console.log(appointmentData._id);
     
-    axios.get('http://localhost:5000/slot/getbyid/' + patientData._id, {
+    axios.get('http://localhost:5000/slot/getbyid/' + appointmentData._id, {
       headers: {
         'x-auth-token': token
       }
@@ -46,7 +47,7 @@ const viewAppointment = () => {
   }
   useEffect(() => {
     fetchSlot();
-    fetchPatientData();
+    fetchAppointmentData();
 
   }, [])
 
@@ -83,13 +84,14 @@ const viewAppointment = () => {
                 </div>
                 {/* End Title */}
                 <p>{slotData._id}</p>
-                <p className='font-bold'> Name : {patientData.patientName}</p>
-                <p className='font-bold'> Age : {patientData.patientAge}</p>
-                <p className='font-bold'> Gender : {patientData.patientGender}</p>
+                <p className='font-bold'> Name : {appointmentData.patientName}</p>
+                <p className='font-bold'> Age : {appointmentData.patientAge}</p>
+                <p className='font-bold'> Gender : {appointmentData.patientGender}</p>
                 <p className='font-bold'> </p>
                 <p className='font-bold'></p>
                 
                 <p ></p>
+                <Link href={'/user/view-report/'+appointmentData._id}>View Report</Link>
               </div>
             </div>
             {/* End Col */}

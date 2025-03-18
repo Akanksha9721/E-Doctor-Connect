@@ -71,6 +71,7 @@ const ViewReport = () => {
                                         return (<form onSubmit={reportForm.handleSubmit}>
                                             {/* Grid */}
                                             <div className="grid sm:grid-cols-12 gap-2 sm:gap-6">
+                                          
                                                 <div className="sm:col-span-3">
                                                     <label
                                                         htmlFor="af-account-full-name"
@@ -148,7 +149,7 @@ const ViewReport = () => {
 
                                                 </div>
                                                 {/* End Col */}
-                                                <div className="sm:col-span-9">
+                                                <div className="sm:col-span-7">
                                                     <div className="sm:flex">
                                                         <textarea
                                                             id="description"
