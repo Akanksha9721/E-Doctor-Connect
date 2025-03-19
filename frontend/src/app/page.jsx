@@ -129,7 +129,7 @@ const Home = () => {
                       <div className="grow">
                         <div className="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
                           <Link
-                            className=" text-[#F59E0B] p-2 flex items-center text-sm bg-gray-100 text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                            className="p-2 flex items-center text-sm text-white"
                             href="/browse-doctor"
                             aria-current="page"
                           >
@@ -155,7 +155,7 @@ const Home = () => {
                             <button
                               id="hs-header-base-dropdown"
                               type="button"
-                              className=" text-[#F59E0B]  hs-dropdown-toggle w-full p-2 flex items-center text-sm text-gray-800  focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                              className="    w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
                               aria-haspopup="menu"
                               aria-expanded="false"
                               aria-label="Dropdown"
@@ -226,7 +226,7 @@ const Home = () => {
                             <button
                               id="hs-header-base-dropdown"
                               type="button"
-                              className=" text-[#F59E0B] hs-dropdown-toggle w-full p-2 flex items-center text-sm text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                              className="  hs-dropdown-toggle w-full p-2 flex items-center text-sm text-white focus:outline-none  dark:text-neutral-200  dark:focus:bg-neutral-700"
                               aria-haspopup="menu"
                               aria-expanded="false"
                               aria-label="Dropdown"
@@ -251,7 +251,7 @@ const Home = () => {
                               </svg>
                               doctor details
                               <svg
-                                className=" text-[#F59E0B]  hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
+                                className="   hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
                                
                                
                                 xmlns="http://www.w3.org/2000/svg"
@@ -267,23 +267,7 @@ const Home = () => {
                                 <path d="m6 9 6 6 6-6" />
                               </svg>
                             </button>
-                            <div
-                              className=" hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 relative w-full md:w-52 hidden z-10 top-full ps-7 md:ps-0 md:bg-white md:rounded-lg md:shadow-md before:absolute before:-top-4 before:start-0 before:w-full before:h-5 md:after:hidden after:absolute after:top-1 after:start-[18px] after:w-0.5 after:h-[calc(100%-0.25rem)] after:bg-gray-100 dark:md:bg-neutral-800 dark:after:bg-neutral-700"
-                              role="menu"
-                              aria-orientation="vertical"
-                              aria-labelledby="hs-header-base-dropdown"
-                            >
-                              <div className="py-1 md:px-1 space-y-0.5">
-                                <Link
-                                  className=" text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
-                                  href="/doctor/doc-profile"
-                                >
-                                  doctor
-                                </Link>
-
-
-                              </div>
-                            </div>
+                            
                           </div>
 
 
@@ -313,7 +297,7 @@ const Home = () => {
             <section className="  min-h-screenw-full flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
               {/* content - start */}
               <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
-                <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl">
+                <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl text-4xl">
                   Let's connect with doctors
                 </p>
                 <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">

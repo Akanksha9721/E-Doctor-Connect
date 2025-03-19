@@ -126,7 +126,7 @@ const Navbar = () => {
                 <div className="grow">
                   <div className="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
                     <Link
-                      className="text-[#F59E0B] p-2 flex items-center text-sm bg-gray-100 text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                      className=" p-2 flex items-center text-sm  text-gray-800   text-white focus:outline-none  dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                       href="/browse-doctor"
                       aria-current="page"
                     >
@@ -152,7 +152,7 @@ const Navbar = () => {
                       <button
                         id="hs-header-base-dropdown"
                         type="button"
-                        className="hs-dropdown-toggle w-full p-2 flex items-center text-sm text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                        className="hs-dropdown-toggle w-full p-2 flex items-center text-sm  text-white focus:outline-none  dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                         aria-haspopup="menu"
                         aria-expanded="false"
                         aria-label="Dropdown"
@@ -225,7 +225,7 @@ const Navbar = () => {
                       <button
                         id="hs-header-base-dropdown"
                         type="button"
-                        className="hs-dropdown-toggle w-full p-2 flex items-center text-sm text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                        className="hs-dropdown-toggle w-full p-2 flex items-center text-sm text-white dark:focus:bg-neutral-700"
                         aria-haspopup="menu"
                         aria-expanded="false"
                         aria-label="Dropdown"

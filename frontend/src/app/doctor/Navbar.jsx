@@ -125,7 +125,7 @@ const Navbar = () => {
                 <div className="grow">
                   <div className="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
                     <Link
-                      className=" text-[#F59E0B] p-2 flex items-center text-sm bg-gray-100 text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                      className="  p-2 flex items-center text-sm text-white dark:focus:bg-neutral-700"
                       href="/browse-doctor"
                       aria-current="page"
                     >
@@ -151,7 +151,7 @@ const Navbar = () => {
                       <button
                         id="hs-header-base-dropdown"
                         type="button"
-                        className=" text-[#F59E0B] hs-dropdown-toggle w-full p-2 flex items-center text-sm text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                        className="  hs-dropdown-toggle w-full p-2 flex items-center text-sm  text-white focus:outline-none  dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                         aria-haspopup="menu"
                         aria-expanded="false"
                         aria-label="Dropdown"
@@ -198,7 +198,7 @@ const Navbar = () => {
                       >
                         <div className="py-1 md:px-1 space-y-0.5">
                           <Link
-                            className=" text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                            className="   p-2 md:px-3 flex items-center text-sm  hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
                             href="/doctor-register"
                           >
                             doctor
@@ -223,7 +223,7 @@ const Navbar = () => {
                       <button
                         id="hs-header-base-dropdown"
                         type="button"
-                        className="hs-dropdown-toggle w-full p-2 flex items-center text-sm text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                        className="hs-dropdown-toggle w-full p-2 flex items-center text-sm  text-white  focus:outline-none  dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                         aria-haspopup="menu"
                         aria-expanded="false"
                         aria-label="Dropdown"
@@ -285,7 +285,7 @@ const Navbar = () => {
                       <button
                         id="hs-header-base-dropdown"
                         type="button"
-                        className=" text-[#F59E0B] hs-dropdown-toggle w-full p-2 flex items-center text-sm text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                        className="  hs-dropdown-toggle w-full p-2 flex items-center text-sm text-white focus:outline-none  dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                         aria-haspopup="menu"
                         aria-expanded="false"
                         aria-label="Dropdown"
@@ -343,8 +343,8 @@ const Navbar = () => {
                     </div>
                     {/* End Dropdown */}
                     <Link
-                      className="p-2 flex items-center text-sm text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-                      href="/doctor/doc-profile"
+                      className="p-2 flex items-center text-sm  text-white dark:focus:bg-neutral-700"
+                      href="/doctor/doctor-profile"
                     >
                       <svg
                         className="shrink-0 size-4 me-3 md:me-2 block md:hidden"

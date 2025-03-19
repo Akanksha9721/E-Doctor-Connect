@@ -24,7 +24,6 @@ app.use('/slot', SlotRouter);
 app.use('/appointment', AppointmentRouter);
 app.use('/test', TestRouter);
 
-
 //accept and process request
 app.get('/', (req, res) => {
    res.send('response from express');

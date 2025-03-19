@@ -17,28 +17,30 @@ const viewReport = () => {
     fetchReportData();
   }, [])
 
-  if(reportData === null){
+  if (reportData === null) {
     return 'Report not found';
   }
 
   return (
     <>
-    <h1 className='text-center font-bold  text-2xl '>Report</h1>
+      <h1 className='text-center font-bold  text-2xl '>Report</h1>
+     
       {/* List */}
+      <div className='bg-yellow-100  w-[800px] h-[250px] text-center  px-4 py-10 mx-auto'>
       <div className='max-w-4xl px-4 py-10 sm:px-6 lg:px-8 mx-auto'>
 
 
         <div className="space-y-3 center">
-        <dl className="flex flex-col sm:flex-row gap-1">
+          <dl className="flex flex-col sm:flex-row gap-1">
             <dt className="min-w-40">
-              <span className="block text-sm text-gray-500 dark:text-neutral-500">
+              <span className="   text-centertext-2xl block text-sm text-gray-500 dark:text-neutral-500">
                 name:
               </span>
             </dt>
             <dd>
               <ul>
                 <li className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                 
+
                   {reportData.name}
                 </li>
 
@@ -47,14 +49,14 @@ const viewReport = () => {
           </dl>
           <dl className="flex flex-col sm:flex-row gap-1">
             <dt className="min-w-40">
-              <span className="block text-sm text-gray-500 dark:text-neutral-500">
+              <span className="block text-sm  text-gray-500  dark:text-neutral-500">
                 prescription:
               </span>
             </dt>
             <dd>
               <ul>
                 <li className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                 
+
                   {reportData.prescription}
                 </li>
 
@@ -70,8 +72,8 @@ const viewReport = () => {
             <dd>
               <ul>
                 <li className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                 
-                 {reportData.description}
+
+                  {reportData.description}
                 </li>
 
 
@@ -81,13 +83,13 @@ const viewReport = () => {
           <dl className="flex flex-col sm:flex-row gap-1">
             <dt className="min-w-40">
               <span className="block text-sm text-gray-500 dark:text-neutral-500">
-               SuggestedTest
+                SuggestedTest
               </span>
             </dt>
             <dd>
               <ul>
                 <li className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                 
+
                   {reportData.suggestedTest}
                 </li>
 
@@ -95,26 +97,13 @@ const viewReport = () => {
               </ul>
             </dd>
           </dl>
+       
           <dl className="flex flex-col sm:flex-row gap-1">
-            <dt className="min-w-40">
-              <span className="block text-sm text-gray-500 dark:text-neutral-500">
-                name
-              </span>
-            </dt>
-            <dd>
-              <ul>
-                <li className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                {reportData.name}
-                </li>
 
-              </ul>
-            </dd>
-          </dl>
-          <dl className="flex flex-col sm:flex-row gap-1">
-           
-           
+
           </dl>
         </div>
+      </div>
       </div>
       {/* End List */}
     </>
