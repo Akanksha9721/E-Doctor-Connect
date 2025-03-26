@@ -45,28 +45,24 @@ const BrowseDoctor = () => {
                             >
                                 <div className="aspect-w-16 aspect-h-11">
                                     <img
-                                        className="w-full object-cover rounded-xl"
+                                        className="w-full object-cover rounded-xl group-hover:scale-110"
                                          src={doctor.avatar}
                                         alt="Blog Image"
                                     />
                                 </div>
                                 <div className="my-6">
-                                    <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
+                                    <h3 className=" translate-y-full group-hover:translate-y-0 text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
                                       {doctor.name} 
                                     </h3>
-                                    <p className="mt-5 text-gray-600 dark:text-neutral-400">
+                                    <p className=" translate-y-full group-hover:translate-y-0 mt-5 text-gray-600 dark:text-neutral-400">
                                        {doctor.fees}
                                     </p>
-                                    <p className="mt-5 text-gray-600 dark:text-neutral-400">
+                                    <p className=" translate-y-full group-hover:translate-y-0 mt-5 text-gray-600 dark:text-neutral-400">
                                         {doctor.qualification}
                                     </p>
                                 </div>
                                 <div className="mt-auto flex items-center gap-x-3">
-                                    <img
-                                        className="size-8 rounded-full"
-                                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
-                                        alt="Avatar"
-                                    />
+                                    
                                     <div>
                                         <h5 className="text-sm text-gray-800 dark:text-neutral-200">
                                            {doctor.uploadBy} 

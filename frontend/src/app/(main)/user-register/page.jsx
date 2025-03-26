@@ -14,9 +14,9 @@ const RegisterSchema = Yup.object().shape({
     .required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().required('password is requried')
-    .matches(/[a-z]/, 'lowercase letter is required')
-    .matches(/[A-Z]/, 'uppercase letter is required')
-    .matches(/[0-9]/, 'numeric letter is required')
+    .matches(/[a-z]/, 'Lowercase letter is required')
+    .matches(/[A-Z]/, 'Uppercase letter is required')
+    .matches(/[0-9]/, 'Numeric letter is required')
     .matches(/\w/, 'special character is required')
     .min(8, 'minimum 8 characters are required'),
   confirmPassword: Yup.string().required('please confirm password')

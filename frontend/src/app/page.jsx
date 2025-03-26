@@ -11,125 +11,22 @@ const Home = () => {
 
             <header className=" fixed top-0 left-0 bg-[#0A2540] flex flex-wrap  md:justify-start md:flex-nowrap z-50 w-full bg-light-Gray border-b border-gray-200 dark:bg-neutral-800 dark:border-neutral-700">
               <nav className=" relative max-w-[85rem] w-full mx-auto flex items-center justify-between gap-3 py-2 px-4 sm:px-6 lg:px-8">
-                <a
-                  className="flex-none font-semibold text-xl text-white focus:outline-none focus:opacity-80 dark:text-white"
-                  href="#"
-                  aria-label="Brand"
-                >
-                  E-Doctor
-                </a>
-                <div className="md:order-3 flex justify-end items-center gap-x-1">
-                  {/* Collapse Button */}
-                  <button
-                    type="button"
-                    className="md:hidden relative p-2 flex items-center font-medium text-[12px] rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-                    id="hs-header-base-collapse"
-                    aria-haspopup="dialog"
-                    aria-expanded="false"
-                    aria-controls="hs-header-base"
-                    aria-label="Toggle navigation"
-                    data-hs-overlay="#hs-header-base"
-                  >
-                    Menu
-                    <svg
-                      className="shrink-0 size-4 ms-1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <circle cx={12} cy={12} r={1} />
-                      <circle cx={12} cy={5} r={1} />
-                      <circle cx={12} cy={19} r={1} />
-                    </svg>
-                  </button>
-                  {/* End Collapse Button */}
-                  <div className="hidden md:inline-block md:me-2">
-                    <div className="w-px h-4 bg-gray-300 dark:bg-neutral-700" />
-                  </div>
-                  {/* Offcanvas Toggle */}
-                  <button
-                    type="button"
-                    className="relative size-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-transparent dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-                    aria-haspopup="dialog"
-                    aria-expanded="false"
-                    aria-controls="hs-header-base-offcanvas"
-                    aria-label="Toggle navigation"
-                    data-hs-overlay="#hs-header-base-offcanvas"
-                  >
-                    <svg
-                      className="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <rect width={18} height={18} x={3} y={3} rx={2} />
-                      <path d="M15 3v18" />
-                      <path d="m8 9 3 3-3 3" />
-                    </svg>
-                    <span className="sr-only">Toggle navigation</span>
-                  </button>
-                  {/* End Offcanvas Toggle */}
+                <div className='text-white  flex items-center space-x-3 '>
+
+                  <img src="../images/logo.png" alt="Logo" class="h-12 w-auto bg- transparent" />
+                  <span className='text-2xl font-bold text-white-800'>E-Doctor</span>
+
                 </div>
+
                 {/* Collapse */}
-                <div
-                  id="hs-header-base"
-                  className="hs-overlay [--auto-close:md] hs-overlay-open:translate-x-0 -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full max-w-xs w-full z-[60] bg-white border-e basis-full grow md:order-2 md:static md:block md:h-auto md:max-w-none md:w-auto md:border-e-transparent md:transition-none md:translate-x-0 md:z-40 md:basis-auto dark:bg-neutral-800 dark:border-e-gray-700 md:dark:border-e-transparent hidden "
-                  role="dialog"
-                  tabIndex={-1}
-                  aria-label="Sidebar"
-                  data-hs-overlay-close-on-resize=""
-                >
+                <div className=''>
                   <div className=" bg-[#0A2540] bg-overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
                     <div className="py-2 md:py-0 px-2 md:px-0 flex flex-col md:flex-row md:items-center gap-0.5 md:gap-1">
-                      {/* Offcanvas Header */}
-                      <div className="md:hidden p-2 flex justify-between items-center">
-                        <h3
-                          id="hs-header-base-label"
-                          className="font-bold text-gray-800 dark:text-white"
-                        >
-                          Menu title
-                        </h3>
-                        <button
-                          type="button"
-                          className="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
-                          aria-label="Close"
-                          data-hs-overlay="#hs-header-base"
-                        >
-                          <span className="sr-only">Close</span>
-                          <svg
-                            className="shrink-0 size-4"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width={24}
-                            height={24}
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M18 6 6 18" />
-                            <path d="m6 6 12 12" />
-                          </svg>
-                        </button>
-                      </div>
-                      {/* End Offcanvas Header */}
+
                       <div className="grow">
                         <div className="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
                           <Link
-                            className="p-2 flex items-center text-sm text-white"
+                            className=" text-white text-xl font-medium hover:text-blue-400  p-2 flex items-center text-sm text-white "
                             href="/browse-doctor"
                             aria-current="page"
                           >
@@ -155,7 +52,7 @@ const Home = () => {
                             <button
                               id="hs-header-base-dropdown"
                               type="button"
-                              className="    w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
+                              className="  text-white text-xl font-medium hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
                               aria-haspopup="menu"
                               aria-expanded="false"
                               aria-label="Dropdown"
@@ -202,19 +99,19 @@ const Home = () => {
                             >
                               <div className="py-1 md:px-1 space-y-0.5">
                                 <Link
-                                  className=" text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                                  className="  text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
                                   href="/doctor-register"
                                 >
                                   doctor
                                 </Link>
                                 <Link
-                                  className=" text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                                  className="  text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
                                   href="/user-register"
                                 >
                                   User
                                 </Link>
                                 <Link
-                                  className=" text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                                  className=" text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
                                   href="#"
                                 >
                                   Team Account
@@ -222,53 +119,7 @@ const Home = () => {
                               </div>
                             </div>
                           </div>
-                          <div className="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] [--is-collapse:true] md:[--is-collapse:false] ">
-                            <button
-                              id="hs-header-base-dropdown"
-                              type="button"
-                              className="  hs-dropdown-toggle w-full p-2 flex items-center text-sm text-white focus:outline-none  dark:text-neutral-200  dark:focus:bg-neutral-700"
-                              aria-haspopup="menu"
-                              aria-expanded="false"
-                              aria-label="Dropdown"
-                            >
-                              <svg
-                                className="shrink-0 size-4 me-3 md:me-2 block md:hidden"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={24}
-                                height={24}
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <path d="m3 10 2.5-2.5L3 5" />
-                                <path d="m3 19 2.5-2.5L3 14" />
-                                <path d="M10 6h11" />
-                                <path d="M10 12h11" />
-                                <path d="M10 18h11" />
-                              </svg>
-                              doctor details
-                              <svg
-                                className="   hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
-                               
-                               
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={24}
-                                height={24}
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <path d="m6 9 6 6 6-6" />
-                              </svg>
-                            </button>
-                            
-                          </div>
+
 
 
 
@@ -287,52 +138,37 @@ const Home = () => {
 
 
 
-
-
-
-
-
-
-
+            {/*slider */}
             <section className="  min-h-screenw-full flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
               {/* content - start */}
-              <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
-                <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl text-4xl">
-                  Let's connect with doctors
-                </p>
-                <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
-                  E-Doctors website
-                </h1>
-                <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-                  This is a section of some simple filler text, also known as
-                  placeholder text. It shares some characteristics of a real written
-                  text but is random.
-                </p>
-                <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-                  <a
-                    href="#"
-                    className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
-                  >
-                    Start now
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
-                  >
-                    Take tour
-                  </a>
-                </div>
-              </div>
-              {/* content - end */}
-              {/* image - start */}
-              <div className="h-70 overflow-hidden rounded-lg    lg:h-auto xl:w-5/12">
+              <div className="h-70 overflow-hidden rounded-lg lg:h-auto ">
                 <img
                   src=" https://youthincmag.com/wp-content/uploads/2023/12/2150796738.jpg"
                   loading="lazy"
                   alt="Photo  not found"
-                  className=" mt-20 w-[900px] h-[700px] object-cover object-center mx-w-3xl shadow-lg rounded-lg"
+                  className=" mt-10 w-full w-screen  h-[770px] object-cover object-center mx-w-3xl"
                 />
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 p-10">
+                  <h3 class="text-blue-400 text-2xl font-semibold tracking-widest uppercase">Let's connect with doctors</h3>
+                  <h1 class="text-white text-7xl font-extrabold leading-tight mt-4">E-Doctors Website</h1>
+                  <p class="text-gray-300 text-xl max-w-2xl mt-6 leading-relaxed tracking-wide">
+                    This is a section of some simple filler text, also known as placeholder text.
+                    It shares some characteristics of a real written text but is random.
+                  </p>
+                  <div class="mt-8 space-x-5">
+                    <button class="bg-blue-600 text-white text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider">Start now</button>
+                    <button class="bg-gray-200 text-gray-900 text-xl px-8 py-4 rounded-lg uppercase tracking-wider">Take tour</button>
+                  </div>
+                </div>
+
               </div>
+
+
+
+
+              {/* content - end */}
+              {/* image - start */}
+
               {/* image - end */}
             </section>
           </div>
@@ -422,7 +258,7 @@ const Home = () => {
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2N1kH-CMSZYlRZ2qTyhd00TL-Sl8vLgxc3w&s"
                     loading="lazy"
                     alt="Photo by Radu Florin"
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-cover object-center w-screen"
                   />
                 </div>
                 <div>
