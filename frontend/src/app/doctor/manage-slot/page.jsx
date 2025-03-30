@@ -5,11 +5,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
+const ISSERVER = typeof window === 'undefined';
 
 const Manageslot = () => {
   const [doctorData, setDoctorData] = useState([]);
   const [slotList, setSlotList] = useState([]);
-  const token = localStorage.getItem('token');
+  const token =   !ISSERVER && localStorage.getItem('token');
 
   const slotForm = useFormik({
     initialValues: {
@@ -18,7 +19,7 @@ const Manageslot = () => {
     },
     onSubmit: (values) => {
       console.log(values);
-      axios.post('http://localhost:5000/slot/add', values, {
+      axios.post(`${process.env.NEXT_PUBLIC_API_URL}/slot/add`, values, {
         headers: {
           'x-auth-token': token
         }
@@ -41,7 +42,7 @@ const Manageslot = () => {
 
 
   const fetchSlot = () => {
-    axios.get('http://localhost:5000/slot/getdoctorslots', {
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/slot/getdoctorslots`, {
       headers: {
         'x-auth-token': token
       }
@@ -63,7 +64,7 @@ const Manageslot = () => {
   }, [])
 
   const deleteSlot = (id) => {
-    axios.delete('http://localhost:5000/slot/delete/' + id)
+    axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/slot/delete/` + id)
       .then((result) => {
         toast.success('Slot Deleted Successfully');
         fetchSlot();
@@ -75,7 +76,7 @@ const Manageslot = () => {
 
   }
   const fetchDoctorData = () => {
-    axios.get('http://localhost:5000/doctor/getdoctor', {
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/doctor/getdoctor`, {
       headers: {
         'x-auth-token': token
       }

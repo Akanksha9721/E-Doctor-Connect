@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react'
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
 const Login = () => {
 
     const router = useRouter();
@@ -16,12 +17,12 @@ const Login = () => {
         },
         onSubmit: async (values) => {
             console.log(values);
-            const res = await axios.post('http://localhost:5000/doctor/authenticate', values)
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/doctor/authenticate`, values)
             console.log(res.data);
             console.log(res.status);
             if (res.status === 200) {
                 toast.success('Logged in successfully');
-                localStorage.setItem('token', res.data.token);
+                !ISSERVER && localStorage.setItem('token', res.data.token);
                 router.push('/doctor/manage-appointment');
             }
         }

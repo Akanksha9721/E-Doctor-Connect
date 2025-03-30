@@ -4,13 +4,15 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
 
+const ISSERVER = typeof window === 'undefined'; 
+
 const ManageDoctor = () => {
     const[doctorList,setDoctorList] =useState([]);
-    const token = localStorage.getItem('token');
+    const token =  !ISSERVER && localStorage.getItem('token');
 
 
     const fetchDoctor= () => {
-        axios.get('http://localhost:5000/doctor/getall', {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/doctor/getall`, {
             headers: {
               'x-auth-token': token
             }

@@ -4,13 +4,15 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
+
 const ManageAppointment = () => {
 
   const [appointmentList, setAppointmentList] = useState([]);
-  const token = localStorage.getItem('token');
+  const token = !ISSERVER && localStorage.getItem('token');
 
   const fetchAppointment = () => {
-    axios.get('http://localhost:5000/slot/getbookedslotsdoctor/', {
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/slot/getbookedslotsdoctor/`, {
       headers: {
         'x-auth-token': token
       }
@@ -31,7 +33,7 @@ const ManageAppointment = () => {
   }, [])
 
   const deleteslot = (id) => {
-    axios.delete('http://localhost:5000/slot/delete/' + id)
+    axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/slot/delete/` + id)
       .then((result) => {
         toast.success('slot Deleted Successfully');
         fetchAppointment();

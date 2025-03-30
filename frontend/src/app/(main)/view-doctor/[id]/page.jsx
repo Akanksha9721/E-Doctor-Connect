@@ -12,7 +12,7 @@ const ViewDoctor = () => {
   const { id } = useParams();
 
   const fetchDoctorData = async () => {
-    const res = await axios.get('http://localhost:5000/doctor/getbyid/' + id)
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/doctor/getbyid/` + id)
     console.log(res.data);
     setDoctorData(res.data);
   }
@@ -24,7 +24,7 @@ const ViewDoctor = () => {
   const submitForm = (values) => {
     console.log(values);
 
-    axios.put('http://localhost:5000/doctor/browse/' + id, values)
+    axios.put(`${process.env.NEXT_PUBLIC_API_URL}/doctor/browse/` + id, values)
       .then((result) => {
         toast.success('User Updated successfully');
         router.back();
@@ -38,7 +38,7 @@ const ViewDoctor = () => {
 
 
   const getDoctorData = async () => {
-    const res = await Axios.get('https://localhost:5000/doctor/getbyid/' + id);
+    const res = await Axios.get(`${process.env.NEXT_PUBLIC_API_URL}/doctor/getbyid/` + id);
     console.log(res.data);
     setDoctorData(res.data);
 

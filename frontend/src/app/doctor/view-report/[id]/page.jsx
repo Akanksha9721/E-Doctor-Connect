@@ -57,7 +57,7 @@ const ViewReport = () => {
                     <div className='text-center text-white'>
                         <h2 className="font-bold text-2xl lg:text-2xl text-gray-800 dark:text-neutral-200">
 
-                            {reportData._id}
+                           
                         </h2>
 
                     </div>

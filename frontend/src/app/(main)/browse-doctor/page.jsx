@@ -8,7 +8,7 @@ const BrowseDoctor = () => {
     const [doctorList, setDoctorList] = useState([]);
 
     const fetchDoctor = () => {
-        axios.get('http://localhost:5000/doctor/getall')
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/doctor/getall`)
             .then((result) => {
                 console.table(result.data);
                 setDoctorList(result.data);

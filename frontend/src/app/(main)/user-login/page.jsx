@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === 'undefined';
 const Login = () => {
 
     const loginForm = useFormik({
@@ -13,12 +14,12 @@ const Login = () => {
         },
         onSubmit: async (values) => {
             console.log(values);
-            const res = await axios.post('http://localhost:5000/user/authenticate', values)
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/authenticat`, values)
             console.log(res.data);
             console.log(res.status);
             if (res.status === 200) {
                 toast.success('Logged in successfully');
-                localStorage.setItem('token', res.data.token);
+                !ISSERVER && localStorage.setItem('token', res.data.token);
             }
 
 
