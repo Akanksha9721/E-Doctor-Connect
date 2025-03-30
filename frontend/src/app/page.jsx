@@ -6,183 +6,159 @@ const Home = () => {
     <>
       <>
         {/* hero - start */}
-        <div className="bg-white pb-6 sm:pb-8 lg:pb-12">
-          <div className="w-full  mx-auto max-w-screen-2xl px-4 md:px-8">
+        <header className=" fixed top-0 left-0 bg-[#0A2540] flex flex-wrap  md:justify-start md:flex-nowrap z-50 w-full bg-light-Gray border-b border-gray-200 dark:bg-neutral-800 dark:border-neutral-700">
+          <nav className=" relative max-w-[85rem] w-full mx-auto flex items-center justify-between gap-3 py-2 px-4 sm:px-6 lg:px-8">
+            <div className='text-white  flex items-center space-x-3 '>
 
-            <header className=" fixed top-0 left-0 bg-[#0A2540] flex flex-wrap  md:justify-start md:flex-nowrap z-50 w-full bg-light-Gray border-b border-gray-200 dark:bg-neutral-800 dark:border-neutral-700">
-              <nav className=" relative max-w-[85rem] w-full mx-auto flex items-center justify-between gap-3 py-2 px-4 sm:px-6 lg:px-8">
-                <div className='text-white  flex items-center space-x-3 '>
+              <img src="../images/logo.png" alt="Logo" class="h-12 w-auto bg- transparent" />
+              <span className='text-2xl font-bold text-black'>E-Doctor</span>
 
-                  <img src="../images/logo.png" alt="Logo" class="h-12 w-auto bg- transparent" />
-                  <span className='text-2xl font-bold text-white-800'>E-Doctor</span>
+            </div>
 
-                </div>
+            {/* Collapse */}
+            <div className=''>
+              <div className=" bg-[#0A2540] bg-overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
+                <div className="py-2 md:py-0 px-2 md:px-0 flex flex-col md:flex-row md:items-center gap-0.5 md:gap-1">
 
-                {/* Collapse */}
-                <div className=''>
-                  <div className=" bg-[#0A2540] bg-overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
-                    <div className="py-2 md:py-0 px-2 md:px-0 flex flex-col md:flex-row md:items-center gap-0.5 md:gap-1">
-
-                      <div className="grow">
-                        <div className="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
-                          <Link
-                            className=" text-white text-xl font-medium hover:text-blue-400  p-2 flex items-center text-sm text-white "
-                            href="/browse-doctor"
-                            aria-current="page"
+                  <div className="grow">
+                    <div className="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
+                      <Link
+                        className=" text-white text-xl font-medium hover:text-blue-400  p-2 flex items-center text-sm text-white "
+                        href="/browse-doctor"
+                        aria-current="page"
+                      >
+                        <svg
+                          className="shrink-0 size-4 me-3 md:me-2 block md:hidden"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                          <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        </svg>
+                        Browse Doctor
+                      </Link>
+                      {/* Dropdown */}
+                      <div className="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] [--is-collapse:true] md:[--is-collapse:false] ">
+                        <button
+                          id="hs-header-base-dropdown"
+                          type="button"
+                          className="  text-white text-xl font-medium hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
+                          aria-haspopup="menu"
+                          aria-expanded="false"
+                          aria-label="Dropdown"
+                        >
+                          <svg
+                            className="shrink-0 size-4 me-3 md:me-2 block md:hidden"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width={24}
+                            height={24}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           >
-                            <svg
-                              className="shrink-0 size-4 me-3 md:me-2 block md:hidden"
-                              xmlns="http://www.w3.org/2000/svg"
-                              width={24}
-                              height={24}
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
+                            <path d="m3 10 2.5-2.5L3 5" />
+                            <path d="m3 19 2.5-2.5L3 14" />
+                            <path d="M10 6h11" />
+                            <path d="M10 12h11" />
+                            <path d="M10 18h11" />
+                          </svg>
+                          Resigter
+                          <svg
+                            className=" hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width={24}
+                            height={24}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="m6 9 6 6 6-6" />
+                          </svg>
+                        </button>
+                        <div
+                          className="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 relative w-full md:w-52 hidden z-10 top-full ps-7 md:ps-0 md:bg-white md:rounded-lg md:shadow-md before:absolute before:-top-4 before:start-0 before:w-full before:h-5 md:after:hidden after:absolute after:top-1 after:start-[18px] after:w-0.5 after:h-[calc(100%-0.25rem)] after:bg-gray-100 dark:md:bg-neutral-800 dark:after:bg-neutral-700"
+                          role="menu"
+                          aria-orientation="vertical"
+                          aria-labelledby="hs-header-base-dropdown"
+                        >
+                          <div className="py-1 md:px-1 space-y-0.5">
+                            <Link
+                              className="  text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                              href="/doctor-register"
                             >
-                              <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
-                              <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                            </svg>
-                            Browse Doctor
-                          </Link>
-                          {/* Dropdown */}
-                          <div className="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] [--is-collapse:true] md:[--is-collapse:false] ">
-                            <button
-                              id="hs-header-base-dropdown"
-                              type="button"
-                              className="  text-white text-xl font-medium hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
-                              aria-haspopup="menu"
-                              aria-expanded="false"
-                              aria-label="Dropdown"
+                              doctor
+                            </Link>
+                            <Link
+                              className="  text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                              href="/user-register"
                             >
-                              <svg
-                                className="shrink-0 size-4 me-3 md:me-2 block md:hidden"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={24}
-                                height={24}
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <path d="m3 10 2.5-2.5L3 5" />
-                                <path d="m3 19 2.5-2.5L3 14" />
-                                <path d="M10 6h11" />
-                                <path d="M10 12h11" />
-                                <path d="M10 18h11" />
-                              </svg>
-                              Resigter
-                              <svg
-                                className=" hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={24}
-                                height={24}
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <path d="m6 9 6 6 6-6" />
-                              </svg>
-                            </button>
-                            <div
-                              className="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 relative w-full md:w-52 hidden z-10 top-full ps-7 md:ps-0 md:bg-white md:rounded-lg md:shadow-md before:absolute before:-top-4 before:start-0 before:w-full before:h-5 md:after:hidden after:absolute after:top-1 after:start-[18px] after:w-0.5 after:h-[calc(100%-0.25rem)] after:bg-gray-100 dark:md:bg-neutral-800 dark:after:bg-neutral-700"
-                              role="menu"
-                              aria-orientation="vertical"
-                              aria-labelledby="hs-header-base-dropdown"
+                              User
+                            </Link>
+                            <Link
+                              className=" text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                              href="#"
                             >
-                              <div className="py-1 md:px-1 space-y-0.5">
-                                <Link
-                                  className="  text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
-                                  href="/doctor-register"
-                                >
-                                  doctor
-                                </Link>
-                                <Link
-                                  className="  text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
-                                  href="/user-register"
-                                >
-                                  User
-                                </Link>
-                                <Link
-                                  className=" text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
-                                  href="#"
-                                >
-                                  Team Account
-                                </Link>
-                              </div>
-                            </div>
+                              Team Account
+                            </Link>
                           </div>
-
-
-
-
-                          {/* End Dropdown */}
-
-
-
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                {/* End Collapse */}
-              </nav>
-            </header>
+              </div>
+            </div>
+            {/* End Collapse */}
+          </nav>
+        </header>
 
 
 
+
+        <div className="max-auto w-full h-full ">
+          <div className="w-full  max-auto w-full">
             {/*slider */}
-            <section className="  min-h-screenw-full flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
+            <section className="  min-h-screen    flex flex-col justify-between  lg:flex-row">
               {/* content - start */}
-              <div className="h-70 overflow-hidden rounded-lg lg:h-auto ">
+              <div className="h-70    overflow-hidden bg-cover  lg:h-auto ">
                 <img
-                  src=" https://youthincmag.com/wp-content/uploads/2023/12/2150796738.jpg"
+                  src=" https://media.istockphoto.com/id/857652610/photo/two-doctors-working-together.jpg?s=170667a&w=0&k=20&c=jk9gERTF7morzPCZhZ1QCIrTqZgXzUf40cYs1lzHLVs="
                   loading="lazy"
                   alt="Photo  not found"
-                  className=" mt-10 w-full w-screen  h-[770px] object-cover object-center mx-w-3xl"
+                  className=" h-screen w-screen"
                 />
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 p-10">
-                  <h3 class="text-blue-400 text-2xl font-semibold tracking-widest uppercase">Let's connect with doctors</h3>
-                  <h1 class="text-white text-7xl font-extrabold leading-tight mt-4">E-Doctors Website</h1>
-                  <p class="text-gray-300 text-xl max-w-2xl mt-6 leading-relaxed tracking-wide">
+                <div class="absolute    inset-0 flex flex-col items-center justify-center text-center bg-white bg-opacity-50 p-10">
+                  <h3 class="text-blue-400 text-2xl font-semibold tracking-widest uppercase"></h3>
+                  <h1 class="text-orange-300 text-7xl font-extrabold leading-tight mt-4">E-Doctors </h1>
+                  <p class="text-black-300 text-xl max-w-2xl mt-6 leading-relaxed tracking-wide">
                     This is a section of some simple filler text, also known as placeholder text.
                     It shares some characteristics of a real written text but is random.
                   </p>
                   <div class="mt-8 space-x-5">
-                    <button class="bg-blue-600 text-white text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider">Start now</button>
-                    <button class="bg-gray-200 text-gray-900 text-xl px-8 py-4 rounded-lg uppercase tracking-wider">Take tour</button>
+                    <button class="bg-gray-600 text-white text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider">Start now</button>
+                    
                   </div>
                 </div>
-
               </div>
-
-
-
-
-              {/* content - end */}
-              {/* image - start */}
-
-              {/* image - end */}
             </section>
           </div>
         </div>
-        {/* hero - end */}
-        {/* features - start */}
 
-        {/* features - end */}
-        {/* logo cloud - start */}
-        <div className="bg-white py-6 sm:py-8 lg:py-12">
 
-        </div>
-        {/* logo cloud - end */}
-        {/* stats - start */}
+
         <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-xl px-4 md:px-8">
             {/* text - start */}
@@ -236,6 +212,51 @@ const Home = () => {
         </div>
         {/* stats - end */}
         {/* team - start */}
+
+
+
+
+        <div className="bg-white py-6 sm:py-8 lg:py-12">
+          <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+            <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
+              <div>
+                <div className="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
+                  <img
+                    src="https://media.istockphoto.com/id/1196710776/photo/doctors-working-in-team.jpg?s=170667a&w=0&k=20&c=BwMBoAO7L-PPYNuxaHR0CD_1oohe8Ilh8RnZvYCnJ74="
+                    loading="lazy"
+                    alt="Photo by Martin Sanchez"
+                    className="h-full w-full object-cover object-center"
+                  />
+                </div>
+              </div>
+              <div className="md:pt-8">
+                
+                
+                <h2 className="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">
+                  About us
+                </h2>
+                <p className="mb-6 text-gray-500 sm:text-lg md:mb-8">
+                  This is a section of some simple filler text, also known as
+                  placeholder text. It shares some characteristics of a real written
+                  text but is random or otherwise generated. It may be used to display a
+                  sample of fonts or generate text for testing. Filler text is dummy
+                  text which has no meaning however looks very similar to real text.
+                  Filler text is dummy text which has no meaning however looks very 
+                  similar to real text.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
         <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-xl px-4 md:px-8">
             {/* text - start */}
@@ -718,97 +739,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* team - end */}
-        {/* testemonials - start */}
-        <div className="bg-white py-6 sm:py-8 lg:py-12">
-          <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-            <h2 className="mb-8 text-center text-2xl font-bold text-gray-800 md:mb-12 lg:text-3xl">
-              What others say about us
-            </h2>
-            <div className="grid gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3 lg:divide-x">
-              {/* quote - start */}
-              <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-                <div className="text-center text-gray-600">
-                  “This is a section of some simple filler text, also known as
-                  placeholder text.”
-                </div>
-                <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-                  <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
-                    <img
-                      src="https://images.unsplash.com/photo-1567515004624-219c11d31f2e??auto=format&q=75&fit=crop&w=112"
-                      loading="lazy"
-                      alt="Photo by Radu Florin"
-                      className="h-full w-full object-cover object-center"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">
-                      John McCulling
-                    </div>
-                    <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">
-                      CEO / Datadrift
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* quote - end */}
-              {/* quote - start */}
-              <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-                <div className="text-center text-gray-600">
-                  “This is a section of some simple filler text, also known as
-                  placeholder text.”
-                </div>
-                <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-                  <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
-                    <img
-                      src="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?auto=format&q=75&fit=crop&w=112"
-                      loading="lazy"
-                      alt="Photo by christian ferrer"
-                      className="h-full w-full object-cover object-center"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">
-                      Kate Berg
-                    </div>
-                    <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">
-                      CFO / Dashdash
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* quote - end */}
-              {/* quote - start */}
-              <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-                <div className="text-center text-gray-600">
-                  “This is a section of some simple filler text, also known as
-                  placeholder text.”
-                </div>
-                <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-                  <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
-                    <img
-                      src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&q=75&fit=crop&w=500"
-                      loading="lazy"
-                      alt="Photo by Ayo Ogunseinde"
-                      className="h-full w-full object-cover object-center"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">
-                      Greg Jackson
-                    </div>
-                    <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">
-                      CTO / Uptime
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* quote - end */}
-            </div>
-          </div>
-        </div>
-        {/* testemonials - end */}
-        {/* newsletter - start */}
+
+
+
         <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 sm:p-8">

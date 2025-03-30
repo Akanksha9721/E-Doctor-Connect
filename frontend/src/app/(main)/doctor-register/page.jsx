@@ -30,15 +30,14 @@ const Register = () => {
 
     })
     return (
-        <div className='h-auto py-7 bg-gray ' >
+        
+        <div className='h-auto  py-7  bg-gray-300  bg-cover h-screen' >
             <div className="max-w-xl mx-auto bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-neutral-900 dark:border-neutral-700">
                 <div className="p-2 sm:p-7 ">
                     <div className="text-center">
                         <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
-                            Doctor Register Form
-
+                             Register Form
                         </h1>
-
                     </div>
                     <div className="mt-5">
                         {/* Form */}

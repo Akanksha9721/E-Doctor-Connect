@@ -35,8 +35,7 @@ const ViewDoctor = () => {
 
       })
   }
-
-
+  
   const getDoctorData = async () => {
     const res = await Axios.get(`${process.env.NEXT_PUBLIC_API_URL}/doctor/getbyid/` + id);
     console.log(res.data);
@@ -56,7 +55,7 @@ const ViewDoctor = () => {
           {/* Grid */}
           <div className="md:grid md:grid-cols-2 md:items-center gap-12 ">
             <img
-              className="  rounded-xl w-full"
+              className="  rounded-2xl w-full"
               src={doctorData.avatar}
               alt="Features Image"
             />
