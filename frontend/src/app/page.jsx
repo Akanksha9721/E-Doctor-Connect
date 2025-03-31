@@ -11,7 +11,7 @@ const Home = () => {
             <div className='text-white  flex items-center space-x-3 '>
 
               <img src="../images/logo.png" alt="Logo" class="h-12 w-auto bg- transparent" />
-              <span className='text-2xl font-bold text-black'>E-Doctor</span>
+              <span className='text-2xl font-bold text-white'>E-Doctor</span>
 
             </div>
 
@@ -23,7 +23,7 @@ const Home = () => {
                   <div className="grow">
                     <div className="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
                       <Link
-                        className=" text-white text-xl font-medium hover:text-blue-400  p-2 flex items-center text-sm text-white "
+                        className=" text-white font-bold  text-xl   uppercase   hover:text-blue-400  p-2 flex items-center text-sm text-white "
                         href="/browse-doctor"
                         aria-current="page"
                       >
@@ -42,14 +42,36 @@ const Home = () => {
                           <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
                           <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                         </svg>
-                        Browse Doctor
+                         DOCTOR
+                      </Link>
+                      <Link
+                        className=" text-white font-bold  text-xl   uppercase   hover:text-blue-400  p-2 flex items-center text-sm text-white "
+                        href="/about"
+                        aria-current="page"
+                      >
+                        <svg
+                          className="shrink-0 size-4 me-3 md:me-2 block md:hidden"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                          <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        </svg>
+                         ABOUT
                       </Link>
                       {/* Dropdown */}
                       <div className="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] [--is-collapse:true] md:[--is-collapse:false] ">
                         <button
                           id="hs-header-base-dropdown"
                           type="button"
-                          className="  text-white text-xl font-medium hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
+                          className="  text-white text-xl uppercase  font-bold hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
                           aria-haspopup="menu"
                           aria-expanded="false"
                           aria-label="Dropdown"
@@ -72,7 +94,7 @@ const Home = () => {
                             <path d="M10 12h11" />
                             <path d="M10 18h11" />
                           </svg>
-                          Resigter
+                          REGISTER
                           <svg
                             className=" hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
                             xmlns="http://www.w3.org/2000/svg"
@@ -96,13 +118,13 @@ const Home = () => {
                         >
                           <div className="py-1 md:px-1 space-y-0.5">
                             <Link
-                              className="  text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                              className="  text-xl font-bold  hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
                               href="/doctor-register"
                             >
                               doctor
                             </Link>
                             <Link
-                              className="  text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                              className="  text-xl font-bold hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
                               href="/user-register"
                             >
                               User
@@ -116,6 +138,33 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
+                      <Link
+                        className=" text-white font-bold  text-xl   uppercase   hover:text-blue-400  p-2 flex items-center text-sm text-white "
+                        href="/about"
+                        aria-current="page"
+                      >
+                        <svg
+                          className="shrink-0 size-4 me-3 md:me-2 block md:hidden"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                          <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        </svg>
+                         Contact
+                      </Link>
+
+
+
+
+
                     </div>
                   </div>
                 </div>
@@ -219,8 +268,8 @@ const Home = () => {
         <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-xl px-4 md:px-8">
             <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
-              <div>
-                <div className="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
+              <div className='profile-card bg-gray-100  hover:bg-indigo-100  rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center '>
+                <div className="  h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
                   <img
                     src="https://media.istockphoto.com/id/1196710776/photo/doctors-working-in-team.jpg?s=170667a&w=0&k=20&c=BwMBoAO7L-PPYNuxaHR0CD_1oohe8Ilh8RnZvYCnJ74="
                     loading="lazy"
@@ -232,7 +281,7 @@ const Home = () => {
               <div className="md:pt-8">
                 
                 
-                <h2 className="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">
+                <h2 className=" font-bold mb-2 text-center text-xl uppercase px-40 font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">
                   About us
                 </h2>
                 <p className="mb-6 text-gray-500 sm:text-lg md:mb-8">
@@ -271,10 +320,13 @@ const Home = () => {
               </p>
             </div>
             {/* text - end */}
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
+            <div className=" grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
               {/* person - start */}
-              <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
-                <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+
+
+
+              <div className=" profile-card bg-gray-100  hover:bg-indigo-100  p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+                <div className="  mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2N1kH-CMSZYlRZ2qTyhd00TL-Sl8vLgxc3w&s"
                     loading="lazy"
@@ -283,11 +335,11 @@ const Home = () => {
                   />
                 </div>
                 <div>
-                  <div className="text-center font-bold text-indigo-500 md:text-lg">
-                    John McCulling
+                  <div className=" hover:text-indigo-800 text-indigo-500  text-center font-bold 0 md:text-lg">
+                    Dr. John McCulling
                   </div>
                   <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
-                    Founder / CEO
+                    Founder
                   </p>
                   {/* social - start */}
                   <div className="flex justify-center">
@@ -329,10 +381,13 @@ const Home = () => {
                   {/* social - end */}
                 </div>
               </div>
+
+
+
               {/* person - end */}
               {/* person - start */}
-              <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
-                <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+              <div className="profile-card bg-gray-100  hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+                <div className=" mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Dn0oLz6MDWnNS6Tkf6AT-zQNdMQ9YF-Iqw&s "
                     loading="lazy"
@@ -341,7 +396,7 @@ const Home = () => {
                   />
                 </div>
                 <div>
-                  <div className="text-center font-bold text-indigo-500 md:text-lg">
+                  <div className=" hover:text-indigo-800 text-center font-bold text-indigo-500 md:text-lg">
                     Kate Berg
                   </div>
                   <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
@@ -389,7 +444,7 @@ const Home = () => {
               </div>
               {/* person - end */}
               {/* person - start */}
-              <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className=" profile-card bg-gray-100  hover:bg-indigo-100  p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
                 <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReerJg361TuZegMwMdpOKrpsWvnvuI7vuEzQ&s "
@@ -399,7 +454,7 @@ const Home = () => {
                   />
                 </div>
                 <div>
-                  <div className="text-center font-bold text-indigo-500 md:text-lg">
+                  <div className=" hover:text-indigo-800 text-center font-bold text-indigo-500 md:text-lg">
                     Greg Jackson
                   </div>
                   <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
@@ -447,7 +502,7 @@ const Home = () => {
               </div>
               {/* person - end */}
               {/* person - start */}
-              <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className=" profile-card bg-gray-100   hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
                 <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_-Gkh2Gfmhr3QmQxGlrPiRvO5aSZ5CK0wg&s"
@@ -457,7 +512,7 @@ const Home = () => {
                   />
                 </div>
                 <div>
-                  <div className="text-center font-bold text-indigo-500 md:text-lg">
+                  <div className=" hover:text-indigo-800 text-indigo-500 text-center font-bold  md:text-lg">
                     Robert Greyson
                   </div>
                   <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
@@ -505,7 +560,7 @@ const Home = () => {
               </div>
               {/* person - end */}
               {/* person - start */}
-              <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className=" profile-card bg-gray-100   hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
                 <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSjhNErdY0bBlN28KirqjUYhik4SlORWm_XA&s "
@@ -515,7 +570,7 @@ const Home = () => {
                   />
                 </div>
                 <div>
-                  <div className="text-center font-bold text-indigo-500 md:text-lg">
+                  <div className="  hover:text-indigo-800 text-indigo-500 text-center font-bold  md:text-lg">
                     John Roberts
                   </div>
                   <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
@@ -543,7 +598,7 @@ const Home = () => {
                       <a
                         href="#"
                         target="_blank"
-                        className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                        className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-gray-600"
                       >
                         <svg
                           className="h-5 w-5"
@@ -563,7 +618,7 @@ const Home = () => {
               </div>
               {/* person - end */}
               {/* person - start */}
-              <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className=" profile-card bg-gray-100  hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
                 <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                   <img
                     src=" data:image/jpeg;base64,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 "
@@ -573,7 +628,7 @@ const Home = () => {
                   />
                 </div>
                 <div>
-                  <div className="text-center font-bold text-indigo-500 md:text-lg">
+                  <div className=" hover:text-indigo-800 text-indigo-500 text-center font-bold md:text-lg">
                     Judy Amandez
                   </div>
                   <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
@@ -621,7 +676,7 @@ const Home = () => {
               </div>
               {/* person - end */}
               {/* person - start */}
-              <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className="profile-card bg-gray-100 hover:bg-indigo-100  p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
                 <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                   <img
                     src=" data:image/jpeg;base64,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"
@@ -631,7 +686,7 @@ const Home = () => {
                   />
                 </div>
                 <div>
-                  <div className="text-center font-bold text-indigo-500 md:text-lg">
+                  <div className=" hover:text-indigo-800  text-indigo-500 text-center font-bold  md:text-lg">
                     Rahul Williams
                   </div>
                   <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
@@ -679,7 +734,7 @@ const Home = () => {
               </div>
               {/* person - end */}
               {/* person - start */}
-              <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className=" profile-card bg-gray-100  hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
                 <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                   <img
                     src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE-n-Eb5PPHCiRyGR1vpCKxiucX1RsoZ0gEA&s"
@@ -689,7 +744,7 @@ const Home = () => {
                   />
                 </div>
                 <div>
-                  <div className="text-center font-bold text-indigo-500 md:text-lg">
+                  <div className=" hover:text-indigo-800  text-indigo-500 text-center font-bold  md:text-lg">
                     Ari Ferris
                   </div>
                   <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
