@@ -40,7 +40,7 @@ const Appointment = () => {
         return toast.error('Please select a slot')
       }
 
-      axios.post('http://localhost:5000/appointment/add', values,
+      axios.post(`${process.env.NEXT_PUBLIC_API_URL}/appointment/add`, values,
         {
           headers: {
             'x-auth-token': token
@@ -64,7 +64,7 @@ const Appointment = () => {
   // console.log(appointmentForm.errors);
 
   const fetchSlotData = async () => {
-    const res = await axios.get('http://localhost:5000/slot/getbydoctor/' + id)
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/slot/getbydoctor/` + id)
     console.log(res.data);
     setSlotData(res.data);
   }
@@ -78,7 +78,7 @@ const Appointment = () => {
   }, [selSlot])
 
   const fetchDoctorData = async () => {
-    const res = await axios.get('http://localhost:5000/doctor/getbyid/' + id)
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/doctor/getbyid/` + id)
     console.log(res.data);
     setDoctorData(res.data);
   }
