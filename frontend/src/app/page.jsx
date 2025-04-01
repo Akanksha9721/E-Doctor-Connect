@@ -853,14 +853,14 @@ const Home = () => {
                     <svg
                       width={95}
                       height={94}
-                      viewBox="0 0 95 94"
+                
                       className="h-auto w-5 text-indigo-500"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path d="M96 0V47L48 94H0V47L48 0H96Z" />
                     </svg>
-                    Flowrift
+                    E-DOCTOR
                   </a>
                 </div>
                 {/* logo - end */}
@@ -939,8 +939,8 @@ const Home = () => {
               </div>
               {/* nav - start */}
               <div>
-                <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                  Products
+                <div className="mb-4 font-bold text-xl uppercase tracking-widest text-gray-100">
+                  DOCTOR
                 </div>
                 <nav className="flex flex-col gap-4">
                   <div>
@@ -948,7 +948,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Overview
+                      Register
                     </a>
                   </div>
                   <div>
@@ -956,7 +956,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Solutions
+                      login
                     </a>
                   </div>
                   <div>
@@ -964,7 +964,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Pricing
+                      manageslot
                     </Link>
                   </div>
                   <div>
@@ -972,7 +972,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Customers
+                      ManageAppointment
                     </Link>
                   </div>
                 </nav>
@@ -980,8 +980,8 @@ const Home = () => {
               {/* nav - end */}
               {/* nav - start */}
               <div>
-                <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                  Company
+                <div className="mb-4 font-bold  text-xl uppercase tracking-widest text-gray-100">
+                  PETIENT
                 </div>
                 <nav className="flex flex-col gap-4">
                   <div>
@@ -989,7 +989,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      About
+                      Rigster
                     </a>
                   </div>
                   <div>
@@ -997,7 +997,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Investor Relations
+                      login
                     </a>
                   </div>
                   <div>
@@ -1005,7 +1005,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Jobs
+                      Book Appointment
                     </a>
                   </div>
                   <div>
@@ -1013,7 +1013,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Press
+                      Book Slot
                     </a>
                   </div>
                   <div>
@@ -1021,7 +1021,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Blog
+                      ManageAppionment
                     </a>
                   </div>
                 </nav>
@@ -1029,8 +1029,8 @@ const Home = () => {
               {/* nav - end */}
               {/* nav - start */}
               <div>
-                <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                  Support
+                <div className="mb-4 font-bold text-xl uppercase tracking-widest text-gray-100">
+                  REPORT
                 </div>
                 <nav className="flex flex-col gap-4">
                   <div>
@@ -1038,7 +1038,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Contact
+                      Edit Report
                     </a>
                   </div>
                   <div>
@@ -1046,7 +1046,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Documentation
+                      View Report
                     </a>
                   </div>
                   <div>
@@ -1054,7 +1054,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      Chat
+                      Download Report
                     </a>
                   </div>
                   <div>
@@ -1062,7 +1062,7 @@ const Home = () => {
                       href="#"
                       className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
-                      FAQ
+                      upload Report
                     </a>
                   </div>
                 </nav>
@@ -1070,8 +1070,8 @@ const Home = () => {
               {/* nav - end */}
               {/* nav - start */}
               <div>
-                <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                  Legal
+                <div className="mb-4 font-bold  text-xl uppercase tracking-widest text-gray-100">
+                  LEGAL
                 </div>
                 <nav className="flex flex-col gap-4">
                   <div>

@@ -18,43 +18,11 @@ const Navbar = () => {
           >
             <div className=" bg-[#0A2540] overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
               <div className="py-2 md:py-0 px-2 md:px-0 flex flex-col md:flex-row md:items-center gap-0.5 md:gap-1">
-                {/* Offcanvas Header */}
-                <div className="md:hidden p-2 flex justify-between items-center">
-                  <h3
-                    id="hs-header-base-label"
-                    className="font-bold text-gray-800 dark:text-white"
-                  >
-                    Menu title
-                  </h3>
-                  <button
-                    type="button"
-                    className="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
-                    aria-label="Close"
-                    data-hs-overlay="#hs-header-base"
-                  >
-                    <span className="sr-only">Close</span>
-                    <svg
-                      className="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M18 6 6 18" />
-                      <path d="m6 6 12 12" />
-                    </svg>
-                  </button>
-                </div>
-                {/* End Offcanvas Header */}
-                <div className="grow">
-                  <div className="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
+                
+                <div className="grow  ">
+                  <div className="flex space-x-10  flex-col   md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
                     <Link
-                      className="  text-white text-xl font-medium hover:text-blue-400  p-2 flex items-center text-sm text-white"
+                      className="  text-white text-xl font-bold uppercase hover:text-blue-400  p-2 flex items-center text-sm text-white"
                       href="/browse-doctor"
                       aria-current="page"
                     >
@@ -73,14 +41,14 @@ const Navbar = () => {
                         <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
                         <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                       </svg>
-                      Browse Doctor
+                      DOCTOR
                     </Link>
                     {/* Dropdown */}
                     <div className="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] [--is-collapse:true] md:[--is-collapse:false] ">
                       <button
                         id="hs-header-base-dropdown"
                         type="button"
-                        className="  text-white text-xl font-medium hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
+                        className="  text-white text-xl font-bold uppercase hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
                         aria-haspopup="menu"
                         aria-expanded="false"
                         aria-label="Dropdown"
@@ -103,7 +71,7 @@ const Navbar = () => {
                           <path d="M10 12h11" />
                           <path d="M10 18h11" />
                         </svg>
-                        Resigter
+                        REGISTER
                         <svg
                           className="hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
                           xmlns="http://www.w3.org/2000/svg"
@@ -127,16 +95,16 @@ const Navbar = () => {
                       >
                         <div className="py-1 md:px-1 space-y-0.5">
                           <Link
-                            className="   text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                            className="   text-xl font-bold uppercase hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
                             href="/doctor-register"
                           >
-                            doctor
+                            DOCTOR
                           </Link>
                           <Link
-                            className=" text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                            className=" text-xl font-bold uppercase hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
                             href="/user-register"
                           >
-                            User
+                            USER
                           </Link>
                           <Link
                             className="text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
@@ -152,7 +120,7 @@ const Navbar = () => {
                       <button
                         id="hs-header-base-dropdown"
                         type="button"
-                        className="text-white text-xl font-medium hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
+                        className="text-white text-xl font-bold uppercase hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700"
                         aria-haspopup="menu"
                         aria-expanded="false"
                         aria-label="Dropdown"
@@ -175,7 +143,7 @@ const Navbar = () => {
                           <path d="M10 12h11" />
                           <path d="M10 18h11" />
                         </svg>
-                        Appointment
+                        APPIONMENT
                         <svg
                           className="hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
                           xmlns="http://www.w3.org/2000/svg"
@@ -199,10 +167,10 @@ const Navbar = () => {
                       >
                         <div className="py-1 md:px-1 space-y-0.5">
                           <Link
-                            className=" text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                            className=" text-xl font-bold uppercase hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
                             href="/doctor/manage-appointment"
                           >
-                            manageappointment
+                            M-APPOINMENT
                           </Link>
                          
                         </div>
@@ -214,7 +182,7 @@ const Navbar = () => {
                       <button
                         id="hs-header-base-dropdown"
                         type="button"
-                        className=" text-white text-xl font-medium hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700 "
+                        className=" text-white text-xl font-bold uppercase hover:text-blue-400   w-full p-2 flex items-center text-sm  text-white    dark:focus:bg-neutral-700 "
                         aria-haspopup="menu"
                         aria-expanded="false"
                         aria-label="Dropdown"
@@ -237,7 +205,7 @@ const Navbar = () => {
                           <path d="M10 12h11" />
                           <path d="M10 18h11" />
                         </svg>
-                        Slot
+                        SLOT
                         <svg
                           className="hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
                           xmlns="http://www.w3.org/2000/svg"
@@ -261,18 +229,17 @@ const Navbar = () => {
                       >
                         <div className="py-1 md:px-1 space-y-0.5">
                           <Link
-                            className="text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
+                            className="text-xl font-bold uppercase hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
                             href="/doctor/manage-slot"
                           >
-                            manageSlot
+                            M-SLOT
                           </Link>
-                         
                         </div>
                       </div>
                     </div>
                     {/* End Dropdown */}
                     <Link
-                      className="text-white text-xl font-medium hover:text-blue-400  p-2 flex items-center text-sm text-white "
+                      className="text-white text-xl font-bold uppercase hover:text-blue-400  p-2 flex items-center text-sm text-white "
                       href="/doctor/doctor-profile"
                     >
                       <svg
@@ -290,9 +257,8 @@ const Navbar = () => {
                         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                         <circle cx={12} cy={7} r={4} />
                       </svg>
-                      Profile
+                      PROFILE
                     </Link>
-
                   </div>
                 </div>
               </div>
