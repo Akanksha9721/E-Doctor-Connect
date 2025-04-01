@@ -9,19 +9,16 @@ const Home = () => {
         <header className=" fixed top-0 left-0 bg-[#0A2540] flex flex-wrap  md:justify-start md:flex-nowrap z-50 w-full bg-light-Gray border-b border-gray-200 dark:bg-neutral-800 dark:border-neutral-700">
           <nav className=" relative max-w-[85rem] w-full mx-auto flex items-center justify-between gap-3 py-2 px-4 sm:px-6 lg:px-8">
             <div className='text-white  flex items-center space-x-3 '>
-
               <img src="../images/logo.png" alt="Logo" class="h-12 w-auto bg- transparent" />
               <span className='text-2xl font-bold text-white'>E-Doctor</span>
-
             </div>
-
             {/* Collapse */}
             <div className=''>
               <div className=" bg-[#0A2540] bg-overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
                 <div className="py-2 md:py-0 px-2 md:px-0 flex flex-col md:flex-row md:items-center gap-0.5 md:gap-1">
 
                   <div className="grow">
-                    <div className="flex flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
+                    <div className="flex space-x-10 flex-col md:flex-row md:justify-end md:items-center gap-0.5 md:gap-1">
                       <Link
                         className=" text-white font-bold  text-xl   uppercase   hover:text-blue-400  p-2 flex items-center text-sm text-white "
                         href="/browse-doctor"

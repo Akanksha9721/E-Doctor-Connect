@@ -565,7 +565,7 @@ const Profile = () => {
               {/* nav - end */}
             </div>
             <div className="border-t border-gray-800 py-8 text-center text-sm text-gray-400">
-              © 2021 - Present E-Doctor. All rights reserved.
+              © 2025 - Present Akanksha yadav. All rights reserved.
             </div>
           </footer>
         </div>
