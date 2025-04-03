@@ -15,7 +15,7 @@ const Login = () => {
         },
         onSubmit: async (values) => {
             console.log(values);
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/authenticat`, values)
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/authenticate`, values)
             console.log(res.data);
             console.log(res.status);
             if (res.status === 200) {
@@ -39,14 +39,14 @@ const Login = () => {
 
                         <div className="p-4 sm:p-7">
                             <div className="text-center">
-                                
+
                                 <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
-                                   
+
                                     <a
                                         className="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
                                         href="../examples/html/signup.html"
                                     >
-                                        
+
                                     </a>
                                 </p>
                             </div>

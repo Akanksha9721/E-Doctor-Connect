@@ -119,7 +119,7 @@ const Manageslot = () => {
                 >
                   <div className=" shadow-xl bg-white  rounded-xl relative flex items-center overflow-hidden">
                     <img
-                      className="w-32 sm:w-48 h-full absolute inset-0 object-cover rounded-full  rounded-s-lg"
+                      className="w-32  h-32 sm:w-48  absolute inset-0 object-cover rounded-full  rounded-s-lg"
                       src={doctorData?.avatar}
                       alt="Blog Image"
                     />

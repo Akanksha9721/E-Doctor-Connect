@@ -44,7 +44,7 @@ const viewAppointment = () => {
     console.log(res.data);
     // return;
     if (res.data === null) {
-      axios.post(`/report/add`, {
+      axios.post(`${process.env.NEXT_PUBLIC_API_URL}/report/add`, {
         appointment: appointmentData._id
       })
         .then((result) => {

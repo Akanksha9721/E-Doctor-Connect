@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const verifyToken = (req, res, next) => {
     const token = req.headers['x-auth-token'];
-     //console.log(req.headers);
+     console.log(token);
     
     if (!token) {
         return res.status(401).json({ message: 'Token not found' })
