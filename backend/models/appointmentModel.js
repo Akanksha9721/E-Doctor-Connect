@@ -14,7 +14,7 @@ const mySchema = new Schema({
     prescription: {type:String},
     prescridedTests: {type:Array},
     report:{type:String},
-    videocall:{type:String , default: "https://meet.google.com/iiu-mkka-pkn"},
+    videocall:{type:String,default: "https://meet.google.com/iiu-mkka-pkn"},
     createdAt: { type: Date, default: Date.now }
 });
 
