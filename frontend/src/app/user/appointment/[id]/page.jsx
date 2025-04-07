@@ -48,7 +48,7 @@ const Appointment = () => {
 
         })
         .then((result) => {
-          toast.success('User added successfully');
+          toast.success('appoinment booked successfully');
           //router.push('/login');
           //fetchAppointment();
           // setSelectdata;

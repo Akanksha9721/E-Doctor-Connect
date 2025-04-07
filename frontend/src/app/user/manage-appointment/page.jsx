@@ -42,39 +42,45 @@ const ManageAppointment = () => {
   }
   return (
     <>
-      <div className=' bg-gray-100 min-h-screen'>
-        <h1 className='text-center font-bold  text-2xl '>USER DASHBORD</h1>
+      <div className=' bg-gray-100 min-h-screen '>
+        <h1 className='text-center font-bold  text-2xl py-4 '>USER DASHBORD</h1>
         <div className='container mx-auto py-10'>
-          <h1 className='text-center font-bold  text-2xl'></h1>
+          <h1 className='text-center font-bold  text-2xl '></h1>
           <table className='w-full'>
             <thead>
-              <tr className='bg-gray-800 text-white font-bold  '>
+              <tr className='bg-blue-800 text-white font-bold text-center '>
                 <th className='p-3'>ID</th>
                 <th className='P-3'>PatientName</th>
                 <th className='p-3'>PatientAge</th>
                 <th className='p-3'>PatienGender</th>
                 <th className='p-3'>createdAt</th>
-                <th className='p-3'>Action</th>
-                <th className='p-3'>Action</th>
+                <th className='p-3 '>Action</th>
+                <th className='p-3 '>Book Here</th>
+                <th className='p-3 '>Join meeting</th>
+               
               </tr>
             </thead>
             <tbody>
               {
                 appointmentList.map((appointment) => {
                   return (
-                    <tr key={appointment._id} className='border text-center'>
-                      <td className='p-3'>{appointment._id}</td>
-                      <td className='p-3'>{appointment.patientName}</td>
+                    <tr key={appointment._id} className='border text-center border-gray-300 bg-white hover:bg-gray-100 transition-all duration-200 '>
+                      <td className='p-3 '>{appointment._id}</td>
+                      <td className='p-3 '>{appointment.patientName}</td>
                       <td className='p-3'>{appointment.patientAge}</td>
                       <td className='p-3'>{appointment.patientGender}</td>
                       <td className='p-3'>{new Date(appointment.createdAt).toDateString()}</td>
+                      
 
 
                       <td className='p-3'>
-                        <button onClick={() => { deleteAppointment(appointment._id) }} className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
+                        <button onClick={() => { deleteAppointment(appointment._id) }} className='bg-red-500 py-1 px-3 text-white rounded-full '>Delete</button>
                       </td>
                       <td className='p-3'>
-                        <Link href={'/user/view-appointment/' + appointment._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>View appointment</Link>
+                        <Link href={'/user/view-appointment/' + appointment._id} className='bg-blue-500 py-1 px-3 text-white rounded-full '>View appointment</Link>
+                      </td>
+                      <td className='p-3 '>
+                        <a target='_blank' href={appointment.videocall} className='bg-green-500 py-1 px-3 text-white rounded-full  '>join</a>
                       </td>
 
                     </tr>
@@ -93,7 +99,7 @@ const ManageAppointment = () => {
 
 
 
-      <div className="bg-gray-900">
+      <div className="bg-blue-800">
           <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
               <div className="col-span-full lg:col-span-2">

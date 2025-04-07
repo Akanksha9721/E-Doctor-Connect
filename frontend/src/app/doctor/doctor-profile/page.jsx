@@ -71,9 +71,9 @@ const Profile = () => {
     <>
 
       {/* Card Section */}
-      <div className="   min-h-screen  bg-[url('https://img.freepik.com/free-vector/abstract-medical-wallpaper-template-design_53876-61811.jpg?semt=ais_hybrid')] bg-cover bg-center   ">
+      <div className="   min-h-screen  bg-[url('')] bg-cover bg-center">
         <div className="max-w-4xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-          <h1 className='text-center font-bold  text-2xl'>DOCTOR PROFILE</h1>
+          <h1 className='text-center font-bold  uppercase text-3xl py-5'>DOCTOR PROFILE</h1>
           {
             doctorData !== null ? (
               <Formik initialValues={doctorData} onSubmit={submitForm}>
@@ -84,13 +84,13 @@ const Profile = () => {
                       <form onSubmit={doctorForm.handleSubmit}>
                         {/* Card */}
 
-                        <div className=" bg-transprent  rounded-xl shadow-2xl dark:bg-neutral-900">
+                        <div className=" bg-transprent  rounded-xl shadow-2xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-sm dark:shadow-neutral- 800">
                           <div className="relative h-40 rounded-t-xl bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRPD9iCdtman5XvT5IzzEFId3TnF9zINg1GQ&s')] bg-no-repeat bg-cover bg-center">
 
                           </div>
                           <div className="pt-0 p-4 sm:pt-0 sm:p-7">
                             {/* Grid */}
-                            <div className="space-y-4 sm:space-y-6">
+                            <div className="space-y-4 sm:space-y-6 ">
                               <div>
                                 <label className="sr-only">Product photo</label>
                                 <div className="flex flex-col sm:flex-row sm:items-center sm:gap-x-5">
@@ -262,14 +262,7 @@ const Profile = () => {
                                 />
 
                               </div>
-                              <div className="space-y-2">
-
-
-
-
-
-                              </div>
-
+                              
 
 
                             </div>
@@ -301,8 +294,8 @@ const Profile = () => {
       </div>
       {/* End Card Section */}
 
-      <div className="bg-gray-900">
-          <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
+      <div className="bg-blue-800 py-10 px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-24 ">
+          <footer className="mx-auto max-w-screen-2xl px-4 md:px-8 ">
             <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
               <div className="col-span-full lg:col-span-2">
                 {/* logo - start */}
