@@ -136,8 +136,30 @@ const Home = () => {
                       </div>
                     </div>
                     <Link
+                      className=" text-white font-bold uppercase  text-xl  flex justify-between  uppercase   hover:text-blue-400  p-2 flex items-center text-sm text-white "
+                      href="/browse-doctor"
+                      aria-current="page"
+                    >
+                      <svg
+                        className="shrink-0 size-4 me-3 md:me-2 block md:hidden"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={24}
+                        height={24}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                        <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                      </svg>
+                      CONSLUTANT
+                    </Link>
+                    <Link
                       className=" text-white font-bold  text-xl   uppercase   hover:text-blue-400  p-2 flex items-center text-sm text-white "
-                      href="/about"
+                      href="/contact"
                       aria-current="page"
                     >
                       <svg
@@ -157,11 +179,6 @@ const Home = () => {
                       </svg>
                       Contact
                     </Link>
-
-
-
-
-
                   </div>
                 </div>
               </div>
@@ -188,14 +205,14 @@ const Home = () => {
               />
               <div class="absolute    inset-0 flex flex-col items-center justify-center text-center bg-white bg-opacity-50 p-10">
                 <h3 class="text-blue-400 text-2xl font-semibold tracking-widest uppercase"></h3>
-                <h1 class="text-green-300 text-7xl font-extrabold leading-tight mt-4">E-Doctors </h1>
-                <p class="text-black-300 text-xl max-w-2xl mt-6 leading-relaxed tracking-wide">
+                <h1 class="text-green-400 text-7xl font-extrabold leading-tight mt-4">E-Doctors </h1>
+                <p class="text-gray-700 text-2xl max-w-2xl font-medium mt-6 leading-relaxed tracking-wide">
                   This is a section of some simple filler text, also known as placeholder text.
                   It shares some characteristics of a real written text but is random.
                 </p>
                 <div class="mt-8 space-x-5">
-                  <button class="bg-green-400 text-white text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider">Start now</button>
-
+                  <button class="bg-green-300 text-white text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider  hover:bg-green-500">Start now</button>
+                  <a href="/browse-doctor" className="bg-green-300 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-green-500">CONSLUTANT</a>
                 </div>
               </div>
             </div>
@@ -209,7 +226,7 @@ const Home = () => {
         <div class="container mx-auto px-4 py-12 max-w-screen">
 
           <div class="text-center mb-16">
-            <p class="text-teal-600 mb-2">Australian digital healthcare services</p>
+            <p class="text-blue-600 mb-2">Australian digital healthcare services</p>
             <h1 class="text-5xl font-bold text-gray-900 mb-6">Why e-Doctor?</h1>
             <p class="text-gray-600 max-w-3xl mx-auto">
               Our doctors are all Australian trained GPs who hold specialist general
@@ -222,7 +239,7 @@ const Home = () => {
           <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 text-center gap-10">
 
             <div class="bg-white p-6 rounded-lg shadow-2xl transition duration-300 ease-in-out hover:bg-teal-100 cursor-pointer">
-              <div class="bg-teal-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ">
+              <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
@@ -233,7 +250,7 @@ const Home = () => {
 
 
             <div class="bg-white p-6 rounded-lg shadow-2xl transition duration-300 ease-in-out hover:bg-teal-100 cursor-pointer">
-              <div class="bg-teal-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -244,7 +261,7 @@ const Home = () => {
 
 
             <div class="bg-white p-6 rounded-lg shadow-2xl transition duration-300 ease-in-out hover:bg-teal-100 cursor-pointer">
-              <div class="bg-teal-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
@@ -255,7 +272,7 @@ const Home = () => {
 
 
             <div class="bg-white p-6 rounded-lg shadow-2xl transition duration-300 ease-in-out hover:bg-teal-100 cursor-pointer">
-              <div class="bg-teal-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
@@ -266,7 +283,7 @@ const Home = () => {
 
 
             <div class="bg-white p-6 rounded-lg shadow-2xl transition duration-300 ease-in-out hover:bg-teal-100 cursor-pointer">
-              <div class="bg-teal-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
@@ -279,6 +296,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
 
 
 
@@ -815,8 +833,9 @@ const Home = () => {
             </div>
             {/* person - end */}
           </div>
-          <div class="mt-10 space-x-10 flex justify-center items-center ">
-            <button class="bg-green-400 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider">conslulate</button>
+          <div className="mt-10 space-x-10 flex justify-center items-center ">
+
+            <a href="/browse-doctor" className="bg-green-300 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-green-500">CONSLUTANT</a>
 
           </div>
         </div>
@@ -840,6 +859,7 @@ const Home = () => {
                   <p>e-Doctor provides convenient, secure, and professional healthcare services from the comfort of your home. Our platform connects you with qualified Australian GPs who can provide consultations, prescriptions, referrals, and medical certificates.</p>
                 </div>
               </div>
+               
 
 
               <div className="faq-item bg-green-50 rounded-md p-4 cursor-pointer transition duration-200">
@@ -874,20 +894,674 @@ const Home = () => {
               </div>
             </div>
           </div>
-
-
-         
-
-
         </div>
-        <div class="mt-10 space-x-10 flex justify-center items-center ">
-                  <button class="bg-gray-400 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider">contact Us</button>
-
+        <div class="mt-8 space-x-5 flex justify-center items-center">
+                  
+                  <a href="/contact" className="bg-green-300 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-green-500">CONTCAT</a>
                 </div>
       </div>
 
 
+      <div className="bg-white py-6 sm:py-8 lg:py-12">
+        <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+          <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">
+            Our plans for you
+          </h2>
+          <div className="mb-6 grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-8">
+            {/* plan - start */}
+            <div className="flex flex-col rounded-lg  p-4 pt-6 shadow-lg  hover:shadow-lg  hover:scale-105 transition duratoin-200 border-gray-200 ">
+              <div className="mb-12">
+                <div className="mb-2 text-center text-2xl font-bold text-blue-800">
+                  X-Ray
+                </div>
+                <p className="mx-auto mb-8 px-8 text-center text-gray-500">
+                  For individuals and organizations who want to try our system
+                </p>
+                <div className="space-y-2">
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">meet our consulte </span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">
+                      report and prescriptions
+                    </span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">good healthcare</span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">Comunity support</span>
+                  </div>
+                  {/* check - end */}
+                </div>
+              </div>
+              <div className="mt-auto flex flex-col gap-8">
+                <div className="flex items-end justify-center gap-1">
+                  <span className="text-4xl font-bold text-gray-800">2,000</span>
+                  <span className="text-gray-500">per test</span>
+                </div>
+                <a
+                  href="#"
+                  className="block rounded-lg bg-indigo-700 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:text-gray-700 md:text-base"
+                >
+                  Join for test
+                </a>
+              </div>
+            </div>
+            {/* plan - end */}
+            {/* plan - start */}
+            <div className="relative flex flex-col rounded-lg   p-4 pt-6 shadow-lg boder-2 hover:shadow-xl  hover:scale-105 transition duratoin-200 border-gray-200">
+              <div className="mb-12">
+                <div className="absolute inset-x-0 -top-3 flex justify-center">
 
+                </div>
+                <div className="mb-2 text-center text-2xl font-bold text-blue-800">
+                  Blood Test
+                </div>
+                <p className="mx-auto mb-8 px-8 text-center text-gray-500">
+                  Avanced feaures for Individuals and organizations
+                </p>
+                <div className="space-y-2">
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">Unlimited file storage</span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">10 GB bandwidth per month</span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">10.000 tasks per month</span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">Email support</span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">100 Webhooks</span>
+                  </div>
+                  {/* check - end */}
+                </div>
+              </div>
+              <div className="mt-auto flex flex-col gap-8">
+                <div className="flex items-end justify-center gap-1">
+                  <span className="text-4xl font-bold text-gray-800">1,000</span>
+                  <span className="text-gray-500">per test</span>
+                </div>
+                <a
+                  href="#"
+                  className="block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
+                >
+                  Continue with for test
+                </a>
+              </div>
+            </div>
+            {/* plan - end */}
+            {/* plan - start */}
+            <div className="flex flex-col p-4 pt-6 rounded-lg shadow-lg  hover:shadow-xl  hover:scale-105 transition duratoin-200 border-gray-200 ">
+              <div className="mb-12">
+                <div className="mb-2 text-center text-2xl font-bold text-blue-800">
+                  surgery
+                </div>
+                <p className="mx-auto mb-8 px-8 text-center text-gray-500">
+                  Maximum performace for organisations
+                </p>
+                <div className="space-y-2">
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">Unlimited file storage</span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">
+                      Unlimited bandwidth per month
+                    </span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">1.000.000 tasks per month</span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">Email and phone support</span>
+                  </div>
+                  {/* check - end */}
+                  {/* check - start */}
+                  <div className="flex gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 text-indigo-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-600">Unlimited Webhooks</span>
+                  </div>
+                  {/* check - end */}
+                </div>
+              </div>
+              <div className="mt-auto flex flex-col gap-8">
+                <div className="flex items-end justify-center gap-1">
+                  <span className="text-4xl font-bold text-gray-800">15,000</span>
+                  <span className="text-gray-500">per pateint</span>
+                </div>
+                <a
+                  href="#"
+                  className="block rounded-lg bg-blue-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-blue-700 focus-visible:ring active:bg-gray-600 md:text-base"
+                >
+                  Contact for test
+                </a>
+              </div>
+            </div>
+            {/* plan - end */}
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div className="bg-white py-6 sm:py-8 lg:py-12">
+        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+          {/* text - start */}
+          <div className="mb-10 md:mb-16">
+            <h2 className="mb-4 text-center text-4xl uppercase font-bold text-gray-800 md:mb-6 lg:text-4xl">
+              BLOG
+            </h2>
+            <p className="mx-auto max-w-screen-md text-center text-medium text-blue-500 md:text-lg">
+              This is a section of some simple filler text, also known as placeholder
+              text. It shares some characteristics of a real written text but is
+              random or otherwise generated.
+            </p>
+          </div>
+          {/* text - end */}
+          <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8">
+            {/* article - start */}
+            <a
+              href="#"
+              className="group relative flex h-48 flex-col overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-64 xl:h-96"
+            >
+              <img
+                src="https://www.phc.ox.ac.uk/images/blog/female-doctor-with-patient/responsive_image?ratio=image&scale=w760"
+                loading="lazy"
+                alt="Photo by Minh Pham"
+                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent md:via-transparent" />
+              <div className="relative mt-auto p-4">
+                <span className="block text-sm text-gray-200">July 19, 2025</span>
+                <h2 className="mb-2 text-xl font-semibold text-white transition duration-100">
+                  Good healthcare
+                </h2>
+              </div>
+            </a>
+            {/* article - end */}
+            {/* article - start */}
+            <a
+              href="#"
+              className="group relative flex h-48 flex-col overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-64 xl:h-96"
+            >
+              <img
+                src="https://www.phreesia.com/wp-content/uploads/2025/01/PHR-Blog-Image-Customization-Campaign-Op3-V1-250116.jpg"
+                loading="lazy"
+                alt="Photo by Lorenzo Herrera"
+                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent md:via-transparent" />
+              <div className="relative mt-auto p-4">
+                <span className="block text-sm text-gray-200">April 07, 2025</span>
+                <h2 className="mb-2 text-xl font-semibold text-white transition duration-100">
+                  Working with legacy stacks
+                </h2>
+
+              </div>
+            </a>
+            {/* article - end */}
+            {/* article - start */}
+            <a
+              href="#"
+              className="group relative flex h-48 flex-col overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-64 xl:h-96"
+            >
+              <img
+                src="https://www.priviahealth.com/wp-content/uploads/2021/02/SeniorsWithDoctor_498579529-1024x683.jpg"
+                loading="lazy"
+                alt="Photo by Magicle"
+                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent md:via-transparent" />
+              <div className="relative mt-auto p-4">
+                <span className="block text-sm text-gray-200">March 15, 2025</span>
+                <h2 className="mb-2 text-xl font-semibold text-white transition duration-100">
+                  10 best smartphones for devs
+                </h2>
+
+              </div>
+            </a>
+            {/* article - end */}
+            {/* article - start */}
+            <a
+              href="#"
+              className="group relative flex h-48 flex-col overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-64 xl:h-96"
+            >
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuTQEkxL5mSV3LtJgxOU7iC-izvxzHerMr5OaDABThsd-K5o1DGXADmwZ_q0iNtdmY2i4&usqp=CAU"
+                loading="lazy"
+                alt="Photo by Martin Sanchez"
+                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent md:via-transparent" />
+              <div className="relative mt-auto p-4">
+                <span className="block text-sm text-gray-200">January 27, 2025</span>
+                <h2 className="mb-2 text-xl font-semibold text-white transition duration-100">
+                  8 High performance Notebooks
+                </h2>
+
+              </div>
+            </a>
+            {/* article - end */}
+          </div>
+        </div>
+      </div>
+
+      {/*reviews*/}
+      <div className="bg-white py-6 sm:py-8 lg:py-12">
+        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">
+            Pateint Reviews
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
+            {/* review - start */}
+            <div className="flex flex-col gap-3 rounded-lg border p-4 md:p-6">
+              <div>
+                <span className="block text-sm font-bold md:text-base">
+                  John McCulling
+                </span>
+                <span className="block text-sm text-gray-500">January 28, 2025</span>
+              </div>
+              {/* stars - start */}
+              <div className="-ml-1 flex gap-0.5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              {/* stars - end */}
+              <p className="text-gray-600">
+                This is a section of some simple filler text, also known as
+                placeholder text. It shares some characteristics of a real written
+                text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </div>
+            {/* review - end */}
+            {/* review - start */}
+            <div className="flex flex-col gap-3 rounded-lg border p-4 md:p-6">
+              <div>
+                <span className="block text-sm font-bold md:text-base">
+                  Kate Berg
+                </span>
+                <span className="block text-sm text-gray-500">February 21, 2025</span>
+              </div>
+              {/* stars - start */}
+              <div className="-ml-1 flex gap-0.5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              {/* stars - end */}
+              <p className="text-gray-600">
+                This is a section of some simple filler text, also known as
+                placeholder text. It shares some characteristics of a real written
+                text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </div>
+            {/* review - end */}
+            {/* review - start */}
+            <div className="flex flex-col gap-3 rounded-lg border p-4 md:p-6">
+              <div>
+                <span className="block text-sm font-bold md:text-base">
+                  Greg Jackson
+                </span>
+                <span className="block text-sm text-gray-500">March 16, 2025</span>
+              </div>
+              {/* stars - start */}
+              <div className="-ml-1 flex gap-0.5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-yellow-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-gray-300"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-gray-300"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              {/* stars - end */}
+              <p className="text-gray-600">
+                This is a section of some simple filler text, also known as
+                placeholder text. It shares some characteristics of a real written
+                text but is random or otherwise generated. It may be used to display a
+                sample of fonts or generate text for testing.
+              </p>
+            </div>
+            {/* review - end */}
+          </div>
+        </div>
+      </div>
+      {/*reviews end*/}
+
+
+      {/* newsletter start */}
 
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -930,6 +1604,7 @@ const Home = () => {
         </div>
       </div>
       {/* newsletter - end */}
+
       {/* footer - start */}
       <div className="bg-blue-800">
         <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">

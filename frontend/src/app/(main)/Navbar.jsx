@@ -140,7 +140,7 @@ const Navbar = () => {
                     </div>
                     <Link
                         className=" text-white font-bold uppercase  text-xl  flex justify-between  uppercase   hover:text-blue-400  p-2 flex items-center text-sm text-white "
-                        href="/about"
+                        href="/browse-doctor"
                         aria-current="page"
                       >
                         <svg
@@ -158,11 +158,11 @@ const Navbar = () => {
                           <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
                           <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                         </svg>
-                         CONSLUTENT
+                         CONSLUTANT
                       </Link>
                       <Link
                         className=" text-white font-bold uppercase  text-xl  flex justify-between  uppercase   hover:text-blue-400  p-2 flex items-center text-sm text-white "
-                        href="/about"
+                        href="/contact"
                         aria-current="page"
                       >
                         <svg
@@ -180,7 +180,7 @@ const Navbar = () => {
                           <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
                           <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                         </svg>
-                         PATIENT
+                         Contact
                       </Link>
 
 
