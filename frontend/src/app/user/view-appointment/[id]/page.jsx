@@ -59,54 +59,49 @@ const viewAppointment = () => {
     <>
 
       <>
-        <div className="  bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFjPbDbbExfhBf4WqzlRSC__atI7pL5zDiqw&s')] h-screen bg-cover">
-          <div className=" max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-            {/* Grid */}
-            <h1 className='text-center font-bold  text-2xl '>USER DASHBOARD</h1>
-            <div className="md:grid md:grid-cols-2 md:items-center gap-12">
-              <div className='bg-white-300 h-[500px] w-[400px] text-center py-10  shadow-2xl  rounded-xl hover:bg-blue-200 transition duration-300 '>
-                <p>{slotData._id}</p>
-                <div className='space-y-9'>
-                  <p className='font-bold text-3xl'> Name : {appointmentData.patientName}</p>
-                  <p className='font-bold text-3xl'> Age : {appointmentData.patientAge}</p>
-                  <p className='font-bold text-3xl'> Gender : {appointmentData.patientGender}</p>
-                  <p className='font-bold text-3xl'>Description:{appointmentData.description} </p>
-                  <p className='font-bold text-3xl'></p>
-                  <Link href={'/user/view-report/' + appointmentData._id} className='bg-blue-500 py-1 px-3 text-white rounded-full  hover:bg-blue-700'>View Report</Link>
-                </div>
+        <h1 className='text-center font-bold  text-blue-800 bg-gray-100 text-4 xl py-8 uppercase '>USER DASHBOARD</h1>
+
+        <div>
+          <div className=' bg-gray-100 flex justify-end items-start '>
+            <div className='bg-gray-100 h-[500px] w-[700px] text-center py-10  '>
+              <p className='font-bold text-4xl  text-blue-800 '>ID:{appointmentData._id}</p>
+              <div className='space-y-9'>
+                <p className='font-bold text-2xl py-1'> Name : {appointmentData.patientName}</p>
+                <p className='font-bold text-2xl py-1'> Age : {appointmentData.patientAge}</p>
+                <p className='font-bold text-2xl py-1'> Gender : {appointmentData.patientGender}</p>
+                <p className='font-bold text-2xl py-1'>Description:{appointmentData.description} </p>
+                <p className='font-bold text-2xl py-1'></p>
+                <Link href={'/user/view-report/' + appointmentData._id} className='bg-blue-500 py-1 px-3 text-white rounded-full  hover:bg-blue-700'>View Report</Link>
               </div>
-              <img
-                className="rounded-xl w-full"
-                src={slotData.patientAvatar}
-
-                alt="Features Image"
-              />
-              {/* End Col */}
-              <div className="mt-5 sm:mt-10 lg:mt-0">
-                <div className="space-y-6 sm:space-y-8">
-                  {/* Title */}
-                  <div className="space-y-2 md:space-y-4">
-                    <h2 className="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200">
-
-                      {slotData._id}
-                    </h2>
-                    <p className="text-gray-500 dark:text-neutral-500">
-
-                    </p>
-                  </div>
-                  {/* End Title */}
-
-                  <p ></p>
-
-                </div>
-              </div>
-              {/* End Col */}
             </div>
-            {/* End Grid */}
+            <div className="bg-gray-100 py-2 sm:py-4 lg:py-8">
+              <div className="mx-auto max-w-screen-md px-4 md:px-8">
+                <h1 className="mb-4 text-center text-2xl font-bold text-blue-800 sm:text-3xl md:mb-6">
+                  Our competitive advantage
+                </h1>
+                <p className="mb-6 text-gray-500 sm:text-lg md:mb-8">
+                  This is a section of some simple filler text, also known as placeholder
+                  text. It shares some characteristics of a real written text but is random
+                  or otherwise generated. It may be used to display a sample of fonts or
+                  generate text for testing. Filler text is dummy text which has no meaning
+                  however looks very similar to real text. The important factor when using
+                  filler text is that the text looks realistic otherwise it will not look
+                  very good.
+
+                </p>
+                <blockquote className="mb-6 border-l-4 pl-4 italic text-gray-500 sm:text-lg md:mb-8 md:pl-6">
+                  “This is a section of some simple filler text, also known as placeholder
+                  text. It shares some characteristics of a real written text but is random
+                  or otherwise generated.”
+                </blockquote>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div className="bg-gray-900">
+
+        <div className="bg-blue-800">
           <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
               <div className="col-span-full lg:col-span-2">
@@ -120,7 +115,7 @@ const viewAppointment = () => {
                     <svg
                       width={95}
                       height={94}
-                
+
                       className="h-auto w-5 text-indigo-500"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
