@@ -105,7 +105,7 @@ router.delete('/delete/:id', (req, res) => {
 });
 
 //update
-router.put('/update/:id', (req, res) => {
+router.put('/update/:id', verifyToken,(req, res) => {
   Model.findByIdAndUpdate(req.params.id, req.body, { new: TextTrackCueList })
     .then((result) => {
       res.status(200).json(result);

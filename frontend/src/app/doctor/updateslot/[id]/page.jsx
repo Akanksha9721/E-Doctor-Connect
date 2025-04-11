@@ -12,7 +12,7 @@ const Updateslot = () => {
     const { id } = useParams();
 
     const fetchSlotData = async () => {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/slot/getbyid/` + id)
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/slot/getbyid/${id}`);
         console.log(res.data);
         setSlotData(res.data);
     }
@@ -23,7 +23,7 @@ const Updateslot = () => {
     const submitForm = (values) => {
         console.log(values);
 
-        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/slot/update/` + id, values)
+        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/slot/update/${id}` , values)
             .then((result) => {
                 toast.success('slot Updated successfully');
                 router.back();
@@ -31,18 +31,18 @@ const Updateslot = () => {
             })
             .catch((err) => {
                 console.log(err);
-                toast.error('Failed to slot design');
+                toast.error('Failed to slot update');
             })
     }
     const getSlotData = async () => {
-        const res = await axios.get(`{process.env.NEXT_PUBLIC_API_URL}/slot/getbyid/` + id);
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/slot/getbyid/${id}`);
         console.log(res.data);
         setSlotData(res.data);
-    
       }
-
-
-
+      useEffect(()=>{
+        getSlotData();
+      },[]);
+    
     return (
         <>
             <div className='bg-gray-100 py-10 '>
