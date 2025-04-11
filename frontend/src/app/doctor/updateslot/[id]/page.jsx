@@ -1,177 +1,128 @@
 'use client';
-import React from 'react';
-import { useFormik } from 'formik';
 import axios from 'axios';
-import toast from 'react-hot-toast';
+import { Formik } from 'formik'
 import Link from 'next/link';
+import { useParams, useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 
-const ISSERVER = typeof window === 'undefined';
-const Login = () => {
+const Updateslot = () => {
+    const router = useRouter();
+    const [slotData, setSlotData] = useState(null);
+    const { id } = useParams();
 
-    const loginForm = useFormik({
-        initialValues: {
-            email: '',
-            password: ''
-        },
-        onSubmit: async (values) => {
-            console.log(values);
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/authenticate`, values)
-            console.log(res.data);
-            console.log(res.status);
-            if (res.status === 200) {
-                toast.success('Logged in successfully');
-                !ISSERVER && localStorage.setItem('token', res.data.token);
-            }
+    const fetchSlotData = async () => {
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/slot/getbyid/` + id)
+        console.log(res.data);
+        setSlotData(res.data);
+    }
+    useEffect(() => {
+        fetchSlotData();
+
+    }, []);
+    const submitForm = (values) => {
+        console.log(values);
+
+        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/slot/update/` + id, values)
+            .then((result) => {
+                toast.success('slot Updated successfully');
+                router.back();
+
+            })
+            .catch((err) => {
+                console.log(err);
+                toast.error('Failed to slot design');
+            })
+    }
+    const getSlotData = async () => {
+        const res = await axios.get(`{process.env.NEXT_PUBLIC_API_URL}/slot/getbyid/` + id);
+        console.log(res.data);
+        setSlotData(res.data);
+    
+      }
 
 
-        }
-
-    })
 
     return (
         <>
-            <div className=' py-20 h-screen bg-cover ' style={{ backgroundImage: `url('https://t3.ftcdn.net/jpg/02/38/08/42/360_F_238084232_5XhGUddDZezzJxybvVXzfPp8cOKAuqRp.jpg')` }}>
-                <div className='max-w-lg mx-auto py-5'>
-                    <h1 className="block  text-center uppercase text-4xl font-bold text-gray-800 dark:text-white">
-                        Patient Login
-                    </h1>
-                    <div className=" mt-10 bg-transprent  shadow-2xl  border-green-200 rounded-2xl  dark:bg-neutral-900 dark:border-neutral-700">
+            <div className='bg-gray-100 py-10 '>
+                <div className="  max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
 
-                        <div className="p-4 sm:p-7">
-                            <div className="text-center">
-
-                                <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
-
-                                    <a
-                                        className="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                                        href="../examples/html/signup.html"
-                                    >
-
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="mt-5">
-
-
-                                {/* Form */}
-                                <form onSubmit={loginForm.handleSubmit}>
-                                    <div className="grid gap-y-4">
-                                        {/* Form Group */}
-                                        <div>
-                                            <label
-                                                htmlFor="email"
-                                                className="block text-sm mb-2 dark:text-white"
-                                            >
-                                                Email address
-                                            </label>
-                                            <div className="relative">
-                                                <input
-                                                    type="email"
-                                                    id="email"
-                                                    onChange={loginForm.handleChange}
-                                                    value={loginForm.values.email}
-                                                    className=" border py-3 px-4 block w-full border-blue-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                                    required=""
-                                                    aria-describedby="email-error"
-                                                />
-                                                <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                                    <svg
-                                                        className="size-5 text-red-500"
-                                                        width={16}
-                                                        height={16}
-                                                        fill="currentColor"
-                                                        viewBox="0 0 16 16"
-                                                        aria-hidden="true"
-                                                    >
-                                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <p className="hidden text-xs text-red-600 mt-2" id="email-error">
-                                                Please include a valid email address so we can get back to you
-                                            </p>
-                                        </div>
-                                        {/* End Form Group */}
-                                        {/* Form Group */}
-                                        <div>
-                                            <div className="flex justify-between items-center">
-                                                <label
-                                                    htmlFor="password"
-                                                    className="block text-sm mb-2 dark:text-white"
-                                                >
-                                                    Password
-                                                </label>
-
-                                            </div>
-                                            <div className="relative">
-                                                <input
-                                                    type="password"
-                                                    id="password"
-                                                    onChange={loginForm.handleChange}
-                                                    value={loginForm.values.password}
-                                                    className=" border py-3 px-4 block w-full border-blue-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                                    required=""
-                                                    aria-describedby="password-error"
-                                                />
-                                                <a
-                                                    className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                                                    href="../examples/html/recover-account.html"
-                                                >
-                                                    Forgot password?
-                                                </a>
-                                                <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
-                                                    <svg
-                                                        className="size-5 text-red-500"
-                                                        width={16}
-                                                        height={16}
-                                                        fill="currentColor"
-                                                        viewBox="0 0 16 16"
-                                                        aria-hidden="true"
-                                                    >
-                                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <p className="hidden text-xs text-red-600 mt-2" id="password-error">
-                                                8+ characters required
-                                            </p>
-                                        </div>
-                                        {/* End Form Group */}
-                                        {/* Checkbox */}
-                                        <div className="flex items-center">
-                                            <div className="flex">
-                                                <input
-                                                    id="remember-me"
-                                                    name="remember-me"
-                                                    type="checkbox"
-                                                    className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                                />
-                                            </div>
-                                            <div className="ms-3">
-                                                <label htmlFor="remember-me" className="text-sm dark:text-white">
-                                                    Remember me
-                                                </label>
-                                            </div>
-                                        </div>
-                                        {/* End Checkbox */}
-                                        <button
-                                            type="submit"
-                                            className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-orange-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                                        >
-                                            Sign in
-                                        </button>
-                                    </div>
-                                </form>
-                                {/* End Form */}
-                            </div>
+                    <div className="mx-auto max-w-2xl ">
+                        <div className="text-center mb-5 ">
+                            <h2 className=" font-bold text-xl  uppercase text-gray-800 font-bold sm:text-3xl dark:text-white ">
+                                UPDATE SLOT
+                            </h2>
                         </div>
-                    </div>
+                        {/* Card */}
 
+                        <div className="mt-5 p-4 relative z-10 bg-white border rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700 shadow-lg shadow-neutral-900/50 dark:shadow-none overflow-hidden ">
+                            {
+                                slotData !== null ? (
+                                    <Formik initialValues={slotData} onSubmit={submitForm}>
+                                        {
+
+                                            (updateForm) => {
+                                                return (
+                                                    <form onSubmit={updateForm.handleSubmit}>
+                                                        <div className="mb-4 sm:mb-8">
+                                                            <label
+                                                                htmlFor="hs-feedback-post-comment-name-1"
+                                                                className="block mb-2 text-sm font-medium dark:text-white"
+                                                            >
+                                                                Time
+                                                            </label>
+                                                            <input
+                                                                type="text"
+                                                                id="time"
+                                                                onChange={updateForm.handleChange}
+                                                                value={updateForm.values.time}
+                                                                className=" border  py-3 px-4 block w-full border-blue-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                                                placeholder="time"
+                                                            />
+                                                        </div>
+                                                        <div className="mb-4 sm:mb-8">
+                                                            <label
+                                                                htmlFor="hs-feedback-post-comment-email-1"
+                                                                className="block mb-2 text-sm font-medium dark:text-white"
+                                                            >
+                                                                Date
+                                                            </label>
+                                                            <input
+                                                                type="date"
+                                                                id="date"
+                                                                onChange={updateForm.handleChange}
+                                                                value={updateForm.values.date}
+                                                                className=" border py-3 px-4 block w-full border-blue-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                                                placeholder="date"
+                                                            />
+                                                        </div>
+                                                        <div className="mt-6 grid">
+                                                            <button
+                                                                type="submit"
+                                                                className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                                            >
+                                                                Update
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                )
+                                            }
+                                        }
+                                    </Formik>
+                                ) : (
+                                    <p className='text-center my-10 font-bold text-2xl'>Loading..</p>
+                                )
+                            }
+
+                        </div>
+                        {/* End Card */}
+                    </div>
 
                 </div>
             </div>
-            <div className="bg-blue-800 py-10">
-                <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <div className="bg-blue-800 py-10 px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-24 ">
+                <footer className="mx-auto max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 ">
                     <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
                         <div className="col-span-full lg:col-span-2">
                             {/* logo - start */}
@@ -184,14 +135,14 @@ const Login = () => {
                                     <svg
                                         width={95}
                                         height={94}
-                                        viewBox="0 0 95 94"
+
                                         className="h-auto w-5 text-indigo-500"
                                         fill="currentColor"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
                                         <path d="M96 0V47L48 94H0V47L48 0H96Z" />
                                     </svg>
-                                    Flowrift
+                                    E-DOCTOR
                                 </a>
                             </div>
                             {/* logo - end */}
@@ -270,8 +221,8 @@ const Login = () => {
                         </div>
                         {/* nav - start */}
                         <div>
-                            <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                                Products
+                            <div className="mb-4 font-bold text-xl uppercase tracking-widest text-gray-100">
+                                DOCTOR
                             </div>
                             <nav className="flex flex-col gap-4">
                                 <div>
@@ -279,7 +230,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Overview
+                                        Register
                                     </a>
                                 </div>
                                 <div>
@@ -287,7 +238,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Solutions
+                                        login
                                     </a>
                                 </div>
                                 <div>
@@ -295,7 +246,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Pricing
+                                        manageslot
                                     </Link>
                                 </div>
                                 <div>
@@ -303,7 +254,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Customers
+                                        ManageAppointment
                                     </Link>
                                 </div>
                             </nav>
@@ -311,8 +262,8 @@ const Login = () => {
                         {/* nav - end */}
                         {/* nav - start */}
                         <div>
-                            <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                                Company
+                            <div className="mb-4 font-bold  text-xl uppercase tracking-widest text-gray-100">
+                                PETIENT
                             </div>
                             <nav className="flex flex-col gap-4">
                                 <div>
@@ -320,7 +271,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        About
+                                        Rigster
                                     </a>
                                 </div>
                                 <div>
@@ -328,7 +279,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Investor Relations
+                                        login
                                     </a>
                                 </div>
                                 <div>
@@ -336,7 +287,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Jobs
+                                        Book Appointment
                                     </a>
                                 </div>
                                 <div>
@@ -344,7 +295,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Press
+                                        Book Slot
                                     </a>
                                 </div>
                                 <div>
@@ -352,7 +303,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Blog
+                                        ManageAppionment
                                     </a>
                                 </div>
                             </nav>
@@ -360,8 +311,8 @@ const Login = () => {
                         {/* nav - end */}
                         {/* nav - start */}
                         <div>
-                            <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                                Support
+                            <div className="mb-4 font-bold text-xl uppercase tracking-widest text-gray-100">
+                                REPORT
                             </div>
                             <nav className="flex flex-col gap-4">
                                 <div>
@@ -369,7 +320,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Contact
+                                        Edit Report
                                     </a>
                                 </div>
                                 <div>
@@ -377,7 +328,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Documentation
+                                        View Report
                                     </a>
                                 </div>
                                 <div>
@@ -385,7 +336,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        Chat
+                                        Download Report
                                     </a>
                                 </div>
                                 <div>
@@ -393,7 +344,7 @@ const Login = () => {
                                         href="#"
                                         className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                                     >
-                                        FAQ
+                                        upload Report
                                     </a>
                                 </div>
                             </nav>
@@ -401,8 +352,8 @@ const Login = () => {
                         {/* nav - end */}
                         {/* nav - start */}
                         <div>
-                            <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
-                                Legal
+                            <div className="mb-4 font-bold  text-xl uppercase tracking-widest text-gray-100">
+                                LEGAL
                             </div>
                             <nav className="flex flex-col gap-4">
                                 <div>
@@ -434,7 +385,7 @@ const Login = () => {
                         {/* nav - end */}
                     </div>
                     <div className="border-t border-gray-800 py-8 text-center text-sm text-gray-400">
-                        © 2021 - Present E-Doctor. All rights reserved.
+                        © 2025- Present E-Doctor. All rights reserved.
                     </div>
                 </footer>
             </div>
@@ -442,4 +393,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default Updateslot

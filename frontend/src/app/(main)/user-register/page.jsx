@@ -59,7 +59,7 @@ const UserRegister = () => {
     <>
       <div className=' py-20 h-screen bg-cover ' style={{ backgroundImage: `url('https://t3.ftcdn.net/jpg/02/89/60/96/360_F_289609649_SayyqhWUJoVj3roYfRty2sWYEipZ2n0L.jpg')` }}>
         <div className=' max-w-xl mx-auto'>
-        <h1 className="block font-bold  text-center  text-2xl font-bold text-gray-800 dark:text-white">
+        <h1 className="block font-bold  uppercase  text-center  text-4xl font-bold text-gray-800 dark:text-white">
                    Register
                 </h1>
           <div className=" mt-10 bg-transprent    rounded-xl shadow-2xl dark:bg-neutral-900 dark:border-neutral-700">
@@ -281,7 +281,7 @@ const UserRegister = () => {
 
 
       {/*footer*/}
-      <div className="bg-gray-900 py-10">
+      <div className="bg-blue-800 py-10 text-gray-100">
         <footer className="mt-10 mx-auto max-w-screen-2xl px-4 md:px-8">
           <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
             <div className="col-span-full lg:col-span-2">

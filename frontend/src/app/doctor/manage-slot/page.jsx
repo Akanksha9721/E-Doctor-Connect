@@ -108,10 +108,8 @@ const Manageslot = () => {
         {/* Comment Form */}
         <div className='bg-gray-100 py-10 '>
           <div className="  max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-            <div className="mx-auto max-w-2xl">
 
-
-
+            <div className="mx-auto max-w-2xl ">
               <div className="text-center mb-5 ">
                 <h2 className=" font-bold text-xl  uppercase text-gray-800 font-bold sm:text-3xl dark:text-white ">
                   MANAGE SLOT
@@ -166,50 +164,17 @@ const Manageslot = () => {
               </div>
               {/* End Card */}
             </div>
+           
           </div>
         </div>
         {/* End Comment Form */}
       </>
-
-      <div className=' bg-gray-100 py-10'>
+ {/*doctor*/}
+      <div className=' bg-gray-100 '>
         <div className='container mx-auto py-10'>
           <div className='  max-w-lg mx-auto py-5'>
             {/* Card */}
-            <div className="shadow-xl bg-white rounded-xl relative flex items-center overflow-hidden p-4 sm:p-6 lg:p-8 dark:bg-neutral-900 dark:border-neutral-700 shadow-neutral-900/50 dark:shadow-none overflow-hidden ">
-              <img
-                className="w-40  h-40  rounded-full object-cover absolute-top-16 left-4 border-2 border-white dark:border-neutral-800  shadow-lg shadow-neutral-900/50 dark:shadow-none "
-                src={doctorData?.avatar}
-                alt="Blog Image"
-              />
-              <div className="grow p-4 ms-32 sm:ms-48 lg:ms-56    ">
-                <div className="min-h-24 flex flex-col justify-center items-center text-center sm:text-lg lg:items-start lg:taxt-left gap-2 sm:gap-4  ">
-                  <h3 className="font-bold text-lg text-gray-800 dark:text-neutral-300">
-                    {doctorData.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                    {doctorData.qualification}
-                  </p>
-                  <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                    {doctorData. specilization}
-                  </p>
-                  <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                  {doctorData.contact}
-                  </p>
-                  <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                  {doctorData.fees}
-                  </p>
-                  <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                  {doctorData.city}
-                  </p>
-                  <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                  {doctorData.experience}
-                  </p>
-                  <p className="mt-1 text-sm text-gray-500 dark:text-neutral-500">
-                 
-                  </p>
-                </div>
-              </div>
-            </div>
+            
           </div>
 
           <h1 className='text-center text-2xl font-bold  py-10'> SLOT </h1>
@@ -230,7 +195,7 @@ const Manageslot = () => {
               {
                 slotList.map((slot) => {
                   return (
-                    <tr key={slot._id} className='border text-center border-gray-200 hover:bg-gary-100 '>
+                    <tr key={slot._id} className='border text-center border-gray-200 '>
                       <td className='p-3'>{slot._id}</td>
                       <td className='p-3'>{slot.name}</td>
                       <td className='p-3'>{slot.time}</td>
@@ -242,7 +207,7 @@ const Manageslot = () => {
                         <button onClick={() => { deleteSlot(slot._id) }} className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
                       </td>
                       <td className='p-3'>
-                        <Link href={'/updateslot/' + slot._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>Update</Link>
+                        <Link href={'/doctor/updateslot/' + slot._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>Update</Link>
                       </td>
                     </tr>
                   )
@@ -253,6 +218,7 @@ const Manageslot = () => {
           </table>
 
         </div>
+          {/*doctor*/}
       </div>
 
 
