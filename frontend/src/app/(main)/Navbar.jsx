@@ -10,8 +10,8 @@ const Navbar = () => {
         <nav className=" relative max-w-[85rem] w-full mx-auto flex items-center justify-between gap-3 py-2 px-4 sm:px-6 lg:px-8">
           <div className='text-white  flex items-center space-x-3 '>
 
-            <img src="../images/logo.png" alt="Logo" class="h-12 w-auto bg- transparent" />
-            <span className='text-2xl font-bold text-white-800'>E-Doctor</span>
+            <img src="../images/logo3.png" alt="Logo" class="h-12 w-auto bg-transparent" />
+            <span className='text-4xl font-bold text-white-800 uppercase'>E-Doctor</span>
 
           </div>
 
@@ -129,12 +129,7 @@ const Navbar = () => {
                           >
                             USER
                           </Link>
-                          <Link
-                            className=" text-xl font-medium hover:text-blue-400 text-[#F59E0B] p-2 md:px-3 flex items-center text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300"
-                            href="#"
-                          >
-                            Team Account
-                          </Link>
+                          
                         </div>
                       </div>
                     </div>
