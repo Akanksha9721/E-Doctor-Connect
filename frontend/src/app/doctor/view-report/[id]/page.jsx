@@ -53,17 +53,17 @@ const ViewReport = () => {
   return (
     <>
       {/* Card Section */}
-      <div className='h-screen w-full max-auto bg-pink-200 '>
-        <div className="max-w-4xl px-4 py-20 sm:px-6 lg:px-8 mx-auto  ">
+      <div className='h-screen w-full max-auto bg-gray-200 '>
+        <div className="max-w-3xl px-4 py-20 sm:px-6 lg:px-8 mx-auto  ">
           <div className='text-center text-white'>
-            <h2 className="font-bold text-2xl lg:text-2xl text-gray-800 dark:text-neutral-200">
+            <h2 className="font-bold text-2xl lg:text-2xl text-blue-800 dark:text-neutral-200">
               REPORT
             </h2>
 
           </div>
 
           {/* Card */}
-          <div className="   py-6 w-full rounded-xl shadow-xl p-4 sm:p-7 dark:bg-neutral-800 bg-red-200  mt-10 ">
+          <div className="   py-6 w-full rounded-xl shadow-2xl p-4 sm:p-7 dark:bg-neutral-800 bg-white mt-10 ">
             <div className="mb-8">
               
 
@@ -210,7 +210,7 @@ const ViewReport = () => {
         </div>
       </div>
       {/* End Card Section */}
-      <div className="bg-gray-900">
+      <div className="bg-blue-800">
         <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
           <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
             <div className="col-span-full lg:col-span-2">
