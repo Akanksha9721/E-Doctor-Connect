@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import PrelineScript from '@/prelinescript'
+import PrelineScript from '@/components/prelinescript'
 
 const Layout = ({ children }) => {
     return (

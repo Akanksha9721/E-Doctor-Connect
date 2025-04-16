@@ -7,6 +7,7 @@ const ReportRouter = require('./routers/reportRouter');
 const TestRouter = require('./routers/testRouter');
 const AppointmentRouter = require('./routers/appointmentRouter');
 const cors = require('cors');
+import PayRouter from './paymentrouter/payrouter.js';
 
 //initializating express
 const app = express();
@@ -24,6 +25,7 @@ app.use('/report', ReportRouter);
 app.use('/slot', SlotRouter);
 app.use('/appointment', AppointmentRouter);
 app.use('/test', TestRouter);
+app.use('/payment',PayRouter)
 
 //accept and process request
 app.get('/', (req, res) => {
