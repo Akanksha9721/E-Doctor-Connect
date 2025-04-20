@@ -20,8 +20,9 @@ router.post('/create-order', async (req, res) => {
         });
         res.status(200).json({ orderId: order.id });
     } catch (error) {
-        console.error('Error creating order:', error);
+        console.error('Error creating order:', error.response ? error.response.data : error.message);
         res.status(500).json({ error: 'Error creating order' });
     }
 });
 
+module.exports = router;

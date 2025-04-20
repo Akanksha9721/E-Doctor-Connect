@@ -1,17 +1,19 @@
 //importing express
 const express = require('express');
 const cors = require('cors');
+
 const UserRouter = require('./routers/userRouter');
 const DoctorRouter = require('./routers/doctorRouter');
 const SlotRouter = require('./routers/slotRouter');
 const ReportRouter = require('./routers/reportRouter');
 const TestRouter = require('./routers/testRouter');
 const AppointmentRouter = require('./routers/appointmentRouter');
-const PayRouter = require ('./paymentrouter/payrouter');
+const PaymentRouter = require ('./routers/paymentRouter');
 
 
 //initializating express
 const app = express();
+
 const port = 5000;
 
 //middleware
@@ -26,7 +28,7 @@ app.use('/report', ReportRouter);
 app.use('/slot', SlotRouter);
 app.use('/appointment', AppointmentRouter);
 app.use('/test', TestRouter);
-app.use('/payment',PayRouter);
+app.use('/payment',PaymentRouter);
 
 //accept and process request
 app.get('/', (req, res) => {
