@@ -8,7 +8,7 @@ const SlotRouter = require('./routers/slotRouter');
 const ReportRouter = require('./routers/reportRouter');
 const TestRouter = require('./routers/testRouter');
 const AppointmentRouter = require('./routers/appointmentRouter');
-const PaymentRouter = require ('./routers/paymentRouter');
+const PaymentRouter = require ('./routers/razorpayRouter');
 
 
 //initializating express
