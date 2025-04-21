@@ -9,6 +9,7 @@ const ReportRouter = require('./routers/reportRouter');
 const TestRouter = require('./routers/testRouter');
 const AppointmentRouter = require('./routers/appointmentRouter');
 const PaymentRouter = require ('./routers/razorpayRouter');
+const paydetailRouter =require('./routers/paydetailRouter');
 
 
 //initializating express
@@ -29,6 +30,7 @@ app.use('/slot', SlotRouter);
 app.use('/appointment', AppointmentRouter);
 app.use('/test', TestRouter);
 app.use('/payment',PaymentRouter);
+app.use('/paydetail',paydetailRouter);
 
 //accept and process request
 app.get('/', (req, res) => {

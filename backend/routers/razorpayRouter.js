@@ -5,12 +5,16 @@ const express = require("express");
 
 const razorpay = new Razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
-    key_secret: process.env.RAZORPAY_SECRET,
+    key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
+
+// console.log(process.env.RAZORPAY_KEY_ID,process.env.RAZORPAY_SECRET);
+
 
 const router = express.Router();
 
 router.post("/create-order", async (req, res) => {
+
     const { amount, currency } = req.body;
 
     try {
@@ -32,7 +36,7 @@ router.post("/verify-payment", async (req, res) => {
     const { razorpay_payment_id, razorpay_order_id, razorpay_signature } = req.body;
 
     const generated_signature = crypto
-        .createHmac("sha256", process.env.RAZORPAY_SECRET)
+        .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET)
         .update(`${razorpay_order_id}|${razorpay_payment_id}`)
         .digest("hex");
 
