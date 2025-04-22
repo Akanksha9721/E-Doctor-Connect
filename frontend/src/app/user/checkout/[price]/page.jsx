@@ -2,10 +2,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import { useParams } from 'next/navigation'
 
 export default function PaymentOnly() {
     const [isProcessing, setIsProcessing] = useState(false)
-    const [userData, setUserData] = useState({name : 'john', email: 'john@mail.com'})
+    const [userData, setUserData] = useState({ name: 'john', email: 'john@mail.com' })
+
+    const {price} = useParams();
 
     useEffect(() => {
         // Load Razorpay script
@@ -46,7 +49,7 @@ export default function PaymentOnly() {
         try {
             // Step 1: Create Razorpay order from server
             const { data: order } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/payment/create-order`, {
-                amount: 10000, // e.g. ₹100.00 in paise
+                amount: parseInt(price), // e.g. ₹100.00 in paise
                 currency: 'INR',
             })
 
@@ -69,6 +72,9 @@ export default function PaymentOnly() {
                         if (verifyResponse.data.success) {
                             toast.dismiss()
                             toast.success('Payment successful!')
+
+                            // yha pr database me values store krenge
+
                         } else {
                             toast.dismiss()
                             toast.error('Payment verification failed!')
@@ -101,14 +107,16 @@ export default function PaymentOnly() {
     }
 
     return (
-        <div className="p-4">
+        <div className="p-4 ">
             <button
-                className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50"
+                className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50 "
                 onClick={handlePayment}
                 disabled={isProcessing}
             >
                 {isProcessing ? 'Processing...' : 'Pay Now'}
             </button>
+        
+
         </div>
     )
 }

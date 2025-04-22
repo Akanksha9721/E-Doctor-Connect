@@ -939,12 +939,12 @@ const Home = () => {
                   <span className="text-4xl font-bold text-gray-800">2,000</span>
                   <span className="text-gray-500">per test</span>
                 </div>
-                <a
-                  href="#"
-                  className="block rounded-lg bg-indigo-700 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:text-gray-700 md:text-base"
+                <Link
+                  href={'/user/checkout/2000'}
+                  className="block rounded-lg bg-blue-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-blue-700 focus-visible:ring active:bg-gray-600 md:text-base"
                 >
                   Join for test
-                </a>
+                </Link>
               </div>
             </div>
             {/* plan - end */}
@@ -1063,12 +1063,12 @@ const Home = () => {
                   <span className="text-4xl font-bold text-gray-800">1,000</span>
                   <span className="text-gray-500">per test</span>
                 </div>
-                <a
-                  href="#"
+                <Link
+                  href={`/user/checkout/${1000}`}
                   className="block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
                 >
                   Continue with for test
-                </a>
+                </Link>
               </div>
             </div>
             {/* plan - end */}
@@ -1186,12 +1186,12 @@ const Home = () => {
                   <span className="text-4xl font-bold text-gray-800">15,000</span>
                   <span className="text-gray-500">per pateint</span>
                 </div>
-                <a
-                  href="#"
+                <Link
+                  href="/user/checkout/5000"
                   className="block rounded-lg bg-blue-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-blue-700 focus-visible:ring active:bg-gray-600 md:text-base"
                 >
                   Contact for test
-                </a>
+                </Link>
               </div>
             </div>
             {/* plan - end */}
