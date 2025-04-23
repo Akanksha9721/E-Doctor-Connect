@@ -8,7 +8,7 @@ const Navbar = () => {
       <header className=" bg-blue-800 flex flex-wrap  md:justify-start md:flex-nowrap z-50 w-full  border-b border-gray-200 dark:bg-neutral-800 dark:border-neutral-700">
         <nav className="relative max-w-[85rem] w-full mx-auto flex items-center justify-between gap-3 py-2 px-4 sm:px-6 lg:px-8">
         <div className='text-white  flex items-center space-x-3 '>
-            <img src="..//images/logo.png" alt="Logo" class="h-12 w-auto bg- transparent" />
+            <img src="/images/logo3.png" alt="Logo" class="h-12 w-auto bg- transparent" />
             <span className='text-2xl font-bold text-white-800'>E-Doctor</span>
           </div>
          

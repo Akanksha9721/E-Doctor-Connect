@@ -70,11 +70,18 @@ export default function PaymentOnly() {
                         })
 
                         if (verifyResponse.data.success) {
+                            // Store payment details in database
+                            await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/paydetail/add`, {
+                                user: userData._id,
+                                paymentDetail: response.razorpay_payment_id
+                            }, {
+                                headers: {
+                                    'x-auth-token': localStorage.getItem('user-token')
+                                }
+                            });
+
                             toast.dismiss()
                             toast.success('Payment successful!')
-
-                            // yha pr database me values store krenge
-
                         } else {
                             toast.dismiss()
                             toast.error('Payment verification failed!')

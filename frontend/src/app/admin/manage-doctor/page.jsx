@@ -50,7 +50,7 @@ const ManageDoctor = () => {
    <>
        <div className=''>
         <div className='container mx-auto py-10'>
-          <h1 className='text-center text-2xl font-bold'>Manage Doctors</h1>
+          <h1 className='text-center text-4xl font-bold py-10 text-blue-800' >Manage Doctors</h1>
           <table className='w-full'>
             <thead>
               <tr className='bg-gray-800 text-white font-bold'>

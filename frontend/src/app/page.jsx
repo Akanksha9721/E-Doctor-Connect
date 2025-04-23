@@ -127,14 +127,12 @@ const Home = () => {
       </header>
 
 
-
-
       <div className="max-auto w-full h-full ">
         <div className="w-full  max-auto w-full">
           {/*slider */}
           <section className="  min-h-screen    flex flex-col justify-between  lg:flex-row">
             {/* content - start */}
-            <div className="h-70    overflow-hidden bg-cover  lg:h-auto ">
+            <div className="h-70 overflow-hidden bg-cover  lg:h-auto ">
               <img
                 src=" https://media.istockphoto.com/id/857652610/photo/two-doctors-working-together.jpg?s=170667a&w=0&k=20&c=jk9gERTF7morzPCZhZ1QCIrTqZgXzUf40cYs1lzHLVs="
                 loading="lazy"
@@ -143,14 +141,14 @@ const Home = () => {
               />
               <div class="absolute    inset-0 flex flex-col items-center justify-center text-center bg-white bg-opacity-50 p-10">
                 <h3 class="text-blue-400 text-2xl font-semibold tracking-widest uppercase"></h3>
-                <h1 class="text-green-400 text-7xl font-extrabold leading-tight mt-4">E-Doctors </h1>
+                <h1 class="text-indigo-400 text-7xl font-extrabold leading-tight mt-4">E-Doctors </h1>
                 <p class="text-gray-700 text-2xl max-w-2xl font-medium mt-6 leading-relaxed tracking-wide">
                   This is a section of some simple filler text, also known as placeholder text.
                   It shares some characteristics of a real written text but is random.
                 </p>
                 <div class="mt-8 space-x-5">
-                  <button class="bg-green-300 text-white text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider  hover:bg-green-500">Start now</button>
-                  <a href="/browse-doctor" className="bg-green-300 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-green-500">CONSLUTANT</a>
+                  <a href="/doctor-register" class="bg-indigo-500 text-white text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider  hover:bg-indigo-800">Start now</a>
+                  <a href="/browse-doctor" className="bg-indigo-500 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-indigo-800">CONSLUTANT</a>
                 </div>
               </div>
             </div>
@@ -478,6 +476,7 @@ const Home = () => {
                 {/* social - end */}
               </div>
             </div>
+            
             {/* person - end */}
             {/* person - start */}
             <div className=" profile-card bg-gray-100   hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
@@ -773,7 +772,7 @@ const Home = () => {
           </div>
           <div className="mt-10 space-x-10 flex justify-center items-center ">
 
-            <a href="/browse-doctor" className="bg-green-300 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-green-500">CONSLUTANT</a>
+            <a href="/browse-doctor" className="bg-indigo-500 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-indigo-800">CONSLUTANT</a>
 
           </div>
         </div>
@@ -797,8 +796,6 @@ const Home = () => {
                 </div>
               </div>
 
-
-
               <div className="faq-item bg-green-50 rounded-md p-4 cursor-pointer transition duration-200">
                 <div className="flex items-center justify-between">
                   <h3 className="font-medium text-gray-800">Who can access e-Doctor services?</h3>
@@ -819,7 +816,6 @@ const Home = () => {
                 </div>
               </div>
 
-
               <div className="faq-item bg-green-50 rounded-md p-4 cursor-pointer transition duration-200">
                 <div className="flex items-center justify-between">
                   <h3 className="font-medium text-gray-800">How long till a Doctor responds</h3>
@@ -834,7 +830,7 @@ const Home = () => {
         </div>
         <div class="mt-8 space-x-5 flex justify-center items-center">
 
-          <a href="/contact" className="bg-green-300 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-green-500">CONTCAT</a>
+          <a href="/contact" className="bg-indigo-500 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-indigo-800">CONTCAT</a>
         </div>
       </div>
 
@@ -1065,7 +1061,7 @@ const Home = () => {
                 </div>
                 <Link
                   href={`/user/checkout/${1000}`}
-                  className="block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
+                  className="block rounded-lg bg-blue-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-blue-700 focus-visible:ring active:bg-gray-600 md:text-base"
                 >
                   Continue with for test
                 </Link>

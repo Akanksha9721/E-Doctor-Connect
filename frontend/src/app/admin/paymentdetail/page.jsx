@@ -5,7 +5,8 @@ const page = () => {
         <>
 
             <div className=' container mx-auto py-10'>
-                <table className='w-full'>
+                <h1 className='font-bold text-4xl text-center py-10 text-blue-800'>ADMIN PANNEL</h1>
+                <table className='w-full '>
                     <thead>
                         <tr className='bg-gray-800 text-white font-bold '>
                             <th className='p-3'>ID</th>
