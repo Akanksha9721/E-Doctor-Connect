@@ -35,7 +35,7 @@ const ManageDoctor = () => {
 
 
     const deleteDoctor = (id) => {
-        axios.delete('http://localhost:5000/doctor/delete/' + id)
+        axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/doctor/delete/` + id)
           .then((result) => {
             toast.success('Doctor Deleted Successfully');
             fetchDoctor();
