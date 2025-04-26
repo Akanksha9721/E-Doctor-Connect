@@ -5,7 +5,8 @@ const jwt = require('jsonwebtoken');
 const verifyToken = require('../middleware/verifytoken');
 require('dotenv').config();
 
-router.post('/add', (req, res) => {
+router.post('/add', verifyToken,(req, res) => {
+  req.body.user = req.user._id;
   console.log(req.body);
   new Model(req.body).save()
     .then((result) => {
@@ -13,12 +14,7 @@ router.post('/add', (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      if(err.code === 11000){
-        res.status(500).json({message:'Email Aleady Registered'});
-
-      }else{
-        res.status(500).json({message:'internal server Error'});
-      }
+      
     })
 
 });

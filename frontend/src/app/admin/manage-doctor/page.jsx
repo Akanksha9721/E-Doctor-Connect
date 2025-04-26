@@ -48,12 +48,12 @@ const ManageDoctor = () => {
       }
   return (
    <>
-       <div className=''>
+       <div className=' bg-green-100 h-auto'>
         <div className='container mx-auto py-10'>
           <h1 className='text-center text-4xl font-bold py-10 text-blue-800' >Manage Doctors</h1>
           <table className='w-full'>
             <thead>
-              <tr className='bg-gray-800 text-white font-bold'>
+              <tr className='bg-gray-800 text-white font-bold '>
                 <th className='p-3' >ID</th>
                 
                 <th className='p-3' >Name</th>
@@ -73,7 +73,7 @@ const ManageDoctor = () => {
               {
                 doctorList.map((doctor) => {
                   return (
-                    <tr key={doctor._id} className='border text-center  font-bold '>
+                    <tr key={doctor._id} className='border  text-center  font-bold '>
                       <td className='p-3'>{doctor._id}</td>
                       
                       <td className='p-3'>{doctor.name}</td>

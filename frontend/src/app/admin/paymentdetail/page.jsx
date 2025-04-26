@@ -5,11 +5,11 @@ import React, { useEffect, useState } from 'react'
 const ISSERVER = typeof window === 'undefined';
 const paymentDetail = () => {
 
-    const [paymentList, setPaymentList] = useState([]);
+    const [userList, setUserList] = useState([]);
     const token = !ISSERVER && localStorage.getItem('token');
 
-    const fetchPayment = () => {
-        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/payment/getall`, {
+    const fetchUser = () => {
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/paydetail/getall`, {
             headers: {
                 'x-auth-token': token
             }
@@ -17,7 +17,7 @@ const paymentDetail = () => {
         })
             .then((result) => {
                 console.table(result.data);
-                setPaymentList(result.data);
+                setUserList(result.data);
 
             })
             .catch((err) => {
@@ -26,7 +26,7 @@ const paymentDetail = () => {
 
     }
     useEffect(() => {
-        fetchPayment();
+        fetchUser();
 
     }, [])
 
@@ -43,32 +43,20 @@ const paymentDetail = () => {
                             <tr className='bg-gray-800 text-white font-bold '>
                                 <th className='p-3'>ID</th>
                                 <th className='p-3'>PAYMENT DATE</th>
-                                <th className='p-3'>NAME</th>
                                 <th className='p-3'>AMOUNT</th>
-                                <th className='p-3'>CURRENCTY</th>
-                                <th className='p-3'>ACTION</th>
-                                <th className='p-3'>ACTION</th>
                                 <th className='p-3'>ACTION</th>
                             </tr>
                         </thead>
                         <tbody>
                             {
-                                paymentList.map((payment) => {
+                                userList.map((user) => {
                                     return (
-                                        <tr key={payment._id} className='border text-center  font-bold '>
-                                            <td className='p-3'>{payment._id}</td>
-
-                                            <td className='p-3'>{payment.paymentDetail}</td>
-
-                                            <td className='p-3'>{payment.contact}</td>
-
-                                            <td className='p-3'>{new Date(payment.createdAt).toDateString()}</td>
+                                        <tr key={user._id} className='border text-center  font-bold '>
+                                            <td className='p-3'>{user._id}</td>
+                                            <td className='p-3'>{user.paymentDetail}</td>
+                                            <td className='p-3'>{user.contact}</td>
+                                            <td className='p-3'>{new Date(user.createdAt).toDateString()}</td>
                                             <td className='p-3' colSpan={2}></td>
-
-
-
-
-
                                         </tr>
                                     )
                                 })
