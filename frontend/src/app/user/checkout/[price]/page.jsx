@@ -86,8 +86,8 @@ export default function PaymentOnly() {
 
                             toast.dismiss()
                             toast.success('Payment successful!')
-                            router.push('/home')
-                        } else {
+router.push('/home')
+                       } else {
                             toast.dismiss()
                             toast.error('Payment verification failed!')
                         }

@@ -48,22 +48,25 @@ const ManageDoctor = () => {
       }
   return (
    <>
-       <div className=' bg-green-100 h-auto'>
+       <div className=' bg-green-50 h-auto h-screen'>
         <div className='container mx-auto py-10'>
           <h1 className='text-center text-4xl font-bold py-10 text-blue-800' >Manage Doctors</h1>
+          <div className='shadow-2xl rounded-lg overflow-hidden '>
           <table className='w-full'>
             <thead>
-              <tr className='bg-gray-800 text-white font-bold '>
-                <th className='p-3' >ID</th>
+              <tr className='bg-gray-600 text-white font-bold border-2 border-gray-200 rounded-t-lg '>
+                <th className='p-3 text-2xl'colSpan={1} >ID</th>
+                <th className='p-3 text-2xl' colSpan={1}>NAME</th>
+                <th className='p-3 text-2xl'colSpan={1} >QUALIFICATION</th>
+                <th className='p-3 text-2xl'colSpan={1} >CONTACT</th>
+                <th className='p-3 text-2xl'colSpan={1} >FEES</th>
+                <th className='p-3 text-2xl'colSpan={1} >CITY</th>
+                <th className='p-3 text-2xl' colSpan={1}>SPECILIZATION</th>
+                <th className='p-3 text-2xl' colSpan={1}>DATE</th>
+                <th className='p-3 text-2xl' colSpan={1}>ACTION</th>
                 
-                <th className='p-3' >Name</th>
-                <th className='p-3' >Qualification</th>
-                <th className='p-3' >contact</th>
-                <th className='p-3' colSpan={2}>fees</th>
-                <th className='p-3' colSpan={2}>city</th>
-                <th className='p-3' colSpan={2}>specilition</th>
-                <th className='p-3' colSpan={2}>Action</th>
-                <th className='p-3' colSpan={2}></th>
+               
+                
                 
 
               </tr>
@@ -73,17 +76,16 @@ const ManageDoctor = () => {
               {
                 doctorList.map((doctor) => {
                   return (
-                    <tr key={doctor._id} className='border  text-center  font-bold '>
-                      <td className='p-3'>{doctor._id}</td>
+                    <tr key={doctor._id} className='border  border-2 border-gray-200 text-center  font-bold  bg-pink-100 hover:bg-blue-200'>
+                      <td className='p-3 text-xl' >{doctor._id}</td>
+                      <td className='p-3 text-xl' >{doctor.name}</td>
+                      <td className='p-3 text-xl' >{doctor.qualification}</td>
+                      <td className='p-3 text-xl' >{doctor.contact}</td>
+                      <td className='p-3 text-xl' >{doctor.fees}</td>
+                      <td className='p-3 text-xl' >{doctor.city}</td>
+                      <td className='p-3 text-xl' >{doctor.specilization}</td>
+                      <td className='p-3 text-xl' >{new Date(doctor.createdAt).toDateString()}</td>
                       
-                      <td className='p-3'>{doctor.name}</td>
-                      <td className='p-3'>{doctor.qualification}</td>
-                      <td className='p-3'>{doctor.contact}</td>
-                      <td className='p-3'>{doctor.fees}</td>
-                      <td className='p-3'>{doctor.city}</td>
-                      <td className='p-3'>{doctor.specilition}</td>
-                      <td className='p-3'>{new Date(doctor.createdAt).toDateString()}</td>
-                      <td className='p-3' colSpan={2}></td>
 
 
                      
@@ -99,7 +101,7 @@ const ManageDoctor = () => {
             </tbody>
 
           </table>
-
+          </div>
 
 
         </div>
