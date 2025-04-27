@@ -4,7 +4,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useParams, useRouter } from 'next/navigation'
 
- 
+
 
 
 export default function PaymentOnly() {
@@ -12,7 +12,7 @@ export default function PaymentOnly() {
     const [isProcessing, setIsProcessing] = useState(false)
     const [userData, setUserData] = useState({ name: 'john', email: 'john@mail.com' })
 
-    const {price} = useParams();
+    const { price } = useParams();
 
     useEffect(() => {
         // Load Razorpay script
@@ -53,7 +53,7 @@ export default function PaymentOnly() {
         try {
             // Step 1: Create Razorpay order from server
             const { data: order } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/payment/create-order`, {
-                amount: parseInt(price)*100, // e.g. ₹100.00 in paise
+                amount: parseInt(price) * 100, // e.g. ₹100.00 in paise
                 currency: 'INR',
             })
 
@@ -86,8 +86,8 @@ export default function PaymentOnly() {
 
                             toast.dismiss()
                             toast.success('Payment successful!')
-router.push('/home')
-                       } else {
+                            
+                        } else {
                             toast.dismiss()
                             toast.error('Payment verification failed!')
                         }
@@ -127,7 +127,7 @@ router.push('/home')
             >
                 {isProcessing ? 'Processing...' : 'Pay Now'}
             </button>
-        
+
 
         </div>
     )

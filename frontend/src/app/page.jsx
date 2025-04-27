@@ -933,7 +933,7 @@ const Home = () => {
                   <span className="text-gray-500">per test</span>
                 </div>
                 <Link
-                  href={'/user/checkout/2000'}
+                  href={`/user/checkout/${2000}`}
                   className="block rounded-lg bg-blue-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-blue-700 focus-visible:ring active:bg-gray-600 md:text-base"
                 >
                   Join for test
@@ -1180,7 +1180,7 @@ const Home = () => {
                   <span className="text-gray-500">per pateint</span>
                 </div>
                 <Link
-                  href="/user/checkout/5000"
+                  href={`/user/checkout/${15000}`}
                   className="block rounded-lg bg-blue-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-blue-700 focus-visible:ring active:bg-gray-600 md:text-base"
                 >
                   Contact for test
