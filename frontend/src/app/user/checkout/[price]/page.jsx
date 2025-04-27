@@ -32,10 +32,13 @@ export default function PaymentOnly() {
         // Fetch user details on mount
         axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getdetails`, {
             headers: {
-                'x-auth-token': localStorage.getItem('user-token'),
+                'x-auth-token': localStorage.getItem('token'),
             },
         })
-            .then((response) => setUserData(response.data))
+            .then((response) => {
+                console.log(response.data);
+                setUserData(response.data)
+            })
             .catch((error) => console.error('Error fetching user details:', error))
     }, [])
 
@@ -119,7 +122,7 @@ export default function PaymentOnly() {
     }
 
     return (
-        <div className="p-4 ">
+        <div className="pt-16 ">
             <button
                 className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50 "
                 onClick={handlePayment}

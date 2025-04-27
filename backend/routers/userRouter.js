@@ -68,7 +68,21 @@ router.get('/getuser', verifyToken, (req, res) => {
       res.status(500).json(err);
     });
 });
+router.get('/getdetails', verifyToken, (req, res) => {
+  const { _id } = req.user;
+  console.log(_id);
+  
+  Model.findById(_id)
+    .then((result) => {
+      console.log(result);
+      
+      res.status(200).json(result);
 
+    }).catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 //delete
 router.delete('/delete/:id', (req, res) => {
   Model.findByIdAndDelete(req.params.id)

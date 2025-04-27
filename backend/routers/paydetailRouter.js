@@ -65,6 +65,8 @@ router.get('/getuser', verifyToken, (req, res) => {
     });
 });
 
+
+
 //delete
 router.delete('/delete/:id', (req, res) => {
   Model.findByIdAndDelete(req.params.id)

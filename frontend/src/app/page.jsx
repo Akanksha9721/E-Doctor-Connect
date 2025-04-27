@@ -2,9 +2,10 @@
 import Link from 'next/link';
 import React from 'react'
 import { useState } from 'react'
-import { useEffect } from 'react';
 
-const Home = () => {
+
+const Page = () => {
+
 
   return (
     <>
@@ -155,681 +156,607 @@ const Home = () => {
       </div>
 
 
-      <div className='bg-white py-10' >
-        <div class="container mx-auto px-4 py-12 max-w-screen">
-          <div class="text-center mb-16">
-            <p class="text-blue-600 mb-2">Australian digital healthcare services</p>
-            <h1 class="text-5xl font-bold text-gray-900 mb-6">Why e-Doctor?</h1>
-            <p class="text-gray-600 max-w-3xl mx-auto">
+      {/*why doctor*/}
+      <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide mb-4">
+              Australian digital healthcare services
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Why choose <span className="text-blue-600">e-Doctor</span>?
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
               Our doctors are all Australian trained GPs who hold specialist general
               practice qualifications accredited by the Australian Health Practitioner
               Regulation Agency (AHPRA) and can provide quality health care
             </p>
           </div>
 
-
-          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 text-center gap-10">
-
-            <div class="bg-white p-6 rounded-lg shadow-2xl transition duration-300 ease-in-out hover:bg-teal-100 cursor-pointer">
-              <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <div className="bg-blue-500 text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3 hover:rotate-6 transition-transform">
+                <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold mb-3">Easy to Use</h3>
-              <p class="text-gray-600">Australia wide with 24 hours online access.24 hours online access.24 hours online access. </p>
-            </div>
-
-
-            <div class="bg-white p-6 rounded-lg shadow-2xl transition duration-300 ease-in-out hover:bg-teal-100 cursor-pointer">
-              <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold mb-3">Fast and Efficient</h3>
-              <p class="text-gray-600">Skip the waiting room and consult with your doctor at home or anywhere convenient.</p>
-            </div>
-
-
-            <div class="bg-white p-6 rounded-lg shadow-2xl transition duration-300 ease-in-out hover:bg-teal-100 cursor-pointer">
-              <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold mb-3">FRACGP Qualified GPs</h3>
-              <p class="text-gray-600">Our doctors are all Australian trained GPs with Specialist General Practice qualifications so you can be guaranteed quality health care.</p>
-            </div>
-
-
-            <div class="bg-white p-6 rounded-lg shadow-2xl transition duration-300 ease-in-out hover:bg-teal-100 cursor-pointer">
-              <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold mb-3">Patient-Centered Care</h3>
-              <p class="text-gray-600">We understand that everyone is unique and can offer best practice healthcare tailored to the individual</p>
-            </div>
-
-
-            <div class="bg-white p-6 rounded-lg shadow-2xl transition duration-300 ease-in-out hover:bg-teal-100 cursor-pointer">
-              <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold mb-3">Confidential & Secure</h3>
-              <p class="text-gray-600">Your personal and medical information is our top priority and will be safeguarded with utmost security and confidentiality</p>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-      <div className="bg-white  py-10">
-        <div className="mx-auto max-w-screen px-4 md:px-5 md:px-10">
-
-          <div className="grid gap-8 md:grid-cols-2 lg:gap-10 px-10">
-            <div className='profile-card bg-gray-100  hover:bg-indigo-100  rounded-lg shadow-md    '>
-
-              <div className="overflow-hidden rounded-lg shadow-lg ">
-                <img
-                  src="https://media.istockphoto.com/id/1196710776/photo/doctors-working-in-team.jpg?s=170667a&w=0&k=20&c=BwMBoAO7L-PPYNuxaHR0CD_1oohe8Ilh8RnZvYCnJ74="
-                  loading="lazy"
-                  alt="Photo by Martin Sanchez"
-                  className="h-full w-full object-cover object-center  transition-transform duration-300 hover:scale-105 "
-                />
-              </div>
-            </div>
-            <div className='md:pt-8 text-center'>
-
-              <h2 className='font-bold text-center uppercase  text-4xl'>
-                About us
-              </h2>
-              <p className="mb-6 py-5 text-gray-500 sm:text-lg md:mb-8 font-medium ">
-                This is a section of some simple filler text, also known as
-                placeholder text. It shares some characteristics of a real written
-                text but is random or otherwise generated. It may be used to display a
-                sample of fonts or generate text for testing. Filler text is dummy
-                text which has no meaning however looks very similar to real text.
-                Filler text is dummy text which has no meaning however looks very
-                similar to real text.text which has no meaning however look
-                sample of fonts or generate text for testing. Filler text is dummy
-                text which has no meaning however looks very similar to real text.
-                Filler text is dummy text which has no meaning however looks very
-                similar to real text.text which has no meaning however look
+              <h3 className="text-xl font-bold text-gray-900 text-center mb-4">
+                Easy to Use
+              </h3>
+              <p className="text-gray-600 text-center leading-relaxed">
+                24/7 online access Australia-wide. Connect with healthcare professionals at your convenience.
               </p>
             </div>
 
-          </div>
+            {/* Feature 2 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <div className="bg-blue-500 text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform -rotate-3 hover:-rotate-6 transition-transform">
+                <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 text-center mb-4">
+                Fast & Efficient
+              </h3>
+              <p className="text-gray-600 text-center leading-relaxed">
+                Skip the waiting room and consult with your doctor from home or anywhere convenient.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <div className="bg-blue-500 text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3 hover:rotate-6 transition-transform">
+                <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 text-center mb-4">
+                Easy to Use
+              </h3>
+              <p className="text-gray-600 text-center leading-relaxed">
+                24/7 online access Australia-wide. Connect with healthcare professionals at your convenience.
+              </p>
+            </div>
 
+            {/* Feature 2 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <div className="bg-blue-500 text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform -rotate-3 hover:-rotate-6 transition-transform">
+                <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 text-center mb-4">
+                Fast & Efficient
+              </h3>
+              <p className="text-gray-600 text-center leading-relaxed">
+                Skip the waiting room and consult with your doctor from home or anywhere convenient.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <div className="bg-blue-500 text-white w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3 hover:rotate-6 transition-transform">
+                <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 text-center mb-4">
+                Easy to Use
+              </h3>
+              <p className="text-gray-600 text-center leading-relaxed">
+                24/7 online access Australia-wide. Connect with healthcare professionals at your convenience.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+
+
+            {/* Remaining features follow the same pattern... */}
+          </div>
         </div>
       </div>
 
 
+      {/*about*/}
 
 
+      <div className="bg-white py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center lg:gap-16">
+            {/* Image Container */}
+            <div className="relative overflow-hidden rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-indigo-100 opacity-50"></div>
 
-      <div className="bg-white py-6 sm:py-8 lg:py-12">
-        <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-          {/* text - start */}
-          <div className="mb-10 md:mb-16">
-            <h2 className="mb-4 text-center text-4xl font-bold text-gray-800 md:mb-6 lg:text-6xl">
+              {/* Image Wrapper */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <img
+                  src=" https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZG9jdG9yfGVufDB8fDB8fHww"
+                  alt="Medical team collaborating"
+                  className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                />
+                {/* Overlay on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+              </div>
+            </div>
+
+            {/* Content Container */}
+            <div className="flex flex-col space-y-6 px-4 sm:px-6 md:px-0">
+              <div className="text-center md:text-left">
+                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+                  About Us
+                </h2>
+                <div className="mt-4 h-1 w-20 bg-blue-600 mx-auto md:mx-0"></div>
+              </div>
+
+              <div className="prose prose-lg text-gray-600 sm:text-justify">
+                <p className="leading-relaxed">
+                  This is a section of some simple filler text, also known as
+                  placeholder text. It shares some characteristics of a real written
+                  text but is random or otherwise generated. It may be used to display a
+                  sample of fonts or generate text for testing.
+                </p>
+                <p className="mt-4 leading-relaxed">
+                  Filler text is dummy text which has no meaning however looks very
+                  similar to real text. Text which has no meaning however looks
+                  sample of fonts or generate text for testing. Filler text is dummy
+                  text which has no meaning however looks very similar to real text.
+                </p>
+              </div>
+
+              {/* Call to Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-6 text-center md:text-left">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-base font-medium text-white transition-all hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                >
+                  Contact Us
+                </a>
+                <a
+                  href="/learn-more"
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-blue-600 px-6 py-3 text-base font-medium text-blue-600 transition-all hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      {/*meet*/}
+
+      <div className="bg-white py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
               Meet our Team
             </h2>
-            <p className="mx-auto font-medium max-w-screen-md text-center text-green-500 md:text-lg">
-              This is a section of some simple filler text, also known as
-              placeholder text. It shares some characteristics of a real written
-              text but is random or otherwise generated.
+            <div className="mt-4 h-1 w-24 bg-indigo-600 mx-auto"></div>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Our dedicated team of healthcare professionals committed to providing you with the best medical care and service.
             </p>
           </div>
-          {/* text - end */}
-          <div className=" grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-8 ">
-            {/* person - start */}
 
-
-
-            <div className=" profile-card bg-gray-100  hover:bg-indigo-100  p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
-              <div className="  mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+          {/* Team Grid */}
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {/* Team Member Card - Start */}
+            <div className="group relative">
+              {/* Image Container */}
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2N1kH-CMSZYlRZ2qTyhd00TL-Sl8vLgxc3w&s"
-                  loading="lazy"
-                  alt="Photo by Radu Florin"
-                  className="h-full w-full object-cover object-center w-screen"
+                  src=" data:image/jpeg;base64,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"
+                  alt="Team member"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                 />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
-              <div>
-                <div className=" hover:text-indigo-800 text-indigo-500  text-center font-bold 0 md:text-lg">
+
+              {/* Content */}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
                   Dr. John McCulling
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">Founder & Chief Medical Officer</p>
+
+                {/* Social Links */}
+                <div className="mt-4 flex gap-4">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </a>
                 </div>
-                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
-                  Founder
-                </p>
-                {/* social - start */}
-                <div className="flex justify-center">
-                  <div className="flex gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                {/* social - end */}
+              </div>
+            </div>
+            {/* Team Member Card - End */}
+            <div className="group relative">
+              {/* Image Container */}
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqBZnOC066fQgcEQDtaaPqN2eQLOyIdTS0HA&s"
+                  alt="Team member"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
 
-            </div>
+              {/* Content */}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  Dr. John McCulling
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">Founder & Chief Medical Officer</p>
 
+                {/* Social Links */}
+                <div className="mt-4 flex gap-4">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="group relative">
+              {/* Image Container */}
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA3EjYMPdwCef2hjyfv5PP1b6KfRXk9lyJCQ&s"
+                  alt="Team member"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              </div>
 
+              {/* Content */}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  Dr. John McCulling
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">Founder & Chief Medical Officer</p>
 
-            {/* person - end */}
-            {/* person - start */}
-            <div className="profile-card bg-gray-100  hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
-              <div className=" mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Dn0oLz6MDWnNS6Tkf6AT-zQNdMQ9YF-Iqw&s "
-                  loading="lazy"
-                  alt="Photo by christian ferrer"
-                  className="h-full w-full object-cover object-center"
-                />
-              </div>
-              <div>
-                <div className=" hover:text-indigo-800 text-center font-bold text-indigo-500 md:text-lg">
-                  Kate Berg
+                {/* Social Links */}
+                <div className="mt-4 flex gap-4">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </a>
                 </div>
-                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
-                  CFO
-                </p>
-                {/* social - start */}
-                <div className="flex justify-center">
-                  <div className="flex gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                {/* social - end */}
               </div>
             </div>
-            {/* person - end */}
-            {/* person - start */}
-            <div className=" profile-card bg-gray-100  hover:bg-indigo-100  p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
-              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <div className="group relative">
+              {/* Image Container */}
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReerJg361TuZegMwMdpOKrpsWvnvuI7vuEzQ&s "
-                  loading="lazy"
-                  alt="Photo by Ayo Ogunseinde"
-                  className="h-full w-full object-cover object-center"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMOcS9pfpH1CpTgbplbL6i7xGU1OGsSFboJg&s"
+                  alt="Team member"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                 />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
-              <div>
-                <div className=" hover:text-indigo-800 text-center font-bold text-indigo-500 md:text-lg">
-                  Greg Jackson
-                </div>
-                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
-                  CTO
-                </p>
-                {/* social - start */}
-                <div className="flex justify-center">
-                  <div className="flex gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                {/* social - end */}
-              </div>
-            </div>
 
-            {/* person - end */}
-            {/* person - start */}
-            <div className=" profile-card bg-gray-100   hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
-              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_-Gkh2Gfmhr3QmQxGlrPiRvO5aSZ5CK0wg&s"
-                  loading="lazy"
-                  alt="Photo by Midas Hofstra"
-                  className="h-full w-full object-cover object-center"
-                />
-              </div>
-              <div>
-                <div className=" hover:text-indigo-800 text-indigo-500 text-center font-bold  md:text-lg">
-                  Robert Greyson
+              {/* Content */}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  Dr. John McCulling
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">Founder & Chief Medical Officer</p>
+
+                {/* Social Links */}
+                <div className="mt-4 flex gap-4">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </a>
                 </div>
-                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
-                  Creative Director
-                </p>
-                {/* social - start */}
-                <div className="flex justify-center">
-                  <div className="flex gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                {/* social - end */}
               </div>
             </div>
-            {/* person - end */}
-            {/* person - start */}
-            <div className=" profile-card bg-gray-100   hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
-              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <div className="group relative">
+              {/* Image Container */}
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSjhNErdY0bBlN28KirqjUYhik4SlORWm_XA&s "
-                  loading="lazy"
-                  alt="Photo by Elizeu Dias"
-                  className="h-full w-full object-cover object-center"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHrkWg3oqXgeyjCxAnM5g4d2CYljpLFlQAVuvCek6Wub_R92tIbTj6UvtaZ9vm5vWFP_U&usqp=CAU"
+                  alt="Team member"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                 />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
-              <div>
-                <div className="  hover:text-indigo-800 text-indigo-500 text-center font-bold  md:text-lg">
-                  John Roberts
+
+              {/* Content */}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  Dr. John McCulling
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">Founder & Chief Medical Officer</p>
+
+                {/* Social Links */}
+                <div className="mt-4 flex gap-4">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </a>
                 </div>
-                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
-                  Investor Relations
-                </p>
-                {/* social - start */}
-                <div className="flex justify-center">
-                  <div className="flex gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                {/* social - end */}
               </div>
             </div>
-            {/* person - end */}
-            {/* person - start */}
-            <div className=" profile-card bg-gray-100  hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
-              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <div className="group relative">
+              {/* Image Container */}
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl">
                 <img
-                  src=" data:image/jpeg;base64,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 "
-                  loading="lazy"
-                  alt="Photo by Matheus Ferrero"
-                  className="h-full w-full object-cover object-center"
+                  src="https://malabarhospitals.com/tharaatu/assets/img/Dr.MiliMoni.jpg"
+                  alt="Team member"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                 />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
-              <div>
-                <div className=" hover:text-indigo-800 text-indigo-500 text-center font-bold md:text-lg">
-                  Judy Amandez
+
+              {/* Content */}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  Dr. John McCulling
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">Founder & Chief Medical Officer</p>
+
+                {/* Social Links */}
+                <div className="mt-4 flex gap-4">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </a>
                 </div>
-                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
-                  Senior Art Director
-                </p>
-                {/* social - start */}
-                <div className="flex justify-center">
-                  <div className="flex gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                {/* social - end */}
               </div>
             </div>
-            {/* person - end */}
-            {/* person - start */}
-            <div className="profile-card bg-gray-100 hover:bg-indigo-100  p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
-              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <div className="group relative">
+              {/* Image Container */}
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl">
                 <img
-                  src=" data:image/jpeg;base64,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"
-                  loading="lazy"
-                  alt="Photo by Leilani Angel"
-                  className="h-full w-full object-cover object-center"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD_KvTsAb4m81bfDmkGt3IZUQXsGyPDSXYPA&s"
+                  alt="Team member"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                 />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
-              <div>
-                <div className=" hover:text-indigo-800  text-indigo-500 text-center font-bold  md:text-lg">
-                  Rahul Williams
+
+              {/* Content */}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  Dr. John McCulling
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">Founder & Chief Medical Officer</p>
+
+                {/* Social Links */}
+                <div className="mt-4 flex gap-4">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </a>
                 </div>
-                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
-                  Creative Director
-                </p>
-                {/* social - start */}
-                <div className="flex justify-center">
-                  <div className="flex gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                {/* social - end */}
               </div>
             </div>
-            {/* person - end */}
-            {/* person - start */}
-            <div className=" profile-card bg-gray-100  hover:bg-indigo-100 p-6 rounded-lg shadow-md transition-transform hover:scale-105 hover:shadow-lg text-center flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
-              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
+            <div className="group relative">
+              {/* Image Container */}
+              <div className="relative h-64 w-full overflow-hidden rounded-2xl">
                 <img
-                  src="  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE-n-Eb5PPHCiRyGR1vpCKxiucX1RsoZ0gEA&s"
-                  loading="lazy"
-                  alt="Photo by Jernej Graj"
-                  className="h-full w-full object-cover object-center"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYxX_WwXHX7RUQ99IUyNuoeD9d57TwuUD4oA&s"
+                  alt="Team member"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                 />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
-              <div>
-                <div className=" hover:text-indigo-800  text-indigo-500 text-center font-bold  md:text-lg">
-                  Ari Ferris
+
+              {/* Content */}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  Dr. John McCulling
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">Founder & Chief Medical Officer</p>
+
+                {/* Social Links */}
+                <div className="mt-4 flex gap-4">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-indigo-600 transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </a>
                 </div>
-                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
-                  Marketing Analyst
-                </p>
-                {/* social - start */}
-                <div className="flex justify-center">
-                  <div className="flex gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                {/* social - end */}
               </div>
             </div>
 
-            {/* person - end */}
+
+            {/* Repeat the card structure for other team members */}
           </div>
-          <div className="mt-10 space-x-10 flex justify-center items-center ">
 
-            <a href="/browse-doctor" className="bg-indigo-500 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-indigo-800">CONSLUTANT</a>
-
+          {/* CTA Section */}
+          <div className="mt-16 flex justify-center">
+            <a
+              href="/browse-doctor"
+              className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:bg-indigo-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              <span>Meet Our Doctors</span>
+              <svg
+                className="ml-2 h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
+      {/*meet end*/}
 
-      <div className='bg-white py-6  px-8 sm:py-8 lg:py-12 '>
-        <div className='flex flex-col md:flex-row items-center md:items-start  max-w-screen  px-10'>
-          <div className='w-full md:w-1/2 px-8 '>
-            <img src="../images/telehealth-doctor.jpg " alt="Doctor with stethoscope on phone" className='rounded-lg shadow-lg object-cover ' />
-          </div>
-          <div className="w-full md:w-1/2 ">
-            <h2 className="text-4xl  text-center font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-            <div class="space-y-4 px-10">
-              <div className="faq-item bg-green-50 rounded-md p-4 cursor-pointer transition duration-200">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-medium text-gray-800  shadow-2xl">Why choose e-Doctor?</h3>
-                  <span className="text-teal-600 text-2xl">+</span>
-                </div>
-                <div className="faq-answer hidden mt-2 text-gray-600">
-                  <p>e-Doctor provides convenient, secure, and professional healthcare services from the comfort of your home. Our platform connects you with qualified Australian GPs who can provide consultations, prescriptions, referrals, and medical certificates.</p>
-                </div>
+
+      <section className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
+            {/* Image Section */}
+            
+            <div className="w-full lg:w-1/2">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src="../images/telehealth-doctor.jpg"
+                  alt="Doctor with stethoscope on phone"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
+            </div>
+            {/* FAQ Content */}
+            <div className="w-full lg:w-1/2">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center lg:text-left">
+                Frequently Asked Questions
+              </h2>
 
-              <div className="faq-item bg-green-50 rounded-md p-4 cursor-pointer transition duration-200">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-medium text-gray-800">Who can access e-Doctor services?</h3>
-                  <span className="text-teal-600 text-2xl">+</span>
-                </div>
-                <div className="faq-answer hidden mt-2 text-gray-600">
-                  <p>Anyone in Australia with internet access can use e-Doctor services. Our platform is designed to be accessible to all Australians, regardless of location, making healthcare available even in remote areas.</p>
-                </div>
-              </div>
+             
+              {/* CTA Button */}
+              <div className="mt-8 text-center lg:text-left">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 text-base sm:text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                >
+                  Contact Us
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
 
-              <div className="faq-item bg-green-50 rounded-md p-4 cursor-pointer transition duration-200">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-medium text-gray-800">Are the medical telehealth services provided by e-Doctor covered by Medicare</h3>
-                  <span className="text-teal-600 text-2xl">+</span>
-                </div>
-                <div className="faq-answer hidden mt-2 text-gray-600">
-                  <p>Yes, eligible telehealth consultations with e-Doctor are covered by Medicare. Bulk billing is available for eligible patients, including those with a valid Medicare card. Please check your eligibility during the booking process.</p>
-                </div>
-              </div>
-
-              <div className="faq-item bg-green-50 rounded-md p-4 cursor-pointer transition duration-200">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-medium text-gray-800">How long till a Doctor responds</h3>
-                  <span className="text-teal-600 text-2xl">+</span>
-                </div>
-                <div className="faq-answer hidden mt-2 text-gray-600">
-                  <p>Our doctors typically respond within 15-30 minutes during business hours. For after-hours consultations, response times may vary but are usually within 1 hour. Urgent cases are prioritized to ensure prompt medical attention.</p>
-                </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
         </div>
-        <div class="mt-8 space-x-5 flex justify-center items-center">
+      </section>
 
-          <a href="/contact" className="bg-indigo-500 text-white  text-xl px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-indigo-800">CONTCAT</a>
-        </div>
-      </div>
 
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="mx-auto max-w-screen-xl px-4 md:px-8">
@@ -1816,4 +1743,5 @@ const Home = () => {
     </>
   )
 }
-export default Home;
+
+export default Page;
