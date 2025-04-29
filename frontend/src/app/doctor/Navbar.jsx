@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import React from 'react'
 
@@ -143,7 +144,7 @@ const Navbar = () => {
                           <path d="M10 12h11" />
                           <path d="M10 18h11" />
                         </svg>
-                        APPIONMENT
+                        APPOINMENT
                         <svg
                           className="hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 size-4 ms-auto md:ms-1"
                           xmlns="http://www.w3.org/2000/svg"

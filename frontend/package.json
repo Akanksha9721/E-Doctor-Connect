@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.2",
+    "@heroicons/react": "^2.2.0",
     "@tabler/icons-react": "^3.26.0",
     "axios": "^1.7.9",
     "formik": "^2.4.6",
