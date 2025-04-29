@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import React from 'react'
-import { useState } from 'react'
 
 
 const Page = () => {
@@ -12,7 +11,7 @@ const Page = () => {
 
       {/* hero - start */}
       <header className="fixed top-0 left-0 bg-blue-800 w-full z-50 border-b border-gray-200">
-        <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 ">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-3">
@@ -98,7 +97,7 @@ const Page = () => {
       </header>
 
       {/*section*/}
-      <div className="relative w-full min-h-screen">
+      <div className="relative w-full min-h-screen py-4 lg:py-8">
         <div className="absolute inset-0">
           {/* Background Image with Overlay */}
           <div className="relative h-full">
@@ -706,58 +705,116 @@ const Page = () => {
       </div>
       {/*meet end*/}
 
-
-      <section className="bg-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
-            {/* Image Section */}
-            
-            <div className="w-full lg:w-1/2">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                <img
-                  src="../images/telehealth-doctor.jpg"
-                  alt="Doctor with stethoscope on phone"
-                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
+      {/*quairy*/}
+      <div className='bg-white py-6  px-8 sm:py-8 lg:py-12 '>
+        <div className='flex flex-col md:flex-row items-center md:items-start  max-w-screen  px-10'>
+          <div className='w-full md:w-1/2 px-8 '>
+            <img src="../images/telehealth-doctor.jpg " alt="Doctor with stethoscope on phone" className='rounded-lg shadow-lg object-cover ' />
+          </div>
+          {/* FAQ Section */}
+          <div className="space-y-8 space-x-10">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+              <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
             </div>
-            {/* FAQ Content */}
-            <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center lg:text-left">
-                Frequently Asked Questions
-              </h2>
 
-             
-              {/* CTA Button */}
-              <div className="mt-8 text-center lg:text-left">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-6 py-3 text-base sm:text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors duration-200"
-                >
-                  Contact Us
-                  <svg
-                    className="w-5 h-5 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+            {/* FAQ Items */}
+            <div className="max-w-3xl mx-auto space-y-6 ">
+              {/* FAQ Item 1 */}
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <button className="w-full px-6 py-4 text-left">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold text-gray-900">Why choose e-Doctor?</h3>
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
 
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </a>
+                </button>
+              </div>
+
+              {/* FAQ Item 2 */}
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <button className="w-full px-6 py-4 text-left">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold text-gray-900">Who can access e-Doctor services?</h3>
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+
+                </button>
+              </div>
+
+              {/* FAQ Item 3 */}
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <button className="w-full px-6 py-4 text-left">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold text-gray-900">Are telehealth services covered by Medicare?</h3>
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+
+                </button>
+              </div>
+
+              {/* FAQ Item 4 */}
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <button className="w-full px-6 py-4 text-left">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold text-gray-900">How long till a Doctor responds?</h3>
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+
+                </button>
               </div>
             </div>
           </div>
+
         </div>
-      </section>
 
+        <div className="mt-12 mb-8">
+          <div className="flex flex-col items-center justify-center space-y-4">
+            {/* Main CTA Button */}
+            <a
+              href="/query"
+              className="inline-flex items-center justify-center px-8 py-4
+        bg-indigo-600 hover:bg-indigo-700
+        text-white font-bold text-xl uppercase
+        rounded-lg shadow-lg hover:shadow-xl
+        transform transition duration-200 hover:scale-105
+        focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              <span>Ask a Question</span>
+              <svg
+                className="w-5 h-5 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
 
+            {/* Subtext */}
+            <p className="text-gray-600 text-center max-w-md">
+              Have medical questions? Our doctors are here to help. Get expert answers quickly and securely.
+            </p>
+          </div>
+        </div>
+      </div>
+      {/*quairy end */}
+
+      {/*our plans*/}
       <div className="bg-white py-6 sm:py-8 lg:py-12">
         <div className="mx-auto max-w-screen-xl px-4 md:px-8">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">
@@ -1118,7 +1175,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-
+      {/*our plans end*/}
 
 
 
@@ -1743,5 +1800,4 @@ const Page = () => {
     </>
   )
 }
-
 export default Page;

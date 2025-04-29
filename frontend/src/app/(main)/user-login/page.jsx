@@ -191,7 +191,7 @@ const Login = () => {
                                     >
                                         <path d="M96 0V47L48 94H0V47L48 0H96Z" />
                                     </svg>
-                                    Flowrift
+                                    E-doctor
                                 </a>
                             </div>
                             {/* logo - end */}

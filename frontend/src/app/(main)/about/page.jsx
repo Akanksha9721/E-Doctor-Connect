@@ -40,8 +40,8 @@ const Aboutpage = () => {
 
                                 <br />
                             </p>
-                            <div class="mt-8 space-x-5 flex justify-center">
-                                <button class="bg-blue-600 text-white text-xl px-8 py-4 rounded-lg font-bold  tracking-wider">Read more</button>
+                            <div className="mt-8 space-x-5 flex justify-center">
+                                <button className="bg-blue-600 text-white text-xl px-8 py-4 rounded-lg font-bold  tracking-wider hover:bg-blue-700 transition-colors duration-200">Read more</button>
 
                             </div>
                             {/*
@@ -329,7 +329,7 @@ const Aboutpage = () => {
                         {/* nav - end */}
                     </div>
                     <div className="border-t border-gray-800 py-8 text-center text-sm text-gray-400">
-                        © 2021 - Present E-Doctor. All rights reserved.
+                        © 2025 - Present E-Doctor. All rights reserved.
                     </div>
                 </footer>
             </div>

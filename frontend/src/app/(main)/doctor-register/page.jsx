@@ -4,7 +4,29 @@ import { useFormik } from 'formik';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react'
+import * as Yup from 'yup';
 import toast from 'react-hot-toast';
+
+const registerSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Name is too short')
+    .max(50, 'Name is too long')
+    .required('Name is required'),
+  email: Yup.string()
+    .email('Invalid email')
+    .required('Email is required'),
+    password: Yup.string()
+      .min(8, 'Password must be at least 8 characters')
+      .required('Password is required'),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref('password'), null], 'Passwords must match')
+      .required('Confirm password is required'),
+    contact: Yup.string()
+      .matches(/^\d{10}$/, 'Phone number must be 10 digits')
+      .required('Contact number is required'),
+      qualification: Yup.string()
+      .required('Qualification is required')
+  });
 
 const Register = () => {
 
@@ -15,24 +37,34 @@ const Register = () => {
             name: '',
             email: '',
             password: '',
+            confirmPassword: '',
             contact: '',
             qualification: '',
         },
-        onSubmit: async (values) => {
-            console.log(values);
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/doctor/add`, values)
-            console.log(res.data);
-            console.log(res.status);
+        validationSchema: registerSchema,
+
+        onSubmit: async (values,{setSubmitting}) => {
+          try {
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/doctor/add`, {
+              ...values,
+              role: 'doctor'
+            });
+            
             if (res.status === 200) {
-                toast.success('Doctor registered successfully');
-                router.push('/doctor-login');
+              toast.success('Registration successful!');
+              router.push('/doctor-login');
             }
+          } catch (error) {
+            toast.error(error.response?.data?.message || 'Registration failed');
+          } finally {
+            setSubmitting(false);
+          }
         }
 
-    })
+    });
     return (
         <>
-            <div className='h-auto  py-7  bg-gray-300  bg-cover h-screen' style={{ backgroundImage: `url('https://img.freepik.com/free-photo/stethoscope-copy-space_23-2147652347.jpg?semt=ais_hybrid')` }} >
+            <div className='h-auto  py-7  bg-gray-300  bg-cover h-screen' >
                 <div className="max-w-xl mx-auto bg-transprent  border-gray-400 rounded-xl shadow-2xl  dark:bg-neutral-900 dark:border-neutral-700">
                     <div className="p-2 sm:p-7 ">
                         <div className="text-center">
@@ -58,6 +90,7 @@ const Register = () => {
                                                 id="name"
                                                 name="name"
                                                 onChange={registerForm.handleChange}
+                                                onBlur={registerForm.handleBlur}
                                                 value={registerForm.values.name}
                                                 className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                                 required=""
