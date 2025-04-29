@@ -1,8 +1,6 @@
 //importing express
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
-require('dotenv').config();
 
 const UserRouter = require('./routers/userRouter');
 const DoctorRouter = require('./routers/doctorRouter');
