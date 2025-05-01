@@ -24,7 +24,7 @@ const registerSchema = Yup.object().shape({
   contact: Yup.string()
     .matches(/^\d{10}$/, 'Phone number must be 10 digits')
     .required('Contact number is required')
-  
+
 });
 
 const Register = () => {
@@ -38,7 +38,7 @@ const Register = () => {
       password: '',
       conformPassword: '',
       contact: '',
-      
+
     },
     validationSchema: registerSchema,
 
@@ -83,7 +83,7 @@ const Register = () => {
                       htmlFor="email"
                       className="block text-sm mb-2 dark:text-white"
                     >
-                     Name
+                      Name
                     </label>
                     <div className="relative">
                       <input
@@ -93,11 +93,15 @@ const Register = () => {
                         onChange={registerForm.handleChange}
                         onBlur={registerForm.handleBlur}
                         value={registerForm.values.name}
-                        className="border  py-3 px-4 block w-full  ring-indigo-300 transition duration-100 focus:ring rounded-lg text-sm focus:border-blue-500    dark:placeholder-blue-500 "
-                        required=""
-                        aria-describedby="name-error"
-                        placeholder="enter the name"
+                        className={`w-full rounded-lg border px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200
+                          ${registerForm.touched.name && registerForm.errors.name ?
+                            'border-red-500' : 'border-gray-300'}`}
                       />
+                      {registerForm.touched.name && registerForm.errors.name && (
+                        <p className="mt-1 text-sm text-red-500">{registerForm.errors.name}</p>
+                      )}
+
+
                       <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                         <svg
                           className="size-5 text-red-500"
@@ -133,11 +137,15 @@ const Register = () => {
                         name="email"
                         onChange={registerForm.handleChange}
                         value={registerForm.values.email}
-                        className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                        required=""
-                        aria-describedby="email-error"
+                        onBlur={registerForm.handleBlur}
                         placeholder="abc@gmail.com"
+                        className={`w-full rounded-lg border px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200
+                          ${registerForm.touched.email && registerForm.errors.email ?
+                            'border-red-500' : 'border-gray-300'}`}
                       />
+                      {registerForm.touched.email && registerForm.errors.email && (
+                        <p className="mt-1 text-sm text-red-500">{registerForm.errors.email}</p>
+                      )}
                       <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                         <svg
                           className="size-5 text-red-500"
@@ -171,11 +179,15 @@ const Register = () => {
                         name="password"
                         onChange={registerForm.handleChange}
                         value={registerForm.values.password}
-                        className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                        required=""
-                        aria-describedby="password-error"
+
                         placeholder="enter the password"
+                        className={`w-full rounded-lg border px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200
+                          ${registerForm.touched.password && registerForm.errors.password ?
+                            'border-red-500' : 'border-gray-300'}`}
                       />
+                      {registerForm.touched.password && registerForm.errors.password && (
+                        <p className="mt-1 text-sm text-red-500">{registerForm.errors.password}</p>
+                      )}
                       <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                         <svg
                           className="size-5 text-red-500"
@@ -209,11 +221,14 @@ const Register = () => {
                         name="conformPassword"
                         onChange={registerForm.handleChange}
                         value={registerForm.values.conformPassword}
-                        className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                        required=""
-                        aria-describedby="password-error"
+                        className={`w-full rounded-lg border px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200
+                          ${registerForm.touched.conformPassword && registerForm.errors.conformPassword?
+                                                    'border-red-500' : 'border-gray-300'}`}
                         placeholder="enter the password"
                       />
+                      {registerForm.touched.conformPassword && registerForm.errors.conformPassword && (
+                        <p className="mt-1 text-sm text-red-500">{registerForm.errors.conformPassword}</p>
+                      )}
                       <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                         <svg
                           className="size-5 text-red-500"
@@ -247,11 +262,14 @@ const Register = () => {
                         id="contact"
                         onChange={registerForm.handleChange}
                         value={registerForm.values.contact}
-                        className="border py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                        required=""
-                        aria-describedby="Speciality-error"
-                        placeholder="enter the city"
+                        className={`w-full rounded-lg border px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200
+                          ${registerForm.touched.contact && registerForm.errors.contact ?
+                                                    'border-red-500' : 'border-gray-300'}`}
+                        placeholder="enter the contact number"
                       />
+                      {registerForm.touched.contact && registerForm.errors.contact && (
+                        <p className="mt-1 text-sm text-red-500">{registerForm.errors.contact}</p>
+                      )}
                       <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                         <svg
                           className="size-5 text-red-500"

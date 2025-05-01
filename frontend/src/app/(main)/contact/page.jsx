@@ -12,11 +12,11 @@ const contactSchema = Yup.object().shape({
         .min(2, 'Too Short!')
         .max(50, 'Too Long!')
         .required('First name is required'),
-    
+
     contact: Yup.string()
         .matches(/^\d{10}$/, 'Phone number must be 10 digits')
         .required('Contact number is required'),
-    
+
     message: Yup.string()
         .min(10, 'Message too short')
         .required('Message is required'),
@@ -26,10 +26,8 @@ const Contactpage = () => {
     const contactForm = useFormik({
         initialValues: {
             firstname: '',
-            lastname: '',
             contact: '',
-            email: '',
-            subject: ''
+            message: '',
 
 
 

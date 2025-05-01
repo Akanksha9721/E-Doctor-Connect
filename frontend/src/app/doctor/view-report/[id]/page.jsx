@@ -167,23 +167,9 @@ const ViewReport = () => {
                                   )
                                 )
                               }
-
-
-
                             </div>
-
-
-
-
-
                           </div>
                           {/* End Col */}
-
-
-
-
-
-
                         </div>
                         {/* End Grid */}
                         <div className="mt-5 flex items-center justify-center ">
@@ -474,7 +460,7 @@ const ViewReport = () => {
             {/* nav - end */}
           </div>
           <div className="border-t border-gray-800 py-8 text-center text-sm text-gray-400">
-            © 2021 - Present E-Doctor. All rights reserved.
+            © 2025 - Present E-Doctor. All rights reserved.
           </div>
         </footer>
       </div>

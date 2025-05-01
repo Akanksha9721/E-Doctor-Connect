@@ -51,7 +51,7 @@ const ManageAppointment = () => {
         <div className=' py-10 bg-gray-100  h-screen  shadow-lg bg-overflow-hidden bg-gray-100    bg-center bg-flexible '>
           <div className='container mx-auto py-10 px-4 '>
             <h1 className='text-center font-bold  text-2xl uppercase '>DOCTOR DASHBORD</h1>
-            <table className='w-full boderer-collapse border-2 boderer border-gary-500 rounded-lg mt-10 shadow-lg '>
+            <table className='w-full border-collapse border-2 boderer border-gary-500 rounded-lg mt-10 shadow-lg '>
               <thead>
                 <tr className='bg-blue-800    text-white font-bold text-center '>
                   <th className='p-3'>ID</th>
