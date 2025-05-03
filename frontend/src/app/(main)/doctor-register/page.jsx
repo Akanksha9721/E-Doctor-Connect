@@ -65,7 +65,7 @@ const Register = () => {
     <>
       <div className='h-auto  py-7  bg-gray-100  bg-cover h-screen' >
         <div className="text-center py-5 lg:py:8">
-          <h1 className="block  uppercase text-4xl font-bold text-gray-800 dark:text-white">
+          <h1 className="block  uppercase text-4xl font-bold text-blue-800 dark:text-white">
             Register Form
           </h1>
         </div>
@@ -585,7 +585,7 @@ const Register = () => {
             {/* nav - end */}
           </div>
           <div className="border-t border-gray-800 py-8 text-center text-sm text-gray-400">
-            © 2025 - Present Akankhsa yadav. All rights reserved.
+            © 2025 - Present E-doctor. All rights reserved.
           </div>
         </footer>
       </div>
