@@ -191,8 +191,8 @@ const Manageslot = () => {
                   <th className='p-3' >Time</th>
                   <th className='p-3' >Date</th>
                   <th className='p-3' >Status</th>
-                  <th className='p-3' colSpan={2}></th>
-                  <th className='p-3' colSpan={2}>Action</th>
+                  <th className='p-3' ></th>
+                  <th className='p-3' >Action</th>
                   <th className='p-3' colSpan={2}></th>
                 </tr>
               </thead>

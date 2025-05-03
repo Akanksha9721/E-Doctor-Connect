@@ -32,7 +32,7 @@ app.use('/appointment', AppointmentRouter);
 app.use('/test', TestRouter);
 app.use('/payment',PaymentRouter);
 app.use('/paydetail',paydetailRouter);
-app.use('api/mail',mailRouter);
+app.use('/mail',mailRouter);
 
 //accept and process request
 app.get('/', (req, res) => {

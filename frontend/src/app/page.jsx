@@ -8,7 +8,6 @@ const Page = () => {
 
   return (
     <>
-
       {/* hero - start */}
       <header className="fixed top-0 left-0 bg-blue-800 w-full z-50 border-b border-gray-200">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 ">
@@ -18,7 +17,6 @@ const Page = () => {
               <img src="../images/logo3.png" alt="Logo" className="h-10 w-auto" />
               <span className="text-2xl md:text-4xl font-bold text-white uppercase">E-Doctor</span>
             </div>
-
             {/* Mobile Menu Button */}
             <button
               className="md:hidden text-white focus:outline-none"

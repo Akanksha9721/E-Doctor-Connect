@@ -11,66 +11,34 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Send password reset email
-router.post('/send-reset-email', async (req, res) => {
+// Generate OTP
+const generateOTP = () => {
+    return Math.floor(100000 + Math.random() * 900000).toString();
+};
+
+// Send email verification OTP
+router.post('/send-verification-otp', async (req, res) => {
     try {
-        const { email, resetToken } = req.body;
+        const { email } = req.body;
+        const otp = generateOTP();
         
-        // Email template
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: email,
-            subject: 'Password Reset - E-Doctor Connect',
-            html: `
-                <h1>Password Reset Request</h1>
-                <p>You requested a password reset for your E-Doctor Connect account.</p>
-                <p>Click the link below to reset your password:</p>
-                <a href="${process.env.FRONTEND_URL}/reset-password/${resetToken}">
-                    Reset Password
-                </a>
-                <p>This link will expire in 1 hour.</p>
-                <p>If you didn't request this, please ignore this email.</p>
-            `
-        };
-
-        // Send email
-        await transporter.sendMail(mailOptions);
-
-        res.status(200).json({ 
-            success: true, 
-            message: 'Password reset email sent successfully' 
-        });
-
-    } catch (error) {
-        console.error('Email sending error:', error);
-        res.status(500).json({ 
-            success: false, 
-            message: 'Failed to send reset email',
-            error: error.message 
-        });
-    }
-});
-
-// Send appointment confirmation email
-router.post('/send-appointment-confirmation', async (req, res) => {
-    try {
-        const { email, appointmentDetails } = req.body;
+        // Store OTP in session or database
+        // TODO: Implement OTP storage with expiration
         
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: email,
-            subject: 'Appointment Confirmation - E-Doctor Connect',
+            subject: 'Email Verification - E-Doctor Connect',
             html: `
-                <h1>Appointment Confirmed</h1>
-                <p>Your appointment has been successfully scheduled.</p>
-                <h2>Details:</h2>
-                <ul>
-                    <li>Date: ${appointmentDetails.date}</li>
-                    <li>Time: ${appointmentDetails.time}</li>
-                    <li>Doctor: ${appointmentDetails.doctorName}</li>
-                    <li>Location: ${appointmentDetails.location}</li>
-                </ul>
-                <p>Need to reschedule? Please contact us or visit your dashboard.</p>
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <h1 style="color: #2563eb; text-align: center;">Email Verification</h1>
+                    <p>Thank you for registering with E-Doctor Connect. Please use the following OTP to verify your email address:</p>
+                    <div style="text-align: center; padding: 20px;">
+                        <h2 style="letter-spacing: 5px; color: #1f2937;">${otp}</h2>
+                    </div>
+                    <p style="color: #6b7280;">This OTP will expire in 10 minutes.</p>
+                    <p style="color: #6b7280;">If you didn't request this verification, please ignore this email.</p>
+                </div>
             `
         };
 
@@ -78,17 +46,55 @@ router.post('/send-appointment-confirmation', async (req, res) => {
 
         res.status(200).json({ 
             success: true, 
-            message: 'Appointment confirmation email sent' 
+            message: 'Verification OTP sent successfully',
+            otp: otp // Remove this in production
         });
 
     } catch (error) {
         console.error('Email sending error:', error);
         res.status(500).json({ 
             success: false, 
-            message: 'Failed to send confirmation email',
+            message: 'Failed to send verification OTP',
             error: error.message 
         });
     }
 });
+
+// Verify OTP
+router.post('/verify-otp', async (req, res) => {
+    try {
+        const { email, otp } = req.body;
+        
+        // TODO: Implement OTP verification logic
+        // 1. Get stored OTP from session/database
+        // 2. Compare with received OTP
+        // 3. Check if OTP is expired
+        
+        // For demonstration purposes:
+        const isValid = true; // Replace with actual verification
+        
+        if (isValid) {
+            res.status(200).json({
+                success: true,
+                message: 'Email verified successfully'
+            });
+        } else {
+            res.status(400).json({
+                success: false,
+                message: 'Invalid or expired OTP'
+            });
+        }
+
+    } catch (error) {
+        console.error('OTP verification error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Failed to verify OTP',
+            error: error.message
+        });
+    }
+});
+
+// ...existing code for password reset and appointment confirmation...
 
 module.exports = router;
