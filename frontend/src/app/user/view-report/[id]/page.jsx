@@ -89,7 +89,6 @@ const viewReport = () => {
                   </ul>
                 </dd>
               </dl>
-             
               <button className='bg-blue-500 py-1 px-3 text-white rounded-full  hover:bg-blue-700'>Download</button>
             </div>
           </div>

@@ -52,7 +52,7 @@ const Navbar = () => {
             <NavDropdown />
             <NavLink href="#">ACCOUNT</NavLink>
             <NavLink href="#">WORK</NavLink>
-            <NavLink href="#">BLOG</NavLink>
+            <NavLink href="/user/blog">BLOG</NavLink>
           </div>
         </div>
 
