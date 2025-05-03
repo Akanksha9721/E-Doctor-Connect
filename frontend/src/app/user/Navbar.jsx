@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-blue-800 w-full border-b border-gray-200 fixed top-0 z-50">
+    <header className="bg-blue-800 w-full border-b border-gray-200 fixed top-0 ">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo Section */}

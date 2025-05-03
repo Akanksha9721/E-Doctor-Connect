@@ -2,10 +2,55 @@
 import axios from 'axios';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react'
-import Appointment from '../../appointment/[id]/page';
+import React, { useEffect, useState } from 'react';
 import jsPDF from 'jspdf';
-const viewReport = () => {
+import { PDFViewer, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+
+// Create styles for PDF
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: 'column',
+    padding: 30,
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  field: {
+    fontSize: 12,
+    marginBottom: 10,
+  },
+  header: {
+    fontSize: 18,
+    marginBottom: 20,
+    textAlign: 'center',
+    color: '#0066cc',
+  }
+});
+
+// PDF Document Component
+const PDFDocument = ({ reportData }) => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text style={styles.title}>E-Doctor Medical Report</Text>
+        <Text style={styles.header}>Patient Medical Report</Text>
+        <Text style={styles.field}>Report ID: {reportData._id}</Text>
+        <Text style={styles.field}>Prescription: {reportData.prescription}</Text>
+        <Text style={styles.field}>Description: {reportData.description}</Text>
+        <Text style={styles.field}>Suggested Tests: {reportData.suggestedTest}</Text>
+        <Text style={styles.field}>Generated on: {new Date().toLocaleDateString()}</Text>
+      </View>
+    </Page>
+  </Document>
+);
+
+const ViewReport = () => {
   const [reportData, setReportData] = useState(null);
   const { id } = useParams();
 
@@ -22,107 +67,81 @@ const viewReport = () => {
   if (reportData === null) {
     return 'Report not found';
   }
-  
 
-// Update the handleDownload function
-const handleDownload = () => {
-  try {
-    const doc = new jsPDF();
-    
-    // Add content to PDF
-    doc.setFontSize(16);
-    doc.text('E-Doctor Medical Report', 20, 20);
-    
-    doc.setFontSize(12);
-    doc.text(`Report ID: ${reportData._id}`, 20, 40);
-    doc.text(`Prescription: ${reportData.prescription}`, 20, 60);
-    doc.text(`Description: ${reportData.description}`, 20, 80);
-    doc.text(`Suggested Tests: ${reportData.suggestedTest}`, 20, 100);
-    
-    // Add date and time
-    const date = new Date().toLocaleDateString();
-    doc.text(`Generated on: ${date}`, 20, 120);
-    
-    // Save the PDF
-    doc.save(`medical-report-${reportData._id}.pdf`);
-    
-  } catch (error) {
-    console.error('Download failed:', error);
-  }
-};
+  const handleDownload = () => {
+    try {
+      const doc = new jsPDF();
+      
+      // Add content to PDF
+      doc.setFontSize(16);
+      doc.text('E-Doctor Medical Report', 20, 20);
+      
+      doc.setFontSize(12);
+      doc.text(`Report ID: ${reportData._id}`, 20, 40);
+      doc.text(`Prescription: ${reportData.prescription}`, 20, 60);
+      doc.text(`Description: ${reportData.description}`, 20, 80);
+      doc.text(`Suggested Tests: ${reportData.suggestedTest}`, 20, 100);
+      
+      // Add date and time
+      const date = new Date().toLocaleDateString();
+      doc.text(`Generated on: ${date}`, 20, 120);
+      
+      // Save the PDF
+      doc.save(`medical-report-${reportData._id}.pdf`);
+      
+    } catch (error) {
+      console.error('Download failed:', error);
+    }
+  };
 
   return (
     <>
-      <div className='h-screen max-auto bg-green-100'>
-        <h1 className='text-center font-bold  text-4xl py-8'>Report</h1>
+      <div className='min-h-screen bg-green-100 '>
+        <h1 className='text-center font-bold text-4xl mt-16'>Report</h1>
 
-        {/* List */}
-        <div className='bg-white  w-[500px] h-[500px] text-center  px-4 py-8 mx-auto rounded-lg shadow-lg  mt-10'>
-          <div className='max-w-4xl px-4 py-10 sm:px-6 lg:px-8 mx-auto'>
-            <div className="space-y-3 center text-center">
-              <dl className="flex flex-col sm:flex-row gap-12">
-                <dt className="min-w-40 space-x-12">
-                  <span className="text-centertext-2xl  font-bold uppercase block text-lg  text-gray-500 dark:text-neutral-500">
-                    REPORT ID:
-                  </span>
-                </dt>
-                <dd>
-                  <ul>
-                    <li className="me-1   inline-flex items-center text-medium text-gray-800 dark:text-neutral-200">
-                      {reportData._id}
-
-                    </li>
-                  </ul>
-                </dd>
+        <div className='container mx-auto px-4 py-8'>
+          {/* Report Details Card */}
+          <div className='bg-white rounded-lg shadow-lg p-6 mb-8'>
+            <div className="space-y-3">
+              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <dt className="text-lg font-bold uppercase text-gray-500">Report ID:</dt>
+                  <dd className="text-gray-800">{reportData._id}</dd>
+                </div>
+                <div>
+                  <dt className="text-lg font-bold uppercase text-gray-500">Prescription:</dt>
+                  <dd className="text-gray-800">{reportData.prescription}</dd>
+                </div>
+                <div>
+                  <dt className="text-lg font-bold uppercase text-gray-500">Description:</dt>
+                  <dd className="text-gray-800">{reportData.description}</dd>
+                </div>
+                <div>
+                  <dt className="text-lg font-bold uppercase text-gray-500">Suggested Test:</dt>
+                  <dd className="text-gray-800">{reportData.suggestedTest}</dd>
+                </div>
               </dl>
-              <dl className="flex flex-col sm:flex-row gap-12">
-                <dt className="min-w-40">
-                  <span className="block text-lg  font-bold  uppercase   text-gray-500  dark:text-neutral-500">
-                    prescription:
-                  </span>
-                </dt>
-                <dd>
-                  <ul>
-                    <li className="me-1  uppercase  text-bold after:content-[','] inline-flex items-center text-medium text-sm text-gray-800 dark:text-neutral-200">
-                      {reportData.prescription}
-                    </li>
-                  </ul>
-                </dd>
-              </dl>
-              <dl className="flex flex-col sm:flex-row gap-12">
-                <dt className="min-w-40 ">
-                  <span className="block  text-lg  font-bold  uppercase text-gray-500 dark:text-neutral-500">
-                    Description:
-                  </span>
-                </dt>
-                <dd>
-                  <ul>
-                    <li className="me-1 uppercase text-bold after:content-[','] text-medium  inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                      {reportData.description}
-                    </li>
-                  </ul>
-                </dd>
-              </dl>
-              <dl className="flex flex-col sm:flex-row gap-12">
-                <dt className="min-w-40">
-                  <span className="block  text-lg  uppercase font-bold text-gray-500 dark:text-neutral-500">
-                    SuggestedTest:
-                  </span>
-                </dt>
-                <dd>
-                  <ul>
-                    <li className="me-1 uppercase after:content-[',']  text-bold text-medium inline-flex items-center text-sm text-gray-800 dark:text-neutral-200">
-                      {reportData.suggestedTest}
-                    </li>
-                  </ul>
-                </dd>
-              </dl>
-              <button   onClick={handleDownload} className='bg-blue-500 py-1 px-3 text-white rounded-full  hover:bg-blue-700'>Download</button>
             </div>
+          </div>
+
+          {/* PDF Preview */}
+          <div className='bg-white rounded-lg shadow-lg p-6 mb-8'>
+            <h2 className='text-2xl font-bold mb-4'>PDF Preview</h2>
+            <div className='h-[800px] w-full'>
+              <PDFViewer width="100%" height="100%">
+                <PDFDocument reportData={reportData} />
+              </PDFViewer>
+            </div>
+          </div>
+
+          {/* Download Button */}
+          <div className='text-center'>
+            <button onClick={handleDownload} className='bg-blue-500 py-2 px-6 text-white rounded-full hover:bg-blue-700 text-lg font-semibold'>
+              Download PDF
+            </button>
           </div>
         </div>
       </div>
-      {/* End List */}
 
       <div className="bg-blue-800 w-full">
         <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -393,8 +412,7 @@ const handleDownload = () => {
         </footer>
       </div>
     </>
-
   )
 }
 
-export default viewReport;
+export default ViewReport;

@@ -56,7 +56,7 @@ const Profile = () => {
         'x-auth-token': token
       }
     })
-      //  values
+      //  val
       .then((result) => {
         toast.success('Profile Updated successfully');
         // router.back();

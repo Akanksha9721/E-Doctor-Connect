@@ -2,6 +2,9 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const router = express.Router();
 
+// Store OTPs with expiration timestamps
+const otpStore = new Map();
+
 // Configure nodemailer with your email service
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -11,19 +14,35 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Generate OTP
-const generateOTP = () => {
-    return Math.floor(100000 + Math.random() * 900000).toString();
+// Generate OTP and store it
+const generateOTP = (email) => {
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const expiresAt = Date.now() + 10 * 60 * 1000; // 10 minutes expiration
+    
+    // Store OTP with expiration
+    otpStore.set(email, {
+        otp,
+        expiresAt
+    });
+    
+    return otp;
 };
+
+// Clean up expired OTPs periodically
+setInterval(() => {
+    const now = Date.now();
+    for (const [email, data] of otpStore.entries()) {
+        if (data.expiresAt < now) {
+            otpStore.delete(email);
+        }
+    }
+}, 5 * 60 * 1000); // Clean up every 5 minutes
 
 // Send email verification OTP
 router.post('/send-verification-otp', async (req, res) => {
     try {
         const { email } = req.body;
-        const otp = generateOTP();
-        
-        // Store OTP in session or database
-        // TODO: Implement OTP storage with expiration
+        const otp = generateOTP(email);
         
         const mailOptions = {
             from: process.env.EMAIL_USER,
@@ -46,8 +65,8 @@ router.post('/send-verification-otp', async (req, res) => {
 
         res.status(200).json({ 
             success: true, 
-            message: 'Verification OTP sent successfully',
-            otp: otp // Remove this in production
+            message: 'Verification OTP sent successfully'
+            // Remove otp from response in production
         });
 
     } catch (error) {
@@ -65,25 +84,41 @@ router.post('/verify-otp', async (req, res) => {
     try {
         const { email, otp } = req.body;
         
-        // TODO: Implement OTP verification logic
-        // 1. Get stored OTP from session/database
-        // 2. Compare with received OTP
-        // 3. Check if OTP is expired
+        const storedData = otpStore.get(email);
         
-        // For demonstration purposes:
-        const isValid = true; // Replace with actual verification
+        if (!storedData) {
+            return res.status(400).json({
+                success: false,
+                message: 'OTP not found or expired'
+            });
+        }
+
+        const { otp: storedOTP, expiresAt } = storedData;
         
-        if (isValid) {
-            res.status(200).json({
+        // Check if OTP is expired
+        if (Date.now() > expiresAt) {
+            otpStore.delete(email);
+            return res.status(400).json({
+                success: false,
+                message: 'OTP has expired'
+            });
+        }
+
+        // Verify OTP
+        if (otp === storedOTP) {
+            // Delete OTP after successful verification
+            otpStore.delete(email);
+            
+            return res.status(200).json({
                 success: true,
                 message: 'Email verified successfully'
             });
-        } else {
-            res.status(400).json({
-                success: false,
-                message: 'Invalid or expired OTP'
-            });
         }
+
+        res.status(400).json({
+            success: false,
+            message: 'Invalid OTP'
+        });
 
     } catch (error) {
         console.error('OTP verification error:', error);
