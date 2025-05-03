@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import Appointment from '../../appointment/[id]/page';
-
+import jsPDF from 'jspdf';
 const viewReport = () => {
   const [reportData, setReportData] = useState(null);
   const { id } = useParams();
@@ -22,6 +22,34 @@ const viewReport = () => {
   if (reportData === null) {
     return 'Report not found';
   }
+  
+
+// Update the handleDownload function
+const handleDownload = () => {
+  try {
+    const doc = new jsPDF();
+    
+    // Add content to PDF
+    doc.setFontSize(16);
+    doc.text('E-Doctor Medical Report', 20, 20);
+    
+    doc.setFontSize(12);
+    doc.text(`Report ID: ${reportData._id}`, 20, 40);
+    doc.text(`Prescription: ${reportData.prescription}`, 20, 60);
+    doc.text(`Description: ${reportData.description}`, 20, 80);
+    doc.text(`Suggested Tests: ${reportData.suggestedTest}`, 20, 100);
+    
+    // Add date and time
+    const date = new Date().toLocaleDateString();
+    doc.text(`Generated on: ${date}`, 20, 120);
+    
+    // Save the PDF
+    doc.save(`medical-report-${reportData._id}.pdf`);
+    
+  } catch (error) {
+    console.error('Download failed:', error);
+  }
+};
 
   return (
     <>
@@ -89,7 +117,7 @@ const viewReport = () => {
                   </ul>
                 </dd>
               </dl>
-              <button className='bg-blue-500 py-1 px-3 text-white rounded-full  hover:bg-blue-700'>Download</button>
+              <button   onClick={handleDownload} className='bg-blue-500 py-1 px-3 text-white rounded-full  hover:bg-blue-700'>Download</button>
             </div>
           </div>
         </div>
