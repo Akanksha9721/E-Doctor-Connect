@@ -50,8 +50,6 @@ const Navbar = () => {
           <div className="hidden md:flex md:items-center md:space-x-8">
             <NavLink href="/user/profile">PROFILE</NavLink>
             <NavDropdown />
-            <NavLink href="#">ACCOUNT</NavLink>
-            <NavLink href="#">WORK</NavLink>
             <NavLink href="/user/blog">BLOG</NavLink>
           </div>
         </div>
@@ -61,8 +59,6 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <MobileNavLink href="/user/profile">PROFILE</MobileNavLink>
             <MobileNavLink href="/user/manage-appointment">APPOINTMENT</MobileNavLink>
-            <MobileNavLink href="#">ACCOUNT</MobileNavLink>
-            <MobileNavLink href="#">WORK</MobileNavLink>
             <MobileNavLink href="#">BLOG</MobileNavLink>
           </div>
         </div>
@@ -117,13 +113,7 @@ const NavDropdown = () => {
               href="/user/manage-appointment"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >
-              MANAGE APPOINTMENT
-            </Link>
-            <Link
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            >
-              TEAM ACCOUNT
+              M-APPOINTMENT
             </Link>
           </div>
         </div>

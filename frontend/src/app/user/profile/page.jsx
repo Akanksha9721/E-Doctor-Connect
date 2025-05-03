@@ -70,9 +70,9 @@ const Profile = () => {
     <>
       <>
         {/* Card Section */}
-        <div className="min-h-screen  bg-[url('https://img.freepik.com/free-vector/abstract-medical-wallpaper-template-design_53876-61805.jpg')] bg-cover bg-center ">
+        <div className="min-h-screen   bg-cover bg-center ">
           <div className="  max-w-4xl px-9 py-6 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-            <h1 className='text-center font-bold  text-2xl '>USER DASHBORD</h1>
+            <h1 className='text-center font-bold text-4xl   py-8  lg:py:10  uppercase'>USER DASHBORD</h1>
             {
               userData !== null ? (
                 <Formik initialValues={userData} onSubmit={submitForm}>
