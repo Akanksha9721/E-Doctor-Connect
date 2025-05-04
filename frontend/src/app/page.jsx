@@ -118,7 +118,7 @@ export default function Page() {
       <section className="  relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
+            src="/Images/background.jpg"
             alt="Doctors working together"
             fill
             className="object-cover"
@@ -146,7 +146,7 @@ export default function Page() {
               >
                 <Link href="/doctor-register">Get Started</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+              <Button size="lg" variant="outline" className="border-white text-black hover:bg-black/10" asChild>
                 <Link href="/browse-doctor">Browse Doctors</Link>
               </Button>
             </div>
@@ -217,7 +217,7 @@ export default function Page() {
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <div className="aspect-[4/3]">
                 <Image
-                  src="/placeholder.svg?height=800&width=1200"
+                  src="/images/aboutus.jpg"
                   alt="Medical team collaborating"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
@@ -319,7 +319,7 @@ export default function Page() {
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <div className="aspect-[4/3]">
                 <Image
-                  src="/placeholder.svg?height=800&width=1200&text=Telehealth+Doctor"
+                  src="/images/query.jpg"
                   alt="Doctor with stethoscope on phone"
                   fill
                   className="object-cover"
@@ -461,25 +461,25 @@ export default function Page() {
               {
                 title: "Good Healthcare Practices",
                 date: "July 19, 2025",
-                image: "/placeholder.svg?height=600&width=800&text=Healthcare",
+                image: "/images/blog3.jpeg",
                 id: "blog-1",
               },
               {
                 title: "Working with Legacy Health Systems",
                 date: "April 07, 2025",
-                image: "/placeholder.svg?height=600&width=800&text=Health+Systems",
+                image: "/images/blog2.jpeg",
                 id: "blog-2",
               },
               {
                 title: "10 Best Health Apps for Patients",
                 date: "March 15, 2025",
-                image: "/placeholder.svg?height=600&width=800&text=Health+Apps",
+                image: "/images/blog1.jpeg",
                 id: "blog-3",
               },
               {
                 title: "The Future of Telehealth",
                 date: "January 27, 2025",
-                image: "/placeholder.svg?height=600&width=800&text=Telehealth",
+                image: "/images/blog5.jpeg",
                 id: "blog-4",
               },
             ].map((blog) => (

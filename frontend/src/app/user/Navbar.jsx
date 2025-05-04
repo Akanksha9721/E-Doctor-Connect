@@ -16,7 +16,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="bg-blue-800 w-full border-b border-gray-200 fixed top-0 ">
+    <header className="bg-blue-800 w-full border-b border-gray-200 ">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo Section */}
@@ -68,8 +68,9 @@ const Navbar = () => {
         <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
             <MobileNavLink href="/user/profile">PROFILE</MobileNavLink>
-            <MobileNavLink href="/user/manage-appointment">APPOINTMENT</MobileNavLink>
-            <MobileNavLink href="#">BLOG</MobileNavLink>
+            <MobileNavLink href="/user/manage-appointment">Manage Appointments</MobileNavLink>
+            <MobileNavLink href="/browse-doctor">Book New Appointment</MobileNavLink>
+            <MobileNavLink href="/user/blog">BLOG</MobileNavLink>
           </div>
         </div>
       </nav>
@@ -122,8 +123,16 @@ const NavDropdown = () => {
             <Link
               href="/user/manage-appointment"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              onClick={() => setIsOpen(false)}
             >
-              M-APPOINTMENT
+              Manage Appointments
+            </Link>
+            <Link
+              href="/browse-doctor"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              onClick={() => setIsOpen(false)}
+            >
+              Book New Appointment
             </Link>
           </div>
         </div>

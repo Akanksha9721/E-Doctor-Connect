@@ -30,9 +30,9 @@ const Login = () => {
 
     return (
         <>
-            <div className=' py-20 h-screen bg-cover ' style={{ backgroundImage: `url('https://t3.ftcdn.net/jpg/02/38/08/42/360_F_238084232_5XhGUddDZezzJxybvVXzfPp8cOKAuqRp.jpg')` }}>
+            <div className=' py-20 h-screen bg-cover ' >
                 <div className='max-w-lg mx-auto py-5'>
-                    <h1 className="block  text-center uppercase text-4xl font-bold text-gray-800 dark:text-white">
+                    <h1 className="block  text-blue-800 text-center uppercase text-4xl font-bold  dark:text-white">
                         Patient Login
                     </h1>
                     <div className=" mt-10 bg-transprent  shadow-2xl  border-green-200 rounded-2xl  dark:bg-neutral-900 dark:border-neutral-700">
@@ -156,7 +156,7 @@ const Login = () => {
                                         {/* End Checkbox */}
                                         <button
                                             type="submit"
-                                            className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-orange-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                            className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-indigo-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                                         >
                                             Sign in
                                         </button>

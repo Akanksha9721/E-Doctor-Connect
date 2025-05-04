@@ -57,9 +57,9 @@ const UserRegister = () => {
   });
   return (
     <>
-      <div className=' py-20 h-screen bg-cover ' style={{ backgroundImage: `url('https://t3.ftcdn.net/jpg/02/89/60/96/360_F_289609649_SayyqhWUJoVj3roYfRty2sWYEipZ2n0L.jpg')` }}>
+      <div className=' py-20 h-screen bg-cover '>
         <div className=' max-w-xl mx-auto'>
-        <h1 className="block font-bold  uppercase  text-center  text-4xl font-bold text-gray-800 dark:text-white">
+        <h1 className="block font-bold   uppercase  text-center  text-4xl font-bold text-blue-800 dark:text-white">
                    Register
                 </h1>
           <div className=" mt-10 bg-transprent    rounded-xl shadow-2xl dark:bg-neutral-900 dark:border-neutral-700">
@@ -70,7 +70,7 @@ const UserRegister = () => {
                   Already have an account?
                   <a
                     className="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                    href="../examples/html/signin.html"
+                    href="user-login"
                   >
                     Sign in here
                   </a>
@@ -265,7 +265,7 @@ const UserRegister = () => {
                     <button
                       type="submit"
                       disabled={registerForm.isSubmitting}
-                      className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-orange-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                      className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-indigo-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                     >
                       {registerForm.isSubmitting ? (<IconLoader3 className='animate-spin' />) : (< IconCheck />)}
                       Register
