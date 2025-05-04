@@ -103,26 +103,22 @@ const Manageslot = () => {
 
   return (
     <>
-
-
       {/* Comment Form */}
-      <div className='bg-gray-100 py-5 '>
-        <div className="  max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-
-          <div className="mx-auto max-w-2xl ">
-            <div className="text-center mb-5 ">
-              <h2 className=" font-bold text-xl  uppercase text-gray-800 font-bold sm:text-3xl dark:text-white ">
+      <div className='bg-gray-100 min-h-screen w-full py-4 sm:py-5 lg:py-6'>
+        <div className="w-full max-w-[95%] sm:max-w-[85%] lg:max-w-[75rem] px-3 sm:px-4 py-6 sm:py-8 lg:py-10 mx-auto">
+          <div className="w-full max-w-lg mx-auto">
+            <div className="text-center mb-4 sm:mb-5">
+              <h2 className="text-lg sm:text-xl lg:text-3xl font-bold uppercase text-gray-800 dark:text-white">
                 ADD SLOT
               </h2>
             </div>
             {/* Card */}
-
-            <div className="mt-5 p-4 relative z-10 bg-white border rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700 shadow-lg shadow-neutral-900/50 dark:shadow-none overflow-hidden ">
-              <form onSubmit={slotForm.handleSubmit}>
-                <div className="mb-4 sm:mb-8">
+            <div className="mt-4 sm:mt-6 p-3 sm:p-4 md:p-6 lg:p-8 relative z-10 bg-white border rounded-xl dark:bg-neutral-900 dark:border-neutral-700 shadow-lg shadow-neutral-900/50 dark:shadow-none">
+              <form onSubmit={slotForm.handleSubmit} className="space-y-4 sm:space-y-6">
+                <div>
                   <label
-                    htmlFor="hs-feedback-post-comment-name-1"
-                    className="block mb-2 text-sm font-medium dark:text-white"
+                    htmlFor="time"
+                    className="block mb-1.5 sm:mb-2 text-sm font-medium dark:text-white"
                   >
                     Time
                   </label>
@@ -131,14 +127,14 @@ const Manageslot = () => {
                     id="time"
                     onChange={slotForm.handleChange}
                     value={slotForm.values.time}
-                    className=" border  py-3 px-4 block w-full border-blue-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                    placeholder="time"
+                    className="w-full border py-2.5 sm:py-3 px-3 sm:px-4 block border-blue-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    placeholder="Enter appointment time"
                   />
                 </div>
-                <div className="mb-4 sm:mb-8">
+                <div>
                   <label
-                    htmlFor="hs-feedback-post-comment-email-1"
-                    className="block mb-2 text-sm font-medium dark:text-white"
+                    htmlFor="date"
+                    className="block mb-1.5 sm:mb-2 text-sm font-medium dark:text-white"
                   >
                     Date
                   </label>
@@ -147,27 +143,23 @@ const Manageslot = () => {
                     id="date"
                     onChange={slotForm.handleChange}
                     value={slotForm.values.date}
-                    className=" border py-3 px-4 block w-full border-blue-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                    placeholder="date"
+                    className="w-full border py-2.5 sm:py-3 px-3 sm:px-4 block border-blue-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                   />
                 </div>
-                <div className="mt-6 grid">
+                <div className="pt-2 sm:pt-4">
                   <button
                     type="submit"
-                    className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                    className="w-full py-2.5 sm:py-3 px-3 sm:px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none transition-colors duration-200"
                   >
                     Submit
                   </button>
                 </div>
               </form>
-
             </div>
             {/* End Card */}
           </div>
-
         </div>
       </div>
-      {/* End Comment Form */}
 
       {/*doctor*/}
       <div className=' bg-gray-100 '>
@@ -183,44 +175,66 @@ const Manageslot = () => {
               </div>
             </div>
 
-            <table className='min-w-full   border border-gary-200 '>
-              <thead>
-                <tr className='bg-blue-800 text-white font-bold '>
-                  <th className='p-3' >ID</th>
-                  <th className='p-3' ></th>
-                  <th className='p-3' >Time</th>
-                  <th className='p-3' >Date</th>
-                  <th className='p-3' >Status</th>
-                  <th className='p-3' ></th>
-                  <th className='p-3' >Action</th>
-                  <th className='p-3' colSpan={2}></th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  slotList.map((slot) => {
-                    return (
-                      <tr key={slot._id} className='border text-center border-gray-200 '>
-                        <td className='p-3'>{slot._id}</td>
-                        <td className='p-3'>{slot.name}</td>
-                        <td className='p-3'>{slot.time}</td>
-                        <td className='p-3'>{new Date(slot.createdAt).toDateString()}</td>
-                        <td className='p-3'>{slot.status}</td>
-                        <td className='p-3' colSpan={2}></td>
-                        <td className='p-3'>
-                          <button onClick={() => { deleteSlot(slot._id) }} className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
-                        </td>
-                        <td className='p-3'>
-                          <Link href={'/doctor/updateslot/' + slot._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>Update</Link>
-                        </td>
-                      </tr>
-                    )
-                  })
-                }
-              </tbody>
-
-            </table>
-
+            {/* Responsive Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full table-auto">
+                <thead>
+                  <tr className="bg-blue-800">
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase">ID</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase ">Name</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase ">Time</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase ">Date</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-white uppercase ">Status</th>
+                    <th className="px-6 py-4 text-right text-xs font-semibold text-white uppercase ">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white">
+                  {slotList.map((slot) => (
+                    <tr key={slot._id} className="hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        {slot._id.substring(0, 8)}...
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {slot.name || '-'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {slot.time}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {new Date(slot.createdAt).toLocaleDateString()}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className={`inline-flex px-2 py-1 text-xs font-semibold leading-5 rounded-full
+                          ${slot.status === 'available' 
+                            ? 'bg-green-100 text-green-800' 
+                            : 'bg-red-100 text-red-800'}`}>
+                          {slot.status}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+                        <button
+                          onClick={() => deleteSlot(slot._id)}
+                          className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
+                        >
+                          Delete
+                        </button>
+                        <Link
+                          href={'/doctor/updateslot/' + slot._id}
+                          className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                        >
+                          Update
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              {slotList.length === 0 && (
+                <div className="text-center py-10 px-6">
+                  <p className="text-gray-500 text-sm">No slots available</p>
+                </div>
+              )}
+            </div>
 
           </div>
           {/*doctor*/}
