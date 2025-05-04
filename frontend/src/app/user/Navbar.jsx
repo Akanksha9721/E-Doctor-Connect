@@ -1,9 +1,19 @@
 'use client';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    import('preline/preline').then((preline) => {
+      if (typeof window !== 'undefined') {
+        window.HSStaticMethods = preline.HSStaticMethods;
+        window.HSStaticMethods.autoInit();
+      }
+    });
+  }, []);
 
   return (
     <header className="bg-blue-800 w-full border-b border-gray-200 fixed top-0 ">

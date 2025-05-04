@@ -135,6 +135,47 @@ router.post('/authenticate', (req, res) => {
 
     });
 
-})
+});
+router.post('/reset/update-password', async (req, res) => {
+  try {
+    const { email, newPassword } = req.body;
+
+    // Validate input
+    if (!email || !newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email and new password are required'
+      });
+    }
+
+    // Update password
+    const updatedUser = await Model.findOneAndUpdate(
+      { email },
+      { password: newPassword },
+      { new: true }
+    ).select('-password');
+
+    if (!updatedUser) {
+      return res.status(404).json({
+        success: false,
+        message: 'User not found'
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: 'Password updated successfully',
+      data: updatedUser
+    });
+
+  } catch (error) {
+    console.error('Password reset error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error',
+      error: error.message
+    });
+  }
+});
 
 module.exports = router;
