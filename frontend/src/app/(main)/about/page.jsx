@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React from 'react'
 
 const Aboutpage = () => {
-
     return (
         <>
             <div className="bg-white  py-10  px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-24 mt-1 ">

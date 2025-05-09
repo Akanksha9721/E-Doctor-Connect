@@ -16,24 +16,27 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="bg-blue-800 w-full border-b border-gray-200 ">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo Section */}
-          <div className="flex-shrink-0 flex items-center space-x-3">
-            <img src="/images/logo3.png" alt="Logo" className="h-10 w-auto" />
-            <span className="text-xl md:text-2xl font-bold text-white">E-Doctor</span>
+          <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600">
+                <span className="text-xl font-bold text-white">E</span>
+              </div>
+              <span className="text-xl font-bold tracking-tight">E-Doctor</span>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="flex md:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-400"
+              className="rounded-full p-2 text-gray-500 hover:bg-gray-100"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
-              {/* Menu icon */}
               <svg
                 className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +46,6 @@ const Navbar = () => {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              {/* Close icon */}
               <svg
                 className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,87 +59,89 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
-            <NavLink href="/user/profile">PROFILE</NavLink>
-            <NavDropdown />
-            <NavLink href="/user/blog">BLOG</NavLink>
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/user/profile" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              PROFILE
+            </Link>
+            {/* Appointment Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center gap-1 text-sm font-medium hover:text-blue-600 transition-colors outline-none"
+              >
+                APPOINTMENT
+                <svg
+                  className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                </svg>
+              </button>
+              
+              {isOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-200">
+                  <Link
+                    href="/user/manage-appointment"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Manage Appointments
+                  </Link>
+                  <Link
+                    href="/browse-doctor"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Book New Appointment
+                  </Link>
+                </div>
+              )}
+            </div>
+            <Link href="/user/blog" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              BLOG
+            </Link>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <MobileNavLink href="/user/profile">PROFILE</MobileNavLink>
-            <MobileNavLink href="/user/manage-appointment">Manage Appointments</MobileNavLink>
-            <MobileNavLink href="/browse-doctor">Book New Appointment</MobileNavLink>
-            <MobileNavLink href="/user/blog">BLOG</MobileNavLink>
+        {isMenuOpen && (
+          <div className="md:hidden border-t py-4 px-6 bg-white">
+            <nav className="flex flex-col space-y-4">
+              <Link
+                href="/user/profile"
+                className="text-sm font-medium hover:text-blue-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                PROFILE
+              </Link>
+              <Link
+                href="/user/manage-appointment"
+                className="text-sm font-medium hover:text-blue-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Manage Appointments
+              </Link>
+              <Link
+                href="/browse-doctor"
+                className="text-sm font-medium hover:text-blue-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Book New Appointment
+              </Link>
+              <Link
+                href="/user/blog"
+                className="text-sm font-medium hover:text-blue-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                BLOG
+              </Link>
+            </nav>
           </div>
-        </div>
+        )}
       </nav>
     </header>
-  );
-};
-
-// Helper Components
-const NavLink = ({ href, children }) => (
-  <Link
-    href={href}
-    className="text-white font-medium hover:text-blue-400 transition-colors"
-  >
-    {children}
-  </Link>
-);
-
-const MobileNavLink = ({ href, children }) => (
-  <Link
-    href={href}
-    className="block px-3 py-2 text-base font-medium text-white hover:text-blue-400 hover:bg-blue-700 rounded-md"
-  >
-    {children}
-  </Link>
-);
-
-const NavDropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="relative">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="text-white font-medium hover:text-blue-400 transition-colors flex items-center"
-      >
-        APPOINTMENT
-        <svg
-          className={`ml-2 h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-        </svg>
-      </button>
-      
-      {isOpen && (
-        <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white">
-          <div className="py-1">
-            <Link
-              href="/user/manage-appointment"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              onClick={() => setIsOpen(false)}
-            >
-              Manage Appointments
-            </Link>
-            <Link
-              href="/browse-doctor"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              onClick={() => setIsOpen(false)}
-            >
-              Book New Appointment
-            </Link>
-          </div>
-        </div>
-      )}
-    </div>
   );
 };
 
