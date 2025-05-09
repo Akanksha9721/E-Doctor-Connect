@@ -6,6 +6,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
+const ISSERVER = typeof window === 'undefined';
 
 const validationSchema = Yup.object().shape({
   newPassword: Yup.string()

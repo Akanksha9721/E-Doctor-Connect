@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+const ISSERVER = typeof window === 'undefined';
 
 const Blogpage = () => {
   return (

@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react'
 import toast from 'react-hot-toast';
 import * as Yup from 'yup';
+const ISSERVER = typeof window === 'undefined';
 
 const RegisterSchema = Yup.object().shape({
   firstName: Yup.string()

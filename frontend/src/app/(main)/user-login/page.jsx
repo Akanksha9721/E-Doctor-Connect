@@ -4,7 +4,6 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
-
 const ISSERVER = typeof window === 'undefined';
 const Login = () => {
 

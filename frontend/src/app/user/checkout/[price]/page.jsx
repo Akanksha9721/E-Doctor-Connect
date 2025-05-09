@@ -4,6 +4,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
+const ISSERVER = typeof window === 'undefined';
 
 
 export default function PaymentOnly() {

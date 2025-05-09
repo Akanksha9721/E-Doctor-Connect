@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
+const ISSERVER = typeof window === 'undefined';
 
 const contactSchema = Yup.object().shape({
   firstname: Yup.string()

@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+const ISSERVER = typeof window === 'undefined';
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);

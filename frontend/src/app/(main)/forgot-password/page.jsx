@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { toast } from 'react-hot-toast';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
 import { useRouter } from 'next/navigation';
+const ISSERVER = typeof window === 'undefined';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()

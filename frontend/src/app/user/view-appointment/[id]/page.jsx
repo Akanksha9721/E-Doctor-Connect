@@ -4,6 +4,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
+const ISSERVER = typeof window === 'undefined';
 
 const viewAppointment = () => {
   const { id } = useParams();

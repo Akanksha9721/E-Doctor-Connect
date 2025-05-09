@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import jsPDF from 'jspdf';
 import { PDFViewer, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+const ISSERVER = typeof window === 'undefined';
 
 // Create styles for PDF
 const styles = StyleSheet.create({

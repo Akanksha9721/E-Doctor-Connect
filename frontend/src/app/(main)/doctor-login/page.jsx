@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 import toast from 'react-hot-toast';
-
 const ISSERVER = typeof window === 'undefined';
+
 const Login = () => {
 
     const router = useRouter();
