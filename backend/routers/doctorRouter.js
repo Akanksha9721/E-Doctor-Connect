@@ -136,6 +136,61 @@ router.post('/authenticate', (req, res) => {
     });
 
 });
+// Add password update endpoint
+router.put('/update-password', verifyToken, async (req, res) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+    const userId = req.user._id;
+
+    // Validate input
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'Current password and new password are required'
+      });
+    }
+
+    // Get user
+    const user = await Model.findById(userId);
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: 'User not found'
+      });
+    }
+
+    // Verify current password
+    if (user.password !== currentPassword) {
+      return res.status(401).json({
+        success: false,
+        message: 'Current password is incorrect'
+      });
+    }
+
+    // Update password
+    const updatedUser = await Model.findByIdAndUpdate(
+      userId,
+      { password: newPassword },
+      { new: true }
+    ).select('-password');
+
+    res.status(200).json({
+      success: true,
+      message: 'Password updated successfully',
+      data: updatedUser
+    });
+
+  } catch (error) {
+    console.error('Password update error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error',
+      error: error.message
+    });
+  }
+});
+
+// Reset password (after OTP verification)
 router.post('/reset/update-password', async (req, res) => {
   try {
     const { email, newPassword } = req.body;
@@ -177,5 +232,6 @@ router.post('/reset/update-password', async (req, res) => {
     });
   }
 });
+
 
 module.exports = router;
