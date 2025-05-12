@@ -4,9 +4,9 @@ import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, } from 'next/navigation';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
-const ISSERVER = typeof window === 'undefined';
+
 
 const validationSchema = Yup.object().shape({
   newPassword: Yup.string()
@@ -17,10 +17,10 @@ const validationSchema = Yup.object().shape({
     .required('Confirm password is required'),
 });
 
-const ResetPasswordPage = () => {
+const ResetPassword = () => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const searchParams = useSearchParams();
+
   const email = searchParams.get('email');
 
   const formik = useFormik({
@@ -148,4 +148,4 @@ const ResetPasswordPage = () => {
   );
 };
 
-export default ResetPasswordPage;
+export default ResetPassword;
