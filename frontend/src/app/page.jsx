@@ -6,7 +6,7 @@ import { Menu, X, ChevronDown, User, Clock, Shield, Star, ArrowRight, CheckCircl
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-const ISSERVER = typeof window === 'undefined';
+
 export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
