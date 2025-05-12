@@ -118,7 +118,7 @@ export default function Page() {
       <section className="  relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/Images/background.jpg"
+            src="/images/background.jpg"
             alt="Doctors working together"
             fill
             className="object-cover"
@@ -304,7 +304,7 @@ export default function Page() {
               <div className="relative overflow-hidden rounded-xl shadow-md mb-4">
                 <div className="aspect-[3/4]">
                   <Image
-                    src="/images/telehealth-doctor.jpg"
+                    src="/images/doctor2.jpg"
                     alt="Dr. Michael Wilson"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -334,9 +334,9 @@ export default function Page() {
             <div className="group">
               <div className="relative overflow-hidden rounded-xl shadow-md mb-4">
                 <div className="aspect-[3/4]">
-                  <Image
-                    src="/placeholder.svg?height=600&width=450&text=Dr.+Emily"
-                    alt="Dr. Emily Chen"
+                 <Image
+                    src="/images/doctor6.jpg"
+                    alt="Dr. Michael Wilson"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -366,8 +366,8 @@ export default function Page() {
               <div className="relative overflow-hidden rounded-xl shadow-md mb-4">
                 <div className="aspect-[3/4]">
                   <Image
-                    src="/placeholder.svg?height=600&width=450&text=Dr.+James"
-                    alt="Dr. James Thompson"
+                    src="/images/doctor4.jpg"
+                    alt="Dr. Michael Wilson"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
