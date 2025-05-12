@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useRouter, } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
 
 
@@ -20,7 +20,7 @@ const validationSchema = Yup.object().shape({
 const ResetPassword = () => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-
+  const searchParams = useSearchParams();
   const email = searchParams.get('email');
 
   const formik = useFormik({
