@@ -25,6 +25,8 @@ const ResetPassword = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get('email');
+  const token = searchParams.get('token');
+  const userType = searchParams.get('type') || 'user';
 
   const formik = useFormik({
     initialValues: {
@@ -33,24 +35,26 @@ const ResetPassword = () => {
     },
     validationSchema,
     onSubmit: async (values) => {
-      if (!email) {
-        toast.error('Email is required');
+      if (!email || !token) {
+        toast.error('Invalid reset link');
         return;
       }
 
       try {
         setIsLoading(true);
         const response = await axios.post(
-          `${process.env.NEXT_PUBLIC_API_URL}/user/reset/update-password`,
+          `${process.env.NEXT_PUBLIC_API_URL}/reset/reset-password`,
           {
             email,
+            token,
             newPassword: values.newPassword,
+            userType,
           }
         );
 
         if (response.data.success) {
           toast.success('Password updated successfully');
-          router.push('/user-login');
+          router.push(userType === 'doctor' ? '/doctor-login' : '/user-login');
         }
       } catch (error) {
         toast.error(error.response?.data?.message || 'Failed to update password');
@@ -60,12 +64,20 @@ const ResetPassword = () => {
     },
   });
 
-  if (!email) {
+  if (!email || !token) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-xl font-semibold text-red-600">Invalid Reset Link</h2>
           <p className="mt-2 text-gray-600">Please use a valid password reset link.</p>
+          <div className="mt-4">
+            <button
+              onClick={() => router.push('/forgot-password')}
+              className="text-indigo-600 hover:text-indigo-500"
+            >
+              Request a new reset link
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -146,7 +158,7 @@ const ResetPassword = () => {
 
               <button
                 type="button"
-                onClick={() => router.push('/user-login')}
+                onClick={() => router.push(userType === 'doctor' ? '/doctor-login' : '/user-login')}
                 className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 Back to Login

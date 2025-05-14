@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const crypto = require('crypto');
-const nodemailer = require('nodemailer');
 const User = require('../models/userModel');
+const Doctor = require('../models/doctorModel');
+const bcrypt = require('bcrypt');
+const nodemailer = require('nodemailer');
+const crypto = require('crypto');
 
-// Configure nodemailer with email service (reusing existing config)
+// Configure nodemailer
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -15,65 +15,63 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Store reset tokens with expiration (similar to OTP store)
+// Store reset tokens with expiration
 const resetTokenStore = new Map();
 
 // Clean up expired tokens periodically
 setInterval(() => {
     const now = Date.now();
-    for (const [email, data] of resetTokenStore.entries()) {
+    for (const [key, data] of resetTokenStore.entries()) {
         if (data.expiresAt < now) {
-            resetTokenStore.delete(email);
+            resetTokenStore.delete(key);
         }
     }
-}, 5 * 60 * 1000);
+}, 5 * 60 * 1000); // Clean up every 5 minutes
 
-// Request password reset
+// Generic function to send reset email
+const sendResetEmail = async (email, resetToken, userType) => {
+    const resetUrl = `${process.env.FRONTEND_URL}/reset-password?token=${resetToken}&email=${email}&type=${userType}`;
+    return transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: email,
+        subject: 'Password Reset Request - E-Doctor Connect',
+        html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                <h1 style="color: #2563eb; text-align: center;">Password Reset Request</h1>
+                <p>You requested a password reset for your E-Doctor Connect ${userType} account. Click the button below to reset your password:</p>
+                <div style="text-align: center; padding: 20px;">
+                    <a href="${resetUrl}" style="background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;">Reset Password</a>
+                </div>
+                <p style="color: #6b7280;">This link will expire in 1 hour.</p>
+                <p style="color: #6b7280;">If you didn't request this password reset, please ignore this email.</p>
+            </div>
+        `
+    });
+};
+
+// Request password reset for user or doctor
 router.post('/forgot-password', async (req, res) => {
     try {
-        const { email } = req.body;
-
-        // Find user by email
-        const user = await User.findOne({ email });
-        if (!user) {
+        const { email, userType } = req.body;
+        const Model = userType === 'doctor' ? Doctor : User;
+        const account = await Model.findOne({ email });
+        
+        if (!account) {
             return res.status(404).json({
                 success: false,
-                message: 'User not found'
+                message: 'Account not found'
             });
         }
 
-        // Generate reset token
         const resetToken = crypto.randomBytes(32).toString('hex');
         const expiresAt = Date.now() + 60 * 60 * 1000; // 1 hour expiration
 
-        // Store token with expiration
-        resetTokenStore.set(email, {
+        resetTokenStore.set(`${email}-${userType}`, {
             resetToken,
             expiresAt
         });
 
-        // Create reset URL
-        const resetUrl = `${process.env.FRONTEND_URL}/reset-password?token=${resetToken}&email=${email}`;
-
-        // Send reset email
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: email,
-            subject: 'Password Reset Request - E-Doctor Connect',
-            html: `
-                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                    <h1 style="color: #2563eb; text-align: center;">Password Reset Request</h1>
-                    <p>You requested a password reset for your E-Doctor Connect account. Click the button below to reset your password:</p>
-                    <div style="text-align: center; padding: 20px;">
-                        <a href="${resetUrl}" style="background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;">Reset Password</a>
-                    </div>
-                    <p style="color: #6b7280;">This link will expire in 1 hour.</p>
-                    <p style="color: #6b7280;">If you didn't request this password reset, please ignore this email.</p>
-                </div>
-            `
-        };
-
-        await transporter.sendMail(mailOptions);
+        await sendResetEmail(email, resetToken, userType);
 
         res.status(200).json({
             success: true,
@@ -93,10 +91,9 @@ router.post('/forgot-password', async (req, res) => {
 // Reset password with token
 router.post('/reset-password', async (req, res) => {
     try {
-        const { email, token, newPassword } = req.body;
-
-        // Verify token
-        const storedData = resetTokenStore.get(email);
+        const { email, token, newPassword, userType } = req.body;
+        const storedData = resetTokenStore.get(`${email}-${userType}`);
+        
         if (!storedData) {
             return res.status(400).json({
                 success: false,
@@ -106,16 +103,14 @@ router.post('/reset-password', async (req, res) => {
 
         const { resetToken, expiresAt } = storedData;
 
-        // Check if token is expired
         if (Date.now() > expiresAt) {
-            resetTokenStore.delete(email);
+            resetTokenStore.delete(`${email}-${userType}`);
             return res.status(400).json({
                 success: false,
                 message: 'Reset token has expired'
             });
         }
 
-        // Verify token matches
         if (token !== resetToken) {
             return res.status(400).json({
                 success: false,
@@ -123,22 +118,21 @@ router.post('/reset-password', async (req, res) => {
             });
         }
 
-        // Find user and update password
-        const user = await User.findOne({ email });
-        if (!user) {
+        const Model = userType === 'doctor' ? Doctor : User;
+        const account = await Model.findOne({ email });
+        
+        if (!account) {
             return res.status(404).json({
                 success: false,
-                message: 'User not found'
+                message: 'Account not found'
             });
         }
 
-        // Hash new password
         const hashedPassword = await bcrypt.hash(newPassword, 10);
-        user.password = hashedPassword;
-        await user.save();
+        account.password = hashedPassword;
+        await account.save();
 
-        // Delete reset token after successful reset
-        resetTokenStore.delete(email);
+        resetTokenStore.delete(`${email}-${userType}`);
 
         res.status(200).json({
             success: true,
