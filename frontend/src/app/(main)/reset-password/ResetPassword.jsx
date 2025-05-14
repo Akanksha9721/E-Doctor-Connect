@@ -4,8 +4,9 @@ import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useRouter, useSearchParams } from 'next/navigation';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
+import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation';
 
 
 const validationSchema = Yup.object().shape({
