@@ -5,13 +5,15 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
-import { useRouter } from 'next/router';
-import { useSearchParams } from 'next/navigation';
-
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const validationSchema = Yup.object().shape({
   newPassword: Yup.string()
-    .min(6, 'Password must be at least 6 characters')
+    .min(8, 'Password must be at least 8 characters')
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/,
+      'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character'
+    )
     .required('New password is required'),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('newPassword'), null], 'Passwords must match')
@@ -45,7 +47,7 @@ const ResetPassword = () => {
             newPassword: values.newPassword,
           }
         );
-        
+
         if (response.data.success) {
           toast.success('Password updated successfully');
           router.push('/user-login');
@@ -133,7 +135,7 @@ const ResetPassword = () => {
               </div>
             </div>
 
-            <div>
+            <div className="flex flex-col space-y-4">
               <button
                 type="submit"
                 disabled={isLoading || !formik.isValid}
@@ -141,6 +143,26 @@ const ResetPassword = () => {
               >
                 {isLoading ? <LoadingSpinner /> : 'Reset Password'}
               </button>
+
+              <button
+                type="button"
+                onClick={() => router.push('/user-login')}
+                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Back to Login
+              </button>
+            </div>
+
+            {/* Password requirements hint */}
+            <div className="mt-4">
+              <p className="text-sm text-gray-600">Password must contain:</p>
+              <ul className="list-disc pl-5 mt-2 text-xs text-gray-500">
+                <li>At least 8 characters</li>
+                <li>One uppercase letter</li>
+                <li>One lowercase letter</li>
+                <li>One number</li>
+                <li>One special character (@$!%*?&)</li>
+              </ul>
             </div>
           </form>
         </div>
