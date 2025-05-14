@@ -18,7 +18,6 @@ const validationSchema = Yup.object().shape({
     .oneOf(['user', 'doctor'], 'Please select account type')
     .required('Please select account type'),
 });
-
 const SuccessMessage = () => (
   <div className="text-center">
     <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
