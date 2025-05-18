@@ -49,8 +49,6 @@ const Contactpage = () => {
 
   return (
     <>
-    
-
       <div className="bg-gray-50 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-screen-xl px-4 md:px-8">
           <div className="mb-10 md:mb-16">
