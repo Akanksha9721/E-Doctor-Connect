@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Menu, X, ChevronDown, User, Clock, Shield, Star, ArrowRight, CheckCircle, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { DropdownMenu, DropdownMenuItem, DropdownMenuContent,  DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
