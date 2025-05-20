@@ -1,5 +1,5 @@
 'use client'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdownmenu';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import Link from 'next/link'
 import React,{ useState }  from 'react'

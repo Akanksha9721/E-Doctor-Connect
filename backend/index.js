@@ -11,7 +11,7 @@ const AppointmentRouter = require('./routers/appointmentRouter');
 const PaymentRouter = require ('./routers/razorpayRouter');
 const paydetailRouter =require('./routers/paydetailRouter');
 const mailRouter =require('./routers/mailRouter');
-
+const resetRouter = require('./routers/resetRouter');
 
 //initializating express
 const app = express();
@@ -33,6 +33,7 @@ app.use('/test', TestRouter);
 app.use('/payment',PaymentRouter);
 app.use('/paydetail',paydetailRouter);
 app.use('/mail',mailRouter);
+app.use('/reset', resetRouter);
 
 //accept and process request
 app.get('/', (req, res) => {
