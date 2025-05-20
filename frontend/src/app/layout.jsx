@@ -3,15 +3,11 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import PrelineScript from '../components/prelinescript';
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const geist = Geist({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
+  adjustFontFallback: true,
+  variable: "--font-geist",
 });
 
 export const metadata = {
@@ -44,12 +40,36 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <PrelineScript/>
-        <Toaster position="top-center"/>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body className={`${geist.variable} font-sans antialiased bg-background min-h-screen`}>
+        <PrelineScript />
+        <Toaster 
+          position="top-center"
+          toastOptions={{
+            duration: 3000,
+            style: {
+              background: '#363636',
+              color: '#fff',
+            },
+            success: {
+              duration: 3000,
+              theme: {
+                primary: '#4caf50',
+                secondary: '#ffffff',
+              },
+            },
+            error: {
+              duration: 4000,
+              theme: {
+                primary: '#f44336',
+                secondary: '#ffffff',
+              },
+            },
+          }}
+        />
         {children}
       </body>
     </html>
