@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['localhost'],
-    unoptimized: true,
+    unoptimized: true, // disables built-in Next.js image optimization
   },
-  reactStrictMode: true,
-  swcMinify: true,
+  reactStrictMode: true, // helps catch potential problems in development
+  swcMinify: true, // enables SWC compiler-based minification
 }
 
 export default nextConfig;
