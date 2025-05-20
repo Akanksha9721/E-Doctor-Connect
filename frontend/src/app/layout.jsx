@@ -3,12 +3,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import PrelineScript from '../components/prelinescript';
 
-const geist = Geist({
-  subsets: ["latin"],
-  display: "swap",
-  adjustFontFallback: true,
-  variable: "--font-geist",
-});
+
 
 export const metadata = {
   title: "E-Doctor Connect | Healthcare Made Easy",
@@ -44,7 +39,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`${geist.variable} font-sans antialiased bg-background min-h-screen`}>
+      <body >
         <PrelineScript />
         <Toaster 
           position="top-center"
