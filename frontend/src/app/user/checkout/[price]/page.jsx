@@ -45,7 +45,9 @@ export default function PaymentOnly() {
     const handlePayment = async () => {
         if (!userData) {
             toast.error('User data not available.')
+            render.push('/login')
             return
+            
         }
 
         setIsProcessing(true)
