@@ -54,9 +54,11 @@ export default function PaymentOnly() {
         const { name, email, phone } = userData
 
         try {
+            console.log(price);
+            
             // Step 1: Create Razorpay order from server
             const { data: order } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/payment/create-order`, {
-                amount: parseInt(price) * 100, // e.g. ₹100.00 in paise
+                amount: parseInt(price.replace(',', '')) * 100, // e.g. ₹100.00 in paise
                 currency: 'INR',
             })
 

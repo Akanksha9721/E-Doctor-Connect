@@ -404,13 +404,13 @@ export default function Page() {
             {[
               {
                 title: "X-Ray",
-                price: "2,000",
+                price: "2000",
                 features: ["Meet our consultants", "Reports and prescriptions", "Good healthcare", "Community support"],
                 id: "plan-1",
               },
               {
                 title: "Blood Test",
-                price: "1,000",
+                price: "1000",
                 features: [
                   "Unlimited file storage",
                   "10 GB bandwidth per month",
@@ -423,7 +423,7 @@ export default function Page() {
               },
               {
                 title: "Surgery",
-                price: "15,000",
+                price: "15000",
                 features: [
                   "Unlimited file storage",
                   "Unlimited bandwidth per month",
