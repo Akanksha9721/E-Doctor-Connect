@@ -1,24 +1,39 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const express = require("express");
 
-// Check if environment variables are set
-if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
-    throw new Error('RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET must be defined in .env file');
+// Improved error checking
+function validateEnvironmentVariables() {
+    const missingVars = [];
+    
+    if (!process.env.RAZORPAY_KEY_ID) missingVars.push('RAZORPAY_KEY_ID');
+    if (!process.env.RAZORPAY_KEY_SECRET) missingVars.push('RAZORPAY_KEY_SECRET');
+    
+    if (missingVars.length > 0) {
+        throw new Error(`Missing required environment variables: ${missingVars.join(', ')}`);
+    }
 }
 
-const razorpay = new Razorpay({
-    key_id: process.env.RAZORPAY_KEY_ID,
-    key_secret: process.env.RAZORPAY_KEY_SECRET,
-});
+let razorpay;
 
-// console.log(process.env.RAZORPAY_KEY_ID,process.env.RAZORPAY_SECRET);
+try {
+    validateEnvironmentVariables();
+    
+    razorpay = new Razorpay({
+        key_id: process.env.RAZORPAY_KEY_ID,
+        key_secret: process.env.RAZORPAY_KEY_SECRET,
+    });
 
-console.log('Environment Variables:', {
-    RAZORPAY_KEY_ID: process.env.RAZORPAY_KEY_ID ? 'Set' : 'Not Set',
-    RAZORPAY_KEY_SECRET: process.env.RAZORPAY_KEY_SECRET ? 'Set' : 'Not Set'
-});
+    console.log('Environment Variables:', {
+        RAZORPAY_KEY_ID: process.env.RAZORPAY_KEY_ID ? 'Set' : 'Not Set',
+        RAZORPAY_KEY_SECRET: process.env.RAZORPAY_KEY_SECRET ? 'Set' : 'Not Set'
+    });
+} catch (error) {
+    console.error('Razorpay initialization failed:', error.message);
+    process.exit(1);
+}
 
 const router = express.Router();
 
