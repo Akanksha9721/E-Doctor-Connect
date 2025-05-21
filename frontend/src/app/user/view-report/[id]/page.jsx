@@ -98,7 +98,7 @@ const ViewReport = () => {
   return (
     <>
       <div className='min-h-screen bg-green-100 '>
-        <h1 className='text-center font-bold text-4xl mt-16'>Report</h1>
+        <h1 className='text-center font-bold text-4xl'>Report</h1>
 
         <div className='container mx-auto px-4 py-8'>
           {/* Report Details Card */}

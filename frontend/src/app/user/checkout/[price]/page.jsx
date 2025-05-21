@@ -123,7 +123,7 @@ export default function PaymentOnly() {
 
     return (
         <div className='h-screen w-screen'>
-            <div className="pt-16 mt-4 px-10 lg:px-20 bg-pink-100 h-screen">
+            <div className="pt-16  px-10 lg:px-20 bg-pink-100 h-screen">
 
                 <button
                     className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50 mx-auto mt-4 "
@@ -494,7 +494,7 @@ export default function PaymentOnly() {
                     </div>
                 </div>
             </div>
-            <div className="bg-blue-800 py-10 lg:py:15">
+            <div className="bg-blue-800 mt-10 ">
                 <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
                     <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
                         <div className="col-span-full lg:col-span-2">
