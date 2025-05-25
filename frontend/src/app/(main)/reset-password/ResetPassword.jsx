@@ -21,12 +21,11 @@ const validationSchema = Yup.object().shape({
 });
 
 const ResetPassword = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);  const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get('email');
   const token = searchParams.get('token');
-  const userType = searchParams.get('type') || 'user';
+  const userType = 'doctor'; // Force userType to be doctor
 
   const formik = useFormik({
     initialValues: {
@@ -149,19 +148,18 @@ const ResetPassword = () => {
 
             <div className="flex flex-col space-y-4">
               <button
-                type="submit"
-                disabled={isLoading || !formik.isValid}
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isLoading ? <LoadingSpinner /> : 'Reset Password'}
-              </button>
+                type="submit"            disabled={isLoading || !formik.isValid}
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isLoading ? <LoadingSpinner /> : 'Reset Doctor Password'}
+          </button>
 
-              <button
-                type="button"
-                onClick={() => router.push(userType === 'doctor' ? '/doctor-login' : '/user-login')}
-                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                Back to Login
+          <button
+            type="button"
+            onClick={() => router.push('/doctor-login')}
+            className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Back to Doctor Login
               </button>
             </div>
 

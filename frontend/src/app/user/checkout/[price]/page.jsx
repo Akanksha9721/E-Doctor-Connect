@@ -57,20 +57,26 @@ export default function PaymentOnly() {
 
         try {
             console.log(price);
-            
-            // Step 1: Create Razorpay order from server
-            const { data: order } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/payment/create-order`, {
-                amount: parseInt(price.replace(',', '')) * 100, // e.g. ₹100.00 in paise
-                currency: 'INR',
-            })
+              // Step 1: Create Razorpay order from server
+            if (!process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID) {
+                throw new Error('Razorpay Key ID is not configured');
+            }
 
-            // Step 2: Open Razorpay checkout
+            let amount = parseInt(price.toString().replace(/[^0-9]/g, '')) * 100; // Convert to paise
+            if (isNaN(amount) || amount <= 0) {
+                throw new Error('Invalid amount');
+            }
+
+            const { data: order } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/payment/create-order`, {
+                amount: amount,
+                currency: 'INR',
+            });// Step 2: Open Razorpay checkout
             const options = {
-                key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-                amount: order.amount,
+                key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID?.trim(),
+                amount: parseInt(order.amount),
                 currency: order.currency,
                 name: 'E-Doctor Connect',
-                description: 'Consultation Payment',
+                description: 'Doctor Consultation Payment',
                 order_id: order.id,
                 handler: async (response) => {
                     try {

@@ -21,18 +21,19 @@ let razorpay;
 try {
     validateEnvironmentVariables();
     
+    if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+        throw new Error('Razorpay API keys are required');
+    }
+
     razorpay = new Razorpay({
-        key_id: process.env.RAZORPAY_KEY_ID,
-        key_secret: process.env.RAZORPAY_KEY_SECRET,
+        key_id: process.env.RAZORPAY_KEY_ID.trim(),
+        key_secret: process.env.RAZORPAY_KEY_SECRET.trim(),
     });
 
-    console.log('Environment Variables:', {
-        RAZORPAY_KEY_ID: process.env.RAZORPAY_KEY_ID ? 'Set' : 'Not Set',
-        RAZORPAY_KEY_SECRET: process.env.RAZORPAY_KEY_SECRET ? 'Set' : 'Not Set'
-    });
+    console.log('Razorpay initialized successfully');
 } catch (error) {
     console.error('Razorpay initialization failed:', error.message);
-    process.exit(1);
+    throw error; // Let the application handle the error
 }
 
 const router = express.Router();

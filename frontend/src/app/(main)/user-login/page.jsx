@@ -112,12 +112,12 @@ const Login = () => {
                                                     required=""
                                                     aria-describedby="password-error"
                                                 />
-                                                <a
+                                                <Link
                                                     className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                                                    href="../examples/html/recover-account.html"
+                                                    href="/forgot-password"
                                                 >
                                                     Forgot password?
-                                                </a>
+                                                </Link>
                                                 <div className="hidden absolute inset-y-0 end-0 pointer-events-none pe-3">
                                                     <svg
                                                         className="size-5 text-red-500"

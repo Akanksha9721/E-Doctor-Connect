@@ -36,18 +36,17 @@ const SuccessMessage = () => (
       </svg>
     </div>
     <div className="mt-3 text-center sm:mt-5">
-      <h3 className="text-lg leading-6 font-medium text-gray-900">
-        Reset Link Sent Successfully
+      <h3 className="text-lg leading-6 font-medium text-gray-900">        OTP Sent Successfully
       </h3>
       <div className="mt-2">
         <p className="text-sm text-gray-500">
-          Please check your email inbox for the password reset link.
+          Please check your email inbox for the OTP (One-Time Password).
           If you don't see it, please check your spam folder.
         </p>
       </div>
       <div className="mt-5">
         <Link
-          href="/login"
+          href="/reset-password"
           className="text-sm font-medium text-indigo-600 hover:text-indigo-500 
             transition-colors duration-200"
         >
@@ -67,16 +66,19 @@ const ForgotPasswordPage = () => {
       email: '',
       userType: '',
     },
-    validationSchema,
-    onSubmit: async (values) => {
+    validationSchema,    onSubmit: async (values) => {
       try {
         setIsLoading(true);
+        const endpoint = values.userType === 'user' 
+          ? '/user/forgot-password'
+          : '/reset/forgot-password';
+          
         const response = await axios.post(
-          `${process.env.NEXT_PUBLIC_API_URL}/reset/forgot-password`,
+          `${process.env.NEXT_PUBLIC_API_URL}${endpoint}`,
           values
         );
         if (response.data.success) {
-          toast.success('Password reset link sent to your email');
+          toast.success('Password reset OTP sent to your email');
           setStep('success');
         }
       } catch (error) {
