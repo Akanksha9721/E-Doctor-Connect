@@ -8,6 +8,9 @@ import { LoadingSpinner } from '@/components/LoadingSpinner';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 const validationSchema = Yup.object().shape({
+  otp: Yup.string()
+    .matches(/^\d{6}$/, 'OTP must be 6 digits')
+    .required('OTP is required'),
   newPassword: Yup.string()
     .min(8, 'Password must be at least 8 characters')
     .matches(
@@ -21,11 +24,13 @@ const validationSchema = Yup.object().shape({
 });
 
 const ResetPassword = () => {
-  const [isLoading, setIsLoading] = useState(false);  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);  const [step, setStep] = useState('form');
+  const [otp, setOtp] = useState('');
+  const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get('email');
   const token = searchParams.get('token');
-  const userType = 'doctor'; // Force userType to be doctor
+  const userType = searchParams.get('userType') || 'doctor';
 
   const formik = useFormik({
     initialValues: {
@@ -63,6 +68,57 @@ const ResetPassword = () => {
     },
   });
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      setIsLoading(true);
+      
+      const verifyEndpoint = userType === 'user' 
+        ? '/user/verify-otp'
+        : '/reset/verify-otp';
+        
+      const resetEndpoint = userType === 'user'
+        ? '/user/reset-password'
+        : '/reset/reset-password';
+
+      // First verify OTP
+      const verifyResponse = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}${verifyEndpoint}`,
+        {
+          email,
+          otp
+        }
+      );
+
+      if (verifyResponse.data.success) {
+        // Then reset password with the token
+        const resetResponse = await axios.post(
+          `${process.env.NEXT_PUBLIC_API_URL}${resetEndpoint}`,
+          {
+            resetToken: verifyResponse.data.resetToken,
+            newPassword: password
+          }
+        );
+
+        if (resetResponse.data.success) {
+          toast.success('Password reset successful');
+          setStep('success');
+          
+          // Redirect to appropriate login page
+          setTimeout(() => {
+            router.push(userType === 'user' ? '/user-login' : '/doctor-login');
+          }, 2000);
+        }
+      }
+    } catch (error) {
+      const errorMessage = error.response?.data?.message || 'Failed to reset password';
+      toast.error(errorMessage);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   if (!email || !token) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -95,86 +151,104 @@ const ResetPassword = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6" onSubmit={formik.handleSubmit}>
-            <div>
-              <label htmlFor="newPassword" className="block text-sm font-medium text-gray-700">
-                New Password
-              </label>
-              <div className="mt-1">
-                <input
-                  id="newPassword"
-                  name="newPassword"
-                  type="password"
-                  required
-                  className={`appearance-none block w-full px-3 py-2 border ${
-                    formik.touched.newPassword && formik.errors.newPassword
-                      ? 'border-red-300'
-                      : 'border-gray-300'
-                  } rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.newPassword}
-                />
-                {formik.touched.newPassword && formik.errors.newPassword && (
-                  <p className="mt-2 text-sm text-red-600">{formik.errors.newPassword}</p>
-                )}
+          {step === 'form' ? (
+            <form className="space-y-6" onSubmit={formik.handleSubmit}>
+              <div>
+                <label htmlFor="newPassword" className="block text-sm font-medium text-gray-700">
+                  New Password
+                </label>
+                <div className="mt-1">
+                  <input
+                    id="newPassword"
+                    name="newPassword"
+                    type="password"
+                    required
+                    className={`appearance-none block w-full px-3 py-2 border ${
+                      formik.touched.newPassword && formik.errors.newPassword
+                        ? 'border-red-300'
+                        : 'border-gray-300'
+                    } rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.newPassword}
+                  />
+                  {formik.touched.newPassword && formik.errors.newPassword && (
+                    <p className="mt-2 text-sm text-red-600">{formik.errors.newPassword}</p>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+                  Confirm Password
+                </label>
+                <div className="mt-1">
+                  <input
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    type="password"
+                    required
+                    className={`appearance-none block w-full px-3 py-2 border ${
+                      formik.touched.confirmPassword && formik.errors.confirmPassword
+                        ? 'border-red-300'
+                        : 'border-gray-300'
+                    } rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.confirmPassword}
+                  />
+                  {formik.touched.confirmPassword && formik.errors.confirmPassword && (
+                    <p className="mt-2 text-sm text-red-600">{formik.errors.confirmPassword}</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="flex flex-col space-y-4">
+                <button
+                  type="submit"
+                  disabled={isLoading || !formik.isValid}
+                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isLoading ? <LoadingSpinner /> : 'Reset Doctor Password'}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => router.push('/doctor-login')}
+                  className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  Back to Doctor Login
+                </button>
+              </div>
+
+              {/* Password requirements hint */}
+              <div className="mt-4">
+                <p className="text-sm text-gray-600">Password must contain:</p>
+                <ul className="list-disc pl-5 mt-2 text-xs text-gray-500">
+                  <li>At least 8 characters</li>
+                  <li>One uppercase letter</li>
+                  <li>One lowercase letter</li>
+                  <li>One number</li>
+                  <li>One special character (@$!%*?&)</li>
+                </ul>
+              </div>
+            </form>
+          ) : (
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-gray-800">Success!</h3>
+              <p className="mt-2 text-sm text-gray-600">
+                Your password has been reset successfully.
+              </p>
+              <div className="mt-4">
+                <button
+                  onClick={() => router.push('/doctor-login')}
+                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  Go to Doctor Login
+                </button>
               </div>
             </div>
-
-            <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
-                Confirm Password
-              </label>
-              <div className="mt-1">
-                <input
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  type="password"
-                  required
-                  className={`appearance-none block w-full px-3 py-2 border ${
-                    formik.touched.confirmPassword && formik.errors.confirmPassword
-                      ? 'border-red-300'
-                      : 'border-gray-300'
-                  } rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.confirmPassword}
-                />
-                {formik.touched.confirmPassword && formik.errors.confirmPassword && (
-                  <p className="mt-2 text-sm text-red-600">{formik.errors.confirmPassword}</p>
-                )}
-              </div>
-            </div>
-
-            <div className="flex flex-col space-y-4">
-              <button
-                type="submit"            disabled={isLoading || !formik.isValid}
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isLoading ? <LoadingSpinner /> : 'Reset Doctor Password'}
-          </button>
-
-          <button
-            type="button"
-            onClick={() => router.push('/doctor-login')}
-            className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            Back to Doctor Login
-              </button>
-            </div>
-
-            {/* Password requirements hint */}
-            <div className="mt-4">
-              <p className="text-sm text-gray-600">Password must contain:</p>
-              <ul className="list-disc pl-5 mt-2 text-xs text-gray-500">
-                <li>At least 8 characters</li>
-                <li>One uppercase letter</li>
-                <li>One lowercase letter</li>
-                <li>One number</li>
-                <li>One special character (@$!%*?&)</li>
-              </ul>
-            </div>
-          </form>
+          )}
         </div>
       </div>
     </div>
