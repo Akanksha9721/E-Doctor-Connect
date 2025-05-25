@@ -70,7 +70,7 @@ const ForgotPasswordPage = () => {
       try {
         setIsLoading(true);
         const endpoint = values.userType === 'user' 
-          ? '/user/forgot-password'
+          ? '/patient-reset/forgot-password'
           : '/reset/forgot-password';
           
         const response = await axios.post(
