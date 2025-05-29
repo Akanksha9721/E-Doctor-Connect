@@ -71,7 +71,7 @@ const viewAppointment = () => {
                 <p className='font-bold text-2xl py-1'> Age : {appointmentData.patientAge}</p>
                 <p className='font-bold text-2xl py-1'> Gender : {appointmentData.patientGender}</p>
                 <p className='font-bold text-2xl py-1'>Description:{appointmentData.description} </p>
-                <p className='font-bold text-2xl py-1'></p>
+                <p className='font-bold text-2xl py-1'> </p>
                 <Link href={'/user/view-report/' + appointmentData._id} className='bg-blue-500 py-1 px-3 text-white rounded-full  hover:bg-blue-700'>View Report</Link>
               </div>
             </div>
@@ -102,7 +102,7 @@ const viewAppointment = () => {
         </div>
 
 
-        <div className="bg-blue-800">
+        <div className="bg-blue-800 mt-10">
           <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
               <div className="col-span-full lg:col-span-2">
