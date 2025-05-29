@@ -36,7 +36,8 @@ const SuccessMessage = () => (
       </svg>
     </div>
     <div className="mt-3 text-center sm:mt-5">
-      <h3 className="text-lg leading-6 font-medium text-gray-900">        OTP Sent Successfully
+      <h3 className="text-lg leading-6 font-medium text-gray-900">
+         OTP Sent Successfully
       </h3>
       <div className="mt-2">
         <p className="text-sm text-gray-500">
