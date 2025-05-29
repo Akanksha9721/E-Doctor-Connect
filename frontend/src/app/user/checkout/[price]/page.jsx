@@ -4,6 +4,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { render } from '@react-pdf/renderer'
 const ISSERVER = typeof window === 'undefined';
 
 
@@ -44,8 +45,10 @@ export default function PaymentOnly() {
 
     const handlePayment = async () => {
         if (!userData) {
+            console.log('User data not available')
             toast.error('User data not available.')
-            render.push('/login')
+            router.push('/user-login')
+        
             return
             
         }
