@@ -134,12 +134,7 @@ const Login = () => {
                                             >
                                                 Password
                                             </label>
-                                            <Link
-                                                className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                                                href="/forgot-password"
-                                            >
-                                                Forgot password?
-                                            </Link>
+                                            
                                         </div>
                                         <div className="relative">
                                             <input
@@ -163,6 +158,12 @@ const Login = () => {
                                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                                 </svg>
                                             </div>
+                                            <Link
+                                                className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
+                                                href="/forgot-password"
+                                            >
+                                                Forgot password?
+                                            </Link>
                                         </div>
                                         <p className="hidden text-xs text-red-600 mt-2" id="password-error">
                                             8+ characters required
@@ -179,6 +180,7 @@ const Login = () => {
                                                 className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
                                             />
                                         </div>
+                                        
                                         <div className="ms-3">
                                             <label htmlFor="remember-me" className="text-sm dark:text-white">
                                                 Remember me
