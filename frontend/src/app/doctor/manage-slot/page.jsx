@@ -147,7 +147,6 @@ const Manageslot = () => {
                   <thead>
                     <tr className="bg-gray-50">
                       <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">ID</th>
-                      <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Name</th>
                       <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Time</th>
                       <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
                       <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
@@ -160,9 +159,7 @@ const Manageslot = () => {
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                           {slot._id.substring(0, 8)}...
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                          {slot.name || '-'}
-                        </td>
+                       
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                           {slot.time}
                         </td>
