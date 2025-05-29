@@ -64,7 +64,7 @@ const Register = () => {
   });
   return (
     <>
-      <div className='h-auto  py-7  bg-gray-100  bg-cover h-screen' >
+      <div className='bg-gray-100  bg-cover  h-screen' >
         <div className="text-center py-5 lg:py:8">
           <h1 className="block  uppercase text-4xl font-bold text-blue-800 dark:text-white">
             Register Form
@@ -322,7 +322,7 @@ const Register = () => {
         </div>
       </div>
 
-      <div className="bg-blue-800">
+      <div className="bg-blue-800  ">
         <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
           <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
             <div className="col-span-full lg:col-span-2">
