@@ -415,7 +415,7 @@ export default function PaymentOnly() {
                 </footer>
             </div>
 
-            {  /* Footer Section End */}
+{            /* Footer Section End */}
         </div>
     )
 }
