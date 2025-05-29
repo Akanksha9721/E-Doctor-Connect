@@ -9,14 +9,14 @@ const Aboutpage = () => {
                 <div className="mx-auto max-w-screen px-4 md:px-5 md:px-10 ">
 
                     <div className="grid gap-10 md:grid-cols-2 lg:gap-15 xl:gap-20 2xl:gap-24">
-                        <div className='profile-card bg-gray-100  hover:bg-indigo-100  rounded-lg shadow-md    '>
+                        <div className=' h-64 profile-card bg-gray-100  hover:bg-indigo-100  rounded-lg shadow-md transition-colors duration-300'>
 
                             <div className="h-64  overflow-hidden  bg-gray-100 shadow-lg md:h-auto ">
                                 <img
                                     src="https://media.istockphoto.com/id/1196710776/photo/doctors-working-in-team.jpg?s=170667a&w=0&k=20&c=BwMBoAO7L-PPYNuxaHR0CD_1oohe8Ilh8RnZvYCnJ74="
                                     loading="lazy"
                                     alt="Photo by Martin Sanchez"
-                                    className="h-full w-full object-cover object-center  "
+                                    className="h-full w-full object-cover object-center"
                                 />
                             </div>
                         </div>
