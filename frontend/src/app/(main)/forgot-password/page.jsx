@@ -44,15 +44,27 @@ const SuccessMessage = () => (
           If you don't see it, please check your spam folder.
         </p>
       </div>
-      <div className="mt-5">
+      <div className="mt-5 flex justify-center">
         <Link
           href="/user-login"
           className="text-sm font-medium text-indigo-600 hover:text-indigo-500 
             transition-colors duration-200"
         >
-          Return to Login
+          Return to  User Login
         </Link>
       </div>
+      <div className="mt-5 flex justify-center">
+        <span className="text-lg text-black ">or</span>
+      </div>
+      <div className="mt-5 flex justify-center">
+        <Link
+          href="/doctor-login"
+          className="text-sm font-medium text-indigo-600 hover:text-indigo-500 
+            transition-colors duration-200"
+        >
+          Return to  Doctor Login
+        </Link>
+      </div>  
     </div>
   </div>
 );
