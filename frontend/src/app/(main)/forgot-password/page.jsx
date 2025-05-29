@@ -46,7 +46,7 @@ const SuccessMessage = () => (
       </div>
       <div className="mt-5">
         <Link
-          href="/reset-password"
+          href="/user-login"
           className="text-sm font-medium text-indigo-600 hover:text-indigo-500 
             transition-colors duration-200"
         >
