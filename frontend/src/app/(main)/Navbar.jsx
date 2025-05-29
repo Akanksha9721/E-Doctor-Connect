@@ -15,8 +15,8 @@ const Navbar = () => {
   return (
     <>
        <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-             <div className=" flex h-16 items-center justify-between  px-4 md:px-6">
-               <div className="flex items-center gap-2">
+             <div className=" flex h-16 items-center justify-between ">
+               <div className="flex  items-center gap-2 ">
                  <Link href="/" className="flex items-center gap-2">
                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600">
                      <span className="text-xl font-bold text-white">E</span>
