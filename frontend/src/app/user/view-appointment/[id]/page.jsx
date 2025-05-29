@@ -128,8 +128,7 @@ const viewAppointment = () => {
                 </div>
                 {/* logo - end */}
                 <p className="mb-6 text-gray-400 sm:pr-8">
-                  Filler text is dummy text which has no meaning however looks very
-                  similar to real text.
+                  E-Doctor is a platform that connects patients with doctors for online consultations, appointment bookings, and medical reports. Our mission is to provide accessible and convenient healthcare services to everyone, anytime, anywhere.
                 </p>
                 {/* social - start */}
                 <div className="flex gap-4">

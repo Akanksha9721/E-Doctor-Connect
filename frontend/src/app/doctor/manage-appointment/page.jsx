@@ -57,6 +57,7 @@ const ManageAppointment = () => {
                   <th className='p-3'>ID</th>
                   <th className='p-3' colSpan={2}>createdAt</th>
                   <th className='P-3' colSpan={2}>Action</th>
+                   <th className='p-3 '>Join meeting</th>
                 </tr>
               </thead>
               <tbody>
@@ -72,6 +73,9 @@ const ManageAppointment = () => {
                         <td className='p-3 '>
                           <Link href={'/doctor/view-appointment/' + slot._id} className='bg-blue-500 py-1 px-3 text-white  rounded-full '>View appointment</Link>
                         </td>
+                        <td className='p-3 '>
+                        <a target='_blank' href={appointment.videocall} className='bg-green-500 py-1 px-3 text-white rounded-full  '>join</a>
+                      </td>
                       </tr>
                     )
                   })
